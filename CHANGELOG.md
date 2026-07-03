@@ -4,6 +4,15 @@ All notable changes to the GSC Design System. Format follows
 [Keep a Changelog](https://keepachangelog.com/); versioning is
 [SemVer](https://semver.org/).
 
+## [1.1.2] — 2026-07-03
+
+### Added
+- **Company profile** — `docs/about-gsc.md` describing what Global Sports
+  Corporation is (Guatemala-based sports development, events & rights company,
+  founded 2013; Juventus Academy partner; LaLiga Next Gen & EA SPORTS FC Futures
+  host). Added an "About GSC" section to the README, company context to the
+  `building-gsc-brand` skill and `docs/brand.md`, and links from the docs index.
+
 ## [1.1.1] — 2026-07-03
 
 ### Changed

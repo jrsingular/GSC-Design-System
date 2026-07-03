@@ -2,6 +2,14 @@
 
 **Global Sports Corporation — _Live the dream._**
 
+## Who we are
+
+Global Sports Corporation is a Guatemala-based sports company (founded 2013) that
+develops talent, runs events, and manages sports rights across Central America
+and beyond — the regional Juventus Academy partner, and host of LaLiga "Next
+Gen" and EA SPORTS FC Futures. Mission: *create opportunities and transform
+lives through sport.* Full company profile: **[about-gsc.md](about-gsc.md)**.
+
 ## The mark
 
 `assets/gsc-logo.png` — the running-figure monogram beside the "GLOBAL /

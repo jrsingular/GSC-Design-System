@@ -13,6 +13,18 @@ condensed all-caps headlines, and rationed warmth.
 This skill is the fast brand overview. For product UI reach for
 `designing-gsc-interfaces`; for words reach for `writing-gsc-copy`.
 
+## Who GSC is (context for on-brand output)
+
+Global Sports Corporation is a **Guatemala-based sports company (founded 2013)**
+that develops talent, runs events, and manages sports rights across Central
+America and beyond. Regional **Juventus Academy** partner; host of **LaLiga
+"Next Gen"** and **EA SPORTS FC Futures**; thousands of young athletes (ages
+~3–18) across football, basketball, tennis and volleyball — football at the
+core. Mission: *create opportunities and transform lives through sport.* It also
+develops football investment/partnership initiatives. Write and design for a
+real, ambitious sports organisation — not a generic "fund." Full profile:
+`docs/about-gsc.md`.
+
 ## Brand at a glance
 
 - **Name:** "Global Sports Corporation" first use, "GSC" after. Never "the GSC" / "G.S.C."

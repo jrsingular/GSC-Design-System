@@ -13,11 +13,26 @@
 > only to authorized personnel and contractors for work on behalf of GSC. Do not
 > copy, distribute, or reuse outside GSC. See [`LICENSE`](LICENSE).
 
-A brand, product **and copy** design system distilled from the GSC investment
-prospectus and extended into a reusable toolkit: DTCG design tokens,
-three-voice typography, 20+ components, four channel systems, and **AI skills**
-that make any agent (Claude Code, Cursor, Codex, Windsurf) build and write
-on-brand. One investment-grade language across every surface.
+A brand, product **and copy** design system for Global Sports Corporation:
+DTCG design tokens, three-voice typography, 20+ components, four channel
+systems, and **AI skills** that make any agent (Claude Code, Cursor, Codex,
+Windsurf) build and write on-brand. One investment-grade language across every
+surface.
+
+## About Global Sports Corporation
+
+**Global Sports Corporation (GSC)** is a Guatemala-based sports company —
+founded **2013** — that develops talent, stages events, and manages sports
+rights across Central America and beyond. Its mission: **create opportunities
+and transform lives through sport.** GSC is the region's official **Juventus
+Academy** partner and has brought **LaLiga "Next Gen"** and **EA SPORTS FC
+Futures** to Guatemala, running recurring programs for thousands of young
+athletes (ages ~3–18) across football, basketball, tennis and volleyball — with
+football at the core.
+
+This design system is the identity that carries GSC across all of that work:
+academy and event communications, marketing pages, rights and partnership
+decks, and investor prospectuses. Full profile → **[docs/about-gsc.md](docs/about-gsc.md)**.
 
 ## Install as an AI skill (authorized GSC users)
 
