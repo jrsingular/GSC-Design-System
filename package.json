@@ -1,0 +1,32 @@
+{
+  "name": "gsc-design-system",
+  "version": "1.1.2",
+  "description": "Global Sports Corporation design system — tokens, components, channel templates, and AI skills. Live the dream. Proprietary & Confidential.",
+  "type": "module",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "css": "bash build.sh",
+    "tokens": "style-dictionary build --config style-dictionary.config.js",
+    "build": "npm run css && npm run tokens"
+  },
+  "keywords": [
+    "design-system",
+    "design-tokens",
+    "dtcg",
+    "style-dictionary",
+    "css",
+    "brand",
+    "agent-skills",
+    "claude-code",
+    "landing-page",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jrsingular/GSC-Design-System"
+  },
+  "devDependencies": {
+    "style-dictionary": "^4.4.0"
+  }
+}

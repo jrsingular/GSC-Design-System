@@ -6,7 +6,10 @@ memorandum have different physics.
 
 | Guide | Covers | Assets |
 |---|---|---|
+| [About GSC](about-gsc.md) | Who Global Sports Corporation is — company profile | — |
 | [Brand](brand.md) | Logo, colour discipline, voice, do/don't | `assets/gsc-logo.png` |
+| [Copywriting](copywriting.md) | Voice, tone, lexicon (EN/ES), microcopy | `.claude/skills/writing-gsc-copy/` |
+| [Tokens](tokens.md) | DTCG source, cross-platform export | `tokens/gsc.tokens.json` |
 | [Presentations](presentations.md) | 16:9 decks, slide types, FONDOS backgrounds, iconography | `css/presentation.css`, `templates/presentation.html` |
 | [Landing pages](landing-pages.md) | Marketing web, hero → proof → CTA rhythm | `templates/landing.html` |
 | [Mobile apps](mobile.md) | App shell, touch targets, mobile type scale | `css/mobile.css`, `templates/mobile-app.html` |
