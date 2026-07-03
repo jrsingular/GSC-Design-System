@@ -1,0 +1,98 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · 03 · TYPOGRAPHY UTILITIES
+   Named type styles. Prefer these over element defaults for headings so the
+   size/role is explicit and independent of tag choice.
+   ========================================================================== */
+
+/* --- Display headlines (Bebas Neue, condensed caps) --------------------- */
+.gsc-display-1,
+.gsc-display-2,
+.gsc-display-3,
+.gsc-display-4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-display);
+  color: var(--color-heading);
+}
+.gsc-display-1 { font-size: var(--fs-display-1); line-height: var(--lh-display); }
+.gsc-display-2 { font-size: var(--fs-display-2); line-height: 1; }
+.gsc-display-3 { font-size: var(--fs-display-3); line-height: 1.02; }
+.gsc-display-4 { font-size: var(--fs-display-4); line-height: var(--lh-snug); }
+
+/* Red full-stop / accent word inside a headline. */
+.gsc-accent { color: var(--color-primary); }
+
+/* --- Eyebrow: the red tick + tracked caps label above a headline -------- */
+.gsc-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-ui);
+  font-size: 12.5px;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+.gsc-eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* --- Section number: "01 — The Asset" ----------------------------------- */
+.gsc-section-num {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+/* --- Kicker / small tracked label (accent orange by default) ------------ */
+.gsc-kicker {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.gsc-kicker.is-red { color: var(--color-primary); }
+.gsc-kicker.is-muted { color: var(--gsc-text-faint); }
+
+/* --- Lead paragraph ----------------------------------------------------- */
+.gsc-lead {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-lead);
+  color: var(--gsc-text-3);
+  letter-spacing: 0.01em;
+}
+
+/* --- Body copy sizes ---------------------------------------------------- */
+.gsc-prose      { font-weight: var(--fw-light); font-size: var(--fs-lg); color: var(--gsc-text-4); line-height: var(--lh-body); }
+.gsc-body       { font-weight: var(--fw-light); font-size: var(--fs-base); color: var(--gsc-text-4); }
+.gsc-fine       { font-family: var(--font-ui); font-size: var(--fs-xs); color: var(--gsc-text-ghost); line-height: var(--lh-relaxed); }
+
+/* --- Section header block (num + h2 + optional intro) ------------------- */
+.gsc-section-head { max-width: 760px; margin-bottom: var(--space-14); }
+.gsc-section-head .gsc-section-num { margin-bottom: var(--space-3); }
+.gsc-section-head h2,
+.gsc-section-head .gsc-display-3 { margin: 0; }
+.gsc-section-head p {
+  font-weight: var(--fw-light);
+  font-size: var(--fs-lg);
+  color: var(--gsc-text-4);
+  max-width: 640px;
+  margin-top: var(--space-5);
+}
+
+/* --- Colour helpers ----------------------------------------------------- */
+.gsc-text-primary { color: var(--color-primary); }
+.gsc-text-accent  { color: var(--color-accent); }
+.gsc-text-muted   { color: var(--gsc-text-muted); }
+.gsc-text-white   { color: var(--gsc-text); }

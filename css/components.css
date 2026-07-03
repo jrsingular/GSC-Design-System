@@ -1,0 +1,454 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · 04 · COMPONENTS
+   Generalised, reusable components lifted from the prospectus and extended
+   with the pieces a full product needs (buttons, forms, tables).
+   Every component is prefixed `.gsc-`.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   BUTTONS  — NEW (the prospectus had none; these match its language)
+   ========================================================================== */
+.gsc-btn {
+  --_bg: var(--color-primary);
+  --_fg: var(--gsc-ink);
+  --_bd: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-family: var(--font-ui);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-sm);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 15px 28px;
+  border: 1.5px solid var(--_bd);
+  border-radius: var(--radius-pill);
+  background: var(--_bg);
+  color: var(--_fg);
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition),
+              border-color var(--transition), color var(--transition);
+}
+.gsc-btn:hover { transform: translateY(-2px); color: var(--_fg); }
+.gsc-btn:active { transform: translateY(0); }
+
+/* Solid red — primary CTA. */
+.gsc-btn--primary { --_bg: var(--color-primary); --_fg: #fff; --_bd: var(--color-primary); }
+.gsc-btn--primary:hover { --_bg: var(--color-primary-hover); --_bd: var(--color-primary-hover); }
+
+/* Outline on dark. */
+.gsc-btn--ghost {
+  --_bg: transparent; --_fg: var(--gsc-text); --_bd: var(--color-border);
+}
+.gsc-btn--ghost:hover { --_bd: var(--color-primary); --_fg: var(--color-primary); }
+
+/* Cream — for use on ink, or dark text on crema surfaces. */
+.gsc-btn--crema { --_bg: var(--gsc-crema); --_fg: var(--gsc-ink); --_bd: var(--gsc-crema); }
+.gsc-btn--crema:hover { --_bg: var(--gsc-crema-deep); --_bd: var(--gsc-crema-deep); }
+
+/* Sizes. */
+.gsc-btn--sm { padding: 10px 18px; font-size: var(--fs-xs); }
+.gsc-btn--lg { padding: 19px 40px; font-size: var(--fs-base); }
+.gsc-btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+
+/* ==========================================================================
+   TOP BAR
+   ========================================================================== */
+.gsc-topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background: rgba(25, 26, 25, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: var(--border-hair);
+}
+.gsc-topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  max-width: var(--container);
+  margin-inline: auto;
+  padding: var(--space-4) var(--container-pad);
+}
+.gsc-topbar__logo img { height: 34px; width: auto; }
+.gsc-topbar__label {
+  font-family: var(--font-ui);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gsc-text-muted);
+  text-align: right;
+  line-height: 1.5;
+}
+.gsc-topbar__label strong { display: block; color: var(--gsc-text); font-size: 11.5px; }
+
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.gsc-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 120px var(--container-pad) 0;
+  background:
+    radial-gradient(ellipse 900px 500px at 20% -10%, var(--glow-red), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 90% 10%, var(--glow-orange), transparent 55%),
+    var(--color-bg);
+}
+.gsc-hero__inner { position: relative; z-index: var(--z-base); max-width: var(--container); margin-inline: auto; }
+.gsc-hero h1 { margin: 0; }
+.gsc-hero__sub {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-lead);
+  color: var(--gsc-text-3);
+  max-width: 640px;
+  margin: var(--space-7) 0 var(--space-14);
+}
+
+
+/* ==========================================================================
+   STAT STRIP  (bordered grid of headline numbers)
+   ========================================================================== */
+.gsc-stat-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-block: var(--border-hair);
+}
+.gsc-stat-cell {
+  padding: var(--space-7) var(--space-5);
+  border-right: var(--border-hair);
+}
+.gsc-stat-cell:last-child { border-right: none; }
+.gsc-stat-cell__num {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1;
+  color: var(--gsc-text);
+}
+.gsc-stat-cell__num .u { color: var(--color-primary); }  /* unit / suffix */
+.gsc-stat-cell__tag {
+  font-family: var(--font-ui);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--gsc-text-faint);
+  margin-top: var(--space-2);
+}
+
+
+/* ==========================================================================
+   MARQUEE  (scrolling red ticker)
+   ========================================================================== */
+.gsc-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--color-primary);
+  border-bottom: 1px solid var(--color-primary-hover);
+}
+.gsc-marquee__track {
+  display: inline-block;
+  padding-block: 13px;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gsc-ink);
+  animation: gsc-marquee 34s linear infinite;
+}
+.gsc-marquee__track span { margin: 0 var(--space-7); }
+.gsc-marquee__track span::after { content: '•'; margin-left: var(--space-7); color: rgba(25,26,25,0.4); }
+@keyframes gsc-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+
+/* ==========================================================================
+   CARD  (the workhorse — bordered surface with lift-on-hover)
+   Variants: --hover-red / --hover-accent, --pad-lg, --crema
+   ========================================================================== */
+.gsc-card {
+  background: var(--color-bg);
+  border: var(--border-hair);
+  border-radius: var(--radius-md);
+  padding: var(--space-8) var(--space-7);
+  transition: border-color var(--transition), transform var(--transition);
+}
+/* On a soft/raised section, cards invert to solid ink for contrast. */
+.is-soft .gsc-card { background: var(--color-bg); }
+.gsc-section:not(.is-soft) .gsc-card { background: var(--color-surface); }
+
+.gsc-card--hover:hover { transform: translateY(-4px); border-color: var(--color-primary); }
+.gsc-card--hover-accent:hover { transform: translateY(-4px); border-color: var(--color-accent); }
+.gsc-card--pad-lg { padding: var(--space-10); }
+
+.gsc-card__tag {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+.gsc-card__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-6);
+  text-transform: uppercase;
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+}
+.gsc-card__body { font-weight: var(--fw-light); font-size: var(--fs-base); color: var(--gsc-text-4); }
+.gsc-card__body b { color: var(--gsc-text); font-weight: var(--fw-medium); }
+
+/* A numbered "lever" card. */
+.gsc-card__num {
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+/* Grid helpers for common card layouts. */
+.gsc-grid { display: grid; gap: var(--space-6); }
+.gsc-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.gsc-grid--3 { grid-template-columns: repeat(3, 1fr); }
+.gsc-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+
+/* ==========================================================================
+   BADGE / PILL
+   ========================================================================== */
+.gsc-badge {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-weight: var(--fw-black);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-tag);
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  background: var(--tint-neutral-bg);
+  color: var(--tint-neutral-fg);
+  border: 1px solid var(--tint-neutral-brd);
+}
+.gsc-badge--primary { background: var(--tint-primary-bg); color: var(--tint-primary-fg); border-color: var(--tint-primary-brd); }
+.gsc-badge--accent  { background: var(--tint-accent-bg);  color: var(--tint-accent-fg);  border-color: var(--tint-accent-brd); }
+
+
+/* ==========================================================================
+   FEATURE NUMBER  (giant Bebas figure with label — trophy / fact style)
+   ========================================================================== */
+.gsc-figure { line-height: 1; }
+.gsc-figure__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-2);
+  color: var(--color-primary);
+  line-height: 0.9;
+}
+.gsc-figure__num em { font-style: normal; color: var(--color-primary); }
+.gsc-figure__label {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-tag);
+  text-transform: uppercase;
+  color: var(--gsc-text-faint);
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+/* Small stat "fact" tile. */
+.gsc-fact {
+  border: var(--border-hair);
+  border-radius: var(--radius-sm);
+  padding: var(--space-5) 18px;
+  background: var(--color-bg);
+}
+.gsc-fact__num { font-family: var(--font-display); font-size: 36px; line-height: 1; color: var(--gsc-text); }
+.gsc-fact__num em { font-style: normal; color: var(--color-primary); }
+.gsc-fact__label {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-2xs);
+  letter-spacing: var(--ls-tag);
+  text-transform: uppercase;
+  color: var(--gsc-text-faint);
+  margin-top: var(--space-2);
+  line-height: 1.5;
+}
+
+
+/* ==========================================================================
+   LIST-ROW  (honors list / ledger — bordered rows)
+   ========================================================================== */
+.gsc-rows { list-style: none; border-top: var(--border-hair); }
+.gsc-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding: var(--space-4) 0;
+  border-bottom: var(--border-hair);
+}
+.gsc-row__num {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-7);
+  color: var(--color-primary);
+  min-width: 34px;
+}
+.gsc-row__text { font-family: var(--font-ui); font-weight: var(--fw-medium); font-size: var(--fs-md); color: var(--gsc-grey); }
+.gsc-row__text b { color: var(--gsc-text); font-weight: var(--fw-bold); }
+
+/* Three-column ledger row (name / desc / badge). */
+.gsc-ledger { border-top: var(--border-hair); }
+.gsc-ledger__row {
+  display: grid;
+  grid-template-columns: 220px 1fr 170px;
+  gap: var(--space-7);
+  align-items: start;
+  padding: var(--space-7) 0;
+  border-bottom: var(--border-hair);
+}
+.gsc-ledger__name { font-family: var(--font-display); font-size: 24px; text-transform: uppercase; line-height: 1.1; }
+.gsc-ledger__desc { font-weight: var(--fw-light); font-size: var(--fs-base); color: var(--gsc-text-4); }
+.gsc-ledger__desc b { color: var(--gsc-text); font-weight: var(--fw-medium); }
+.gsc-ledger__badge { justify-self: end; }
+
+
+/* ==========================================================================
+   BANDS  (full-width feature callouts)
+   .gsc-band--crema  → warm parchment (dark text)
+   .gsc-band--red    → solid red (dark text)
+   .gsc-band--tint   → subtle red gradient on ink
+   ========================================================================== */
+.gsc-band { border-radius: var(--radius-lg); padding: var(--space-11); }
+
+.gsc-band--tint {
+  background: linear-gradient(120deg, rgba(227,34,19,0.14), rgba(234,96,32,0.06));
+  border: 1px solid var(--tint-primary-brd);
+}
+.gsc-band--crema { background: var(--gsc-crema); color: var(--gsc-ink); }
+.gsc-band--crema h2, .gsc-band--crema h3 { color: var(--gsc-ink); }
+.gsc-band--crema .gsc-kicker { color: var(--color-primary-hover); }
+.gsc-band--crema p { color: var(--gsc-ink); font-family: var(--font-ui); font-weight: var(--fw-semibold); }
+
+.gsc-band--red { background: var(--color-primary); color: var(--gsc-ink); }
+.gsc-band--red h2, .gsc-band--red h3 { color: var(--gsc-ink); }
+.gsc-band--red p { color: var(--gsc-ink); font-family: var(--font-ui); font-weight: var(--fw-semibold); }
+
+/* Divider inside crema bands. */
+.gsc-band__divider { margin-top: var(--space-7); padding-top: var(--space-7); border-top: 1px solid var(--gsc-crema-deep); }
+
+/* Arrow list (used inside red bands). */
+.gsc-arrow-list { list-style: none; }
+.gsc-arrow-list li {
+  display: flex;
+  gap: var(--space-3);
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-base);
+  padding: var(--space-4) 0;
+  border-top: 1px solid rgba(25,26,25,0.18);
+}
+.gsc-arrow-list li:first-child { border-top: none; }
+.gsc-arrow-list li::before { content: '→'; font-weight: var(--fw-black); }
+
+
+/* ==========================================================================
+   DATA VISUALISATION  (inline SVG bar charts)
+   Style the SVG text/lines via these classes; draw the geometry in markup.
+   ========================================================================== */
+.gsc-chart-card { background: var(--color-surface); border: var(--border-hair); border-radius: var(--radius-md); padding: var(--space-8); }
+.gsc-chart-card__eyebrow {
+  font-family: var(--font-ui); font-weight: var(--fw-black); font-size: var(--fs-xs);
+  letter-spacing: var(--ls-label); text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-2);
+}
+.gsc-chart-card__title { font-family: var(--font-display); font-size: var(--fs-display-6); text-transform: uppercase; line-height: var(--lh-snug); }
+.gsc-chart-card__note { font-family: var(--font-ui); font-size: var(--fs-xs); font-weight: var(--fw-medium); color: var(--gsc-text-faint); margin-top: var(--space-4); line-height: var(--lh-body); }
+.gsc-chart-card svg { width: 100%; height: auto; margin-top: 18px; }
+
+.gsc-bar-label  { font-family: var(--font-ui); font-size: var(--fs-xs); font-weight: var(--fw-bold); fill: var(--gsc-text-muted); letter-spacing: 0.06em; }
+.gsc-bar-value  { font-family: var(--font-display); font-size: 22px; fill: var(--gsc-text); }
+.gsc-bar-value.is-dim { fill: var(--gsc-text-muted); }
+.gsc-axis-line  { stroke: var(--color-border); stroke-width: 1; }
+.gsc-bar        { fill: var(--color-primary); }
+.gsc-bar.is-dim { fill: var(--color-border); }
+.gsc-bar.is-accent { fill: var(--color-accent); }
+
+
+/* ==========================================================================
+   FORMS  — NEW (matches the system for contact / data-room gating)
+   ========================================================================== */
+.gsc-field { display: flex; flex-direction: column; gap: var(--space-2); }
+.gsc-label {
+  font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-xs);
+  letter-spacing: var(--ls-tag); text-transform: uppercase; color: var(--gsc-text-faint);
+}
+.gsc-input, .gsc-textarea, .gsc-select {
+  font-family: var(--font-ui); font-size: var(--fs-md); font-weight: var(--fw-medium);
+  color: var(--gsc-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  transition: border-color var(--transition), background var(--transition);
+}
+.gsc-input::placeholder, .gsc-textarea::placeholder { color: var(--gsc-text-faint); }
+.gsc-input:focus, .gsc-textarea:focus, .gsc-select:focus {
+  outline: none; border-color: var(--color-primary); background: var(--color-surface-raised);
+}
+.gsc-textarea { resize: vertical; min-height: 120px; }
+
+
+/* ==========================================================================
+   TABLE  — NEW (data-room / comparables)
+   ========================================================================== */
+.gsc-table { width: 100%; border-collapse: collapse; font-family: var(--font-ui); }
+.gsc-table th {
+  text-align: left; font-weight: var(--fw-bold); font-size: var(--fs-xs);
+  letter-spacing: var(--ls-tag); text-transform: uppercase; color: var(--gsc-text-faint);
+  padding: var(--space-4); border-bottom: 1px solid var(--color-border);
+}
+.gsc-table td { font-size: var(--fs-md); color: var(--gsc-text-3); padding: var(--space-4); border-bottom: var(--border-hair); }
+.gsc-table tr:last-child td { border-bottom: none; }
+.gsc-table tbody tr { transition: background var(--transition); }
+.gsc-table tbody tr:hover { background: var(--tint-neutral-bg); }
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.gsc-footer { border-top: var(--border-hair); padding: var(--space-8) var(--container-pad); background: var(--color-bg); }
+.gsc-footer__inner { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-6); flex-wrap: wrap; max-width: var(--container); margin-inline: auto; }
+.gsc-footer p { font-family: var(--font-ui); font-size: var(--fs-xs); color: var(--gsc-text-ghost); max-width: 720px; line-height: var(--lh-relaxed); }
+.gsc-footer__date { font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: var(--fs-xs); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gsc-text-faint); white-space: nowrap; }
+
+
+/* ==========================================================================
+   REVEAL  (scroll-in animation utility — pair with the IO snippet in README)
+   ========================================================================== */
+.gsc-reveal { opacity: 0; transform: translateY(28px); transition: opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease); }
+.gsc-reveal.is-in { opacity: 1; transform: translateY(0); }
+
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 860px) {
+  .gsc-grid--2, .gsc-grid--3, .gsc-grid--4 { grid-template-columns: 1fr; }
+  .gsc-stat-strip { grid-template-columns: repeat(2, 1fr); }
+  .gsc-stat-cell:nth-child(2) { border-right: none; }
+  .gsc-stat-cell { border-bottom: var(--border-hair); }
+  .gsc-ledger__row { grid-template-columns: 1fr; gap: var(--space-3); }
+  .gsc-ledger__badge { justify-self: start; }
+  .gsc-topbar__inner { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
+  .gsc-topbar__label { text-align: left; }
+}

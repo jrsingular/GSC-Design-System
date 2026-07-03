@@ -1,0 +1,104 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · 02 · BASE
+   Reset, root element setup, base typography & the shared layout primitives.
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+* { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--color-bg);
+  color: var(--gsc-text-3);
+  font-family: var(--font-body);
+  font-weight: var(--fw-light);
+  font-size: var(--fs-md);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Honour the user's motion preference everywhere. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--color-primary); }
+
+img, svg { display: block; max-width: 100%; }
+
+/* Keyboard focus — visible, on-brand, never removed. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection { background: var(--color-primary); color: var(--gsc-text); }
+
+/* --------------------------------------------------------------------------
+   BASE TYPOGRAPHY
+   Element-level defaults so semantic HTML looks right out of the box.
+   Use the .gsc-h1 … utilities (typography.css) for precise control.
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-regular);
+  text-transform: uppercase;
+  line-height: var(--lh-snug);
+  color: var(--color-heading);
+  letter-spacing: var(--ls-display);
+}
+h1 { font-size: var(--fs-display-1); line-height: var(--lh-display); }
+h2 { font-size: var(--fs-display-3); }
+h3 { font-size: var(--fs-display-6); }
+h4 { font-size: var(--fs-display-7); }
+
+p { color: var(--color-body); }
+strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
+
+/* --------------------------------------------------------------------------
+   LAYOUT PRIMITIVES
+   -------------------------------------------------------------------------- */
+
+/* Centred content column. */
+.gsc-wrap {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+/* Vertical section rhythm. Add .is-soft for a raised surface band. */
+.gsc-section {
+  position: relative;
+  padding-block: var(--section-y);
+}
+.gsc-section.is-soft { background: var(--color-surface); }
+
+/* The faint chalk-line pitch texture overlay (absolute; parent must be
+   position:relative and overflow:hidden). */
+.gsc-pitch-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(255,255,255,0.018) 0px,
+    rgba(255,255,255,0.018) 2px,
+    transparent 2px,
+    transparent 84px
+  );
+}

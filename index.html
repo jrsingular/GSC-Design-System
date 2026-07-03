@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GSC Design System · Global Sports Corporation</title>
+<meta name="description" content="The design system for Global Sports Corporation — tokens, typography, and components. Live the dream.">
+<link rel="icon" href="assets/gsc-logo.png">
+<link rel="stylesheet" href="dist/gsc-design-system.css">
+<style>
+  /* Doc-only helpers (not part of the system). */
+  .doc-anchor { scroll-margin-top: 90px; }
+  .doc-swatch { border-radius: var(--radius-sm); border: 1px solid var(--color-border); overflow: hidden; }
+  .doc-swatch__chip { height: 84px; }
+  .doc-swatch__meta { padding: 12px 14px; font-family: var(--font-ui); background: var(--color-surface); }
+  .doc-swatch__name { font-size: 12px; font-weight: 700; color: var(--gsc-text); text-transform: uppercase; letter-spacing: 0.06em; }
+  .doc-swatch__hex  { font-size: 11px; color: var(--gsc-text-faint); margin-top: 3px; font-family: var(--font-body); }
+  .doc-specimen { display: flex; align-items: baseline; gap: 20px; padding: 18px 0; border-bottom: 1px solid var(--color-border); }
+  .doc-specimen__meta { font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gsc-text-faint); min-width: 130px; white-space: nowrap; }
+  .doc-nav { display: flex; gap: 4px; flex-wrap: wrap; }
+  .doc-nav a { font-family: var(--font-ui); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gsc-text-faint); padding: 6px 12px; border: 1px solid var(--color-border); border-radius: 100px; }
+  .doc-nav a:hover { color: var(--gsc-text); border-color: var(--color-primary); }
+  .doc-space-bar { background: var(--color-primary); height: 16px; border-radius: 3px; }
+  .doc-label-inline { font-family: var(--font-ui); font-size: 11px; color: var(--gsc-text-faint); font-weight: 600; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12.5px; color: var(--gsc-orange-tint); background: var(--tint-neutral-bg); padding: 2px 7px; border-radius: 5px; }
+</style>
+</head>
+<body>
+
+<!-- ====================== TOP BAR ====================== -->
+<header class="gsc-topbar">
+  <div class="gsc-topbar__inner">
+    <div class="gsc-topbar__logo"><img src="assets/gsc-logo.png" alt="Global Sports Corporation"></div>
+    <div class="gsc-topbar__label">Brand &amp; Product Design System<strong>Live the dream.</strong></div>
+  </div>
+</header>
+
+<!-- ====================== HERO ====================== -->
+<section class="gsc-hero">
+  <div class="gsc-pitch-texture"></div>
+  <div class="gsc-hero__inner">
+    <div class="gsc-eyebrow">Global Sports Corporation</div>
+    <h1 class="gsc-display-1">The <span class="gsc-accent">Design</span><br>System</h1>
+    <p class="gsc-hero__sub">One language for every prospectus, pitch deck and product surface GSC ships — the tokens, type and components behind the investment-grade look you already know.</p>
+    <div class="gsc-flex gsc-gap-3 gsc-wrap-flex" style="margin-bottom:56px;">
+      <a href="#foundations" class="gsc-btn gsc-btn--primary">Foundations</a>
+      <a href="#components" class="gsc-btn gsc-btn--ghost">Components</a>
+      <a href="examples/prospectus.html" class="gsc-btn gsc-btn--crema">See it in the wild</a>
+    </div>
+    <div class="gsc-stat-strip">
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">3</div><div class="gsc-stat-cell__tag">Type Voices</div></div>
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">60<span class="u">+</span></div><div class="gsc-stat-cell__tag">Design Tokens</div></div>
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">20<span class="u">+</span></div><div class="gsc-stat-cell__tag">Components</div></div>
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">1</div><div class="gsc-stat-cell__tag">Source of Truth</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== MARQUEE ====================== -->
+<div class="gsc-marquee">
+  <div class="gsc-marquee__track">
+    <span>Foundations</span><span>Colour</span><span>Typography</span><span>Spacing</span><span>Components</span><span>Buttons</span><span>Cards</span><span>Data</span><span>Bands</span>
+    <span>Foundations</span><span>Colour</span><span>Typography</span><span>Spacing</span><span>Components</span><span>Buttons</span><span>Cards</span><span>Data</span><span>Bands</span>
+  </div>
+</div>
+
+<!-- ====================== NAV ====================== -->
+<section class="gsc-section" style="padding-block:44px;">
+  <div class="gsc-wrap">
+    <nav class="doc-nav">
+      <a href="#foundations">01 — Foundations</a>
+      <a href="#color">Colour</a>
+      <a href="#type">Typography</a>
+      <a href="#space">Spacing</a>
+      <a href="#components">02 — Components</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#cards">Cards</a>
+      <a href="#stats">Stats &amp; Facts</a>
+      <a href="#bands">Bands</a>
+      <a href="#data">Data</a>
+      <a href="#forms">Forms</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ====================== FOUNDATIONS ====================== -->
+<section class="gsc-section is-soft doc-anchor" id="foundations">
+  <div class="gsc-wrap">
+    <div class="gsc-section-head">
+      <div class="gsc-section-num">01 — Foundations</div>
+      <h2 class="gsc-display-3">The raw materials</h2>
+      <p>Stadium-night ink, two brand flames and a trophy-parchment warm. Condensed caps for impact, humanist sans for reading. Everything downstream is built from these.</p>
+    </div>
+
+    <!-- COLOUR -->
+    <div class="doc-anchor" id="color">
+      <div class="gsc-kicker is-red gsc-mb-6">Brand</div>
+      <div class="gsc-grid gsc-grid--4 gsc-mb-8">
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#E32213"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Red</div><div class="doc-swatch__hex">#E32213 · --gsc-red</div></div></div>
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#B01A0E"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Red Deep</div><div class="doc-swatch__hex">#B01A0E · --gsc-red-deep</div></div></div>
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#EA6020"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Orange</div><div class="doc-swatch__hex">#EA6020 · --gsc-orange</div></div></div>
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#F2E4C8"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Crema</div><div class="doc-swatch__hex">#F2E4C8 · --gsc-crema</div></div></div>
+      </div>
+
+      <div class="gsc-kicker is-muted gsc-mb-6">Ink &amp; Neutrals</div>
+      <div class="gsc-grid gsc-grid--4">
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#191A19"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Ink</div><div class="doc-swatch__hex">#191A19 · background</div></div></div>
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#232423"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Ink Soft</div><div class="doc-swatch__hex">#232423 · surface</div></div></div>
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#3A3B3A"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Line</div><div class="doc-swatch__hex">#3A3B3A · borders</div></div></div>
+        <div class="doc-swatch"><div class="doc-swatch__chip" style="background:#9A9B9A"></div><div class="doc-swatch__meta"><div class="doc-swatch__name">Muted</div><div class="doc-swatch__hex">#9A9B9A · captions</div></div></div>
+      </div>
+    </div>
+
+    <!-- TYPE -->
+    <div class="doc-anchor gsc-mt-8" id="type" style="margin-top:72px;">
+      <div class="gsc-kicker is-red gsc-mb-6">Typography</div>
+      <div class="doc-specimen"><div class="doc-specimen__meta">Display · Bebas</div><div class="gsc-display-2">Live the dream</div></div>
+      <div class="doc-specimen"><div class="doc-specimen__meta">Display 3 · H2</div><div class="gsc-display-3">A crown no one else wears</div></div>
+      <div class="doc-specimen"><div class="doc-specimen__meta">Eyebrow</div><div class="gsc-eyebrow">Football Investment Opportunity</div></div>
+      <div class="doc-specimen"><div class="doc-specimen__meta">Lead · Montserrat</div><div class="gsc-lead" style="max-width:520px;">Priced below its history — a professionalising league in real time.</div></div>
+      <div class="doc-specimen"><div class="doc-specimen__meta">Body · Roboto</div><div class="gsc-prose" style="max-width:520px;">The strongest economy in Central America, with three million fans already living in the United States and a diaspora hungry for connection.</div></div>
+      <div class="doc-specimen"><div class="doc-specimen__meta">Kicker</div><div class="gsc-kicker">Value Creation</div></div>
+    </div>
+
+    <!-- SPACE -->
+    <div class="doc-anchor" id="space" style="margin-top:72px;">
+      <div class="gsc-kicker is-red gsc-mb-6">Spacing · 4px grid</div>
+      <div class="gsc-flex-col gsc-gap-3">
+        <div class="gsc-flex gsc-items-center gsc-gap-4"><span class="doc-label-inline" style="min-width:110px;">--space-2 · 8</span><div class="doc-space-bar" style="width:8px;"></div></div>
+        <div class="gsc-flex gsc-items-center gsc-gap-4"><span class="doc-label-inline" style="min-width:110px;">--space-4 · 16</span><div class="doc-space-bar" style="width:16px;"></div></div>
+        <div class="gsc-flex gsc-items-center gsc-gap-4"><span class="doc-label-inline" style="min-width:110px;">--space-6 · 24</span><div class="doc-space-bar" style="width:24px;"></div></div>
+        <div class="gsc-flex gsc-items-center gsc-gap-4"><span class="doc-label-inline" style="min-width:110px;">--space-8 · 32</span><div class="doc-space-bar" style="width:32px;"></div></div>
+        <div class="gsc-flex gsc-items-center gsc-gap-4"><span class="doc-label-inline" style="min-width:110px;">--space-14 · 56</span><div class="doc-space-bar" style="width:56px;"></div></div>
+        <div class="gsc-flex gsc-items-center gsc-gap-4"><span class="doc-label-inline" style="min-width:110px;">--space-25 · 100</span><div class="doc-space-bar" style="width:100px;"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== COMPONENTS ====================== -->
+<section class="gsc-section doc-anchor" id="components">
+  <div class="gsc-wrap">
+    <div class="gsc-section-head">
+      <div class="gsc-section-num">02 — Components</div>
+      <h2 class="gsc-display-3">Built to ship</h2>
+      <p>Every block from the prospectus, generalised and reusable — plus the buttons, forms and tables a live product needs. Each carries a <code>.gsc-</code> prefix.</p>
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="doc-anchor" id="buttons">
+      <div class="gsc-kicker gsc-mb-6">Buttons</div>
+      <div class="gsc-flex gsc-gap-3 gsc-wrap-flex gsc-items-center gsc-mb-8">
+        <button class="gsc-btn gsc-btn--primary">Primary CTA</button>
+        <button class="gsc-btn gsc-btn--ghost">Ghost</button>
+        <button class="gsc-btn gsc-btn--crema">Crema</button>
+        <button class="gsc-btn gsc-btn--primary gsc-btn--sm">Small</button>
+        <button class="gsc-btn gsc-btn--primary gsc-btn--lg">Large</button>
+        <button class="gsc-btn gsc-btn--primary" disabled>Disabled</button>
+      </div>
+    </div>
+
+    <!-- BADGES -->
+    <div class="gsc-kicker gsc-mb-6" style="margin-top:56px;">Badges</div>
+    <div class="gsc-flex gsc-gap-3 gsc-wrap-flex gsc-mb-8">
+      <span class="gsc-badge gsc-badge--primary">Own it</span>
+      <span class="gsc-badge gsc-badge--accent">Grow it</span>
+      <span class="gsc-badge">Flag</span>
+    </div>
+
+    <!-- CARDS -->
+    <div class="doc-anchor" id="cards" style="margin-top:56px;">
+      <div class="gsc-kicker gsc-mb-6">Cards · hover to lift</div>
+      <div class="gsc-grid gsc-grid--3">
+        <article class="gsc-card gsc-card--hover">
+          <div class="gsc-card__tag">The Rivalry</div>
+          <h3 class="gsc-card__title">Derby demand</h3>
+          <p class="gsc-card__body">A fixture that stops a nation — <b>sold-out gates</b> and broadcast numbers that punch far above the league average.</p>
+        </article>
+        <article class="gsc-card gsc-card--hover-accent">
+          <div class="gsc-card__num">Lever 01</div>
+          <h3 class="gsc-card__title">Media rights</h3>
+          <p class="gsc-card__body">Renegotiated distribution and a direct-to-diaspora streaming tier unlock <b>new recurring revenue</b>.</p>
+        </article>
+        <article class="gsc-card gsc-card--hover-accent">
+          <div class="gsc-card__num">Lever 02</div>
+          <h3 class="gsc-card__title">Academy pipeline</h3>
+          <p class="gsc-card__body">A player-trading model that turns youth development into <b>a repeatable export</b>.</p>
+        </article>
+      </div>
+    </div>
+
+    <!-- STATS & FACTS -->
+    <div class="doc-anchor" id="stats" style="margin-top:56px;">
+      <div class="gsc-kicker gsc-mb-6">Facts &amp; figures</div>
+      <div class="gsc-grid gsc-grid--4 gsc-mb-8">
+        <div class="gsc-fact"><div class="gsc-fact__num">30<em>×</em></div><div class="gsc-fact__label">National Titles</div></div>
+        <div class="gsc-fact"><div class="gsc-fact__num">3<em>M</em></div><div class="gsc-fact__label">Diaspora Fans</div></div>
+        <div class="gsc-fact"><div class="gsc-fact__num">#1</div><div class="gsc-fact__label">CA Economy</div></div>
+        <div class="gsc-fact"><div class="gsc-fact__num">1949</div><div class="gsc-fact__label">Founded</div></div>
+      </div>
+
+      <ul class="gsc-rows">
+        <li class="gsc-row"><span class="gsc-row__num">01</span><span class="gsc-row__text"><b>Record league titles</b> — the most decorated club in the country</span></li>
+        <li class="gsc-row"><span class="gsc-row__num">02</span><span class="gsc-row__text"><b>Continental honours</b> across five decades of play</span></li>
+        <li class="gsc-row"><span class="gsc-row__num">03</span><span class="gsc-row__text"><b>Unrivalled derby</b> — the defining fixture of the region</span></li>
+      </ul>
+    </div>
+
+    <!-- BANDS -->
+    <div class="doc-anchor" id="bands" style="margin-top:56px;">
+      <div class="gsc-kicker gsc-mb-6">Feature bands</div>
+
+      <div class="gsc-band gsc-band--crema gsc-mb-6">
+        <div class="gsc-kicker">The Anchor</div>
+        <h3 class="gsc-display-4" style="margin:14px 0 18px;">A crown no one else wears</h3>
+        <p style="max-width:900px;">This is the warm parchment band — reserved for the single most important claim on a page. Dark ink type on crema, a confident all-caps headline, and a divider that leads into the proof points.</p>
+        <div class="gsc-band__divider gsc-grid gsc-grid--3">
+          <div class="gsc-figure"><div class="gsc-figure__num" style="color:var(--gsc-red-deep);">30<em>+</em></div><div class="gsc-figure__label" style="color:var(--gsc-ink);">Major trophies</div></div>
+          <div class="gsc-figure"><div class="gsc-figure__num" style="color:var(--gsc-red-deep);">75</div><div class="gsc-figure__label" style="color:var(--gsc-ink);">Years of history</div></div>
+          <div class="gsc-figure"><div class="gsc-figure__num" style="color:var(--gsc-red-deep);">#1</div><div class="gsc-figure__label" style="color:var(--gsc-ink);">By titles held</div></div>
+        </div>
+      </div>
+
+      <div class="gsc-band gsc-band--red gsc-grid gsc-grid--2 gsc-items-center gsc-mb-6" style="gap:44px;">
+        <div>
+          <h3 class="gsc-display-4" style="margin-bottom:16px;">An open entry window</h3>
+          <p>The red band signals urgency and timing — solid brand red, dark type, used sparingly for the call that matters most.</p>
+        </div>
+        <ul class="gsc-arrow-list">
+          <li>League professionalising in real time</li>
+          <li>Valuations below historical peaks</li>
+          <li>Diaspora media rights still uncommitted</li>
+        </ul>
+      </div>
+
+      <div class="gsc-band gsc-band--tint gsc-grid gsc-items-center" style="grid-template-columns:auto 1fr; gap:34px;">
+        <div class="gsc-display-4" style="white-space:nowrap;"><span class="gsc-text-muted">Loss</span> &nbsp;→&nbsp; <span class="gsc-text-primary">Profit</span></div>
+        <p class="gsc-body" style="color:var(--gsc-text-2);">The subtle tint band — a red-to-orange wash on ink with a hairline border. For turnaround narratives and inline highlights that shouldn't shout.</p>
+      </div>
+    </div>
+
+    <!-- DATA -->
+    <div class="doc-anchor" id="data" style="margin-top:56px;">
+      <div class="gsc-kicker gsc-mb-6">Data visualisation</div>
+      <div class="gsc-grid gsc-grid--2">
+        <div class="gsc-chart-card">
+          <div class="gsc-chart-card__eyebrow">Revenue mix</div>
+          <h4 class="gsc-chart-card__title">Where value is made</h4>
+          <svg viewBox="0 0 400 190" role="img" aria-label="Bar chart of revenue by source">
+            <line class="gsc-axis-line" x1="120" y1="10" x2="120" y2="170"></line>
+            <rect class="gsc-bar" x="120" y="18"  width="230" height="26" rx="3"></rect>
+            <rect class="gsc-bar is-accent" x="120" y="62"  width="170" height="26" rx="3"></rect>
+            <rect class="gsc-bar is-dim" x="120" y="106" width="110" height="26" rx="3"></rect>
+            <rect class="gsc-bar is-dim" x="120" y="150" width="70"  height="26" rx="3"></rect>
+            <text class="gsc-bar-label" x="112" y="36"  text-anchor="end">MEDIA</text>
+            <text class="gsc-bar-label" x="112" y="80"  text-anchor="end">GATE</text>
+            <text class="gsc-bar-label" x="112" y="124" text-anchor="end">RETAIL</text>
+            <text class="gsc-bar-label" x="112" y="168" text-anchor="end">OTHER</text>
+            <text class="gsc-bar-value" x="356" y="38">42%</text>
+            <text class="gsc-bar-value is-dim" x="296" y="82">31%</text>
+            <text class="gsc-bar-value is-dim" x="236" y="126">18%</text>
+            <text class="gsc-bar-value is-dim" x="196" y="170">9%</text>
+          </svg>
+          <p class="gsc-chart-card__note">Illustrative. SVG geometry is authored in markup; colour &amp; type come from <code>.gsc-bar</code> classes.</p>
+        </div>
+        <div class="gsc-chart-card">
+          <div class="gsc-chart-card__eyebrow">Comparables</div>
+          <h4 class="gsc-chart-card__title">Priced below history</h4>
+          <table class="gsc-table" style="margin-top:18px;">
+            <thead><tr><th>Club</th><th>Titles</th><th>EV / rev</th></tr></thead>
+            <tbody>
+              <tr><td>This asset</td><td>30+</td><td style="color:var(--gsc-red-bright);font-weight:700;">1.4×</td></tr>
+              <tr><td>Regional peer A</td><td>18</td><td>2.9×</td></tr>
+              <tr><td>Regional peer B</td><td>12</td><td>3.6×</td></tr>
+              <tr><td>League median</td><td>—</td><td>2.7×</td></tr>
+            </tbody>
+          </table>
+          <p class="gsc-chart-card__note">The <code>.gsc-table</code> component — data-room ready, rows lift on hover.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMS -->
+    <div class="doc-anchor" id="forms" style="margin-top:56px;">
+      <div class="gsc-kicker gsc-mb-6">Forms · data-room access</div>
+      <div class="gsc-card gsc-card--pad-lg" style="max-width:640px;">
+        <div class="gsc-grid gsc-grid--2 gsc-mb-6">
+          <div class="gsc-field"><label class="gsc-label" for="fn">Full name</label><input class="gsc-input" id="fn" placeholder="Jane Investor"></div>
+          <div class="gsc-field"><label class="gsc-label" for="em">Email</label><input class="gsc-input" id="em" placeholder="jane@fund.com"></div>
+        </div>
+        <div class="gsc-field gsc-mb-6"><label class="gsc-label" for="ms">Message</label><textarea class="gsc-textarea" id="ms" placeholder="Tell us about your mandate…"></textarea></div>
+        <button class="gsc-btn gsc-btn--primary gsc-btn--lg gsc-full">Request the data room</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CLOSING ====================== -->
+<section class="gsc-section is-soft gsc-text-center">
+  <div class="gsc-wrap">
+    <img src="assets/gsc-logo.png" alt="Global Sports Corporation" style="height:52px; margin:0 auto 32px;">
+    <h2 class="gsc-display-2">One system.<br><span class="gsc-accent">Every</span> pitch.</h2>
+    <p class="gsc-lead gsc-mx-auto gsc-mt-6" style="max-width:520px;">Import one stylesheet, reach for the tokens, compose the components. The look stays investment-grade, every time.</p>
+    <div class="gsc-kicker is-red" style="margin-top:28px;">Global Sports Corporation · Live the dream.</div>
+  </div>
+</section>
+
+<!-- ====================== FOOTER ====================== -->
+<footer class="gsc-footer">
+  <div class="gsc-footer__inner">
+    <p>GSC Design System. Colour, type and components derived from the Global Sports Corporation investment prospectus language and extended for product use. This document is a living style guide — see <code>README.md</code> for install and usage.</p>
+    <div class="gsc-footer__date">v1.0 · 2026</div>
+  </div>
+</footer>
+
+<script>
+  // Reveal-on-scroll — the one interactive behaviour the system ships with.
+  (function () {
+    var els = document.querySelectorAll('.gsc-reveal');
+    if (!('IntersectionObserver' in window) || !els.length) {
+      els.forEach(function (el) { el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · 00 · FONTS
+   Loads the three brand typefaces from Google Fonts.
+   Self-host these for production; this import is provided for convenience.
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap');

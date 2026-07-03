@@ -1,0 +1,50 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · 05 · UTILITIES
+   Small, single-purpose helpers for composing layouts without new CSS.
+   ========================================================================== */
+
+/* Flex / grid */
+.gsc-flex        { display: flex; }
+.gsc-flex-col    { display: flex; flex-direction: column; }
+.gsc-items-center{ align-items: center; }
+.gsc-items-start { align-items: flex-start; }
+.gsc-items-base  { align-items: baseline; }
+.gsc-justify-between { justify-content: space-between; }
+.gsc-wrap-flex   { flex-wrap: wrap; }
+
+/* Gaps (4px grid) */
+.gsc-gap-2  { gap: var(--space-2); }
+.gsc-gap-3  { gap: var(--space-3); }
+.gsc-gap-4  { gap: var(--space-4); }
+.gsc-gap-6  { gap: var(--space-6); }
+.gsc-gap-8  { gap: var(--space-8); }
+.gsc-gap-14 { gap: var(--space-14); }
+
+/* Margins (block flow) */
+.gsc-mt-2  { margin-top: var(--space-2); }
+.gsc-mt-4  { margin-top: var(--space-4); }
+.gsc-mt-6  { margin-top: var(--space-6); }
+.gsc-mt-8  { margin-top: var(--space-8); }
+.gsc-mb-4  { margin-bottom: var(--space-4); }
+.gsc-mb-6  { margin-bottom: var(--space-6); }
+.gsc-mb-8  { margin-bottom: var(--space-8); }
+
+/* Alignment */
+.gsc-text-center { text-align: center; }
+.gsc-mx-auto     { margin-inline: auto; }
+
+/* Surfaces */
+.gsc-surface     { background: var(--color-surface); }
+.gsc-surface-raised { background: var(--color-surface-raised); }
+.gsc-hairline-top { border-top: var(--border-hair); }
+
+/* Width helpers */
+.gsc-measure     { max-width: 640px; }
+.gsc-measure-wide{ max-width: 900px; }
+.gsc-full        { width: 100%; }
+
+/* Visually hidden (accessible) */
+.gsc-sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}

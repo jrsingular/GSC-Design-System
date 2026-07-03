@@ -1,0 +1,187 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · 01 · TOKENS
+   Global Sports Corporation — "Live the dream."
+   --------------------------------------------------------------------------
+   The single source of truth. Every colour, type ramp, space, radius and
+   motion value in the system is defined here as a custom property. Components
+   never hard-code a raw value — they consume a token. Re-skin the whole
+   system by editing this file alone.
+   ========================================================================== */
+
+:root {
+
+  /* ----------------------------------------------------------------------
+     BRAND — the two flames of the mark (red + orange) and the deeps.
+     ---------------------------------------------------------------------- */
+  --gsc-red:            #E32213;   /* primary — the "SPORTS" red */
+  --gsc-red-deep:       #B01A0E;   /* pressed / on-cream red     */
+  --gsc-red-bright:     #FF7A6E;   /* text-on-dark accent tint   */
+  --gsc-orange:         #EA6020;   /* accent — the running figure */
+  --gsc-orange-tint:    #F0A06A;   /* accent on dark             */
+
+  /* ----------------------------------------------------------------------
+     INK — the dark stadium-night neutral ramp.
+     ---------------------------------------------------------------------- */
+  --gsc-ink:            #191A19;   /* app background            */
+  --gsc-ink-soft:       #232423;   /* raised surface / section  */
+  --gsc-ink-raised:     #2B2C2B;   /* card hover / input        */
+  --gsc-line:           #3A3B3A;   /* hairline borders          */
+
+  /* Neutral text ramp (dark theme) — high → low emphasis. */
+  --gsc-text:           #FFFFFF;   /* headings, primary text    */
+  --gsc-text-2:         #D9DAD9;   /* strong body               */
+  --gsc-text-3:         #C9CAC9;   /* body                      */
+  --gsc-text-4:         #B7B8B7;   /* secondary body            */
+  --gsc-text-muted:     #9A9B9A;   /* captions / axis           */
+  --gsc-text-faint:     #8F908F;   /* labels / eyebrows-muted   */
+  --gsc-text-ghost:     #6F706F;   /* legal / footnotes         */
+
+  /* ----------------------------------------------------------------------
+     CREMA — the warm "trophy parchment" surface for feature blocks.
+     ---------------------------------------------------------------------- */
+  --gsc-crema:          #F2E4C8;
+  --gsc-crema-deep:     #D9C6A0;   /* dividers on crema         */
+
+  /* Light neutral (for crema surfaces, docs, print). */
+  --gsc-white:          #FFFFFF;
+  --gsc-grey:           #F0F0F0;
+
+  /* ----------------------------------------------------------------------
+     SEMANTIC ALIASES — components speak in intent, not raw brand names.
+     ---------------------------------------------------------------------- */
+  --color-bg:               var(--gsc-ink);
+  --color-surface:          var(--gsc-ink-soft);
+  --color-surface-raised:   var(--gsc-ink-raised);
+  --color-border:           var(--gsc-line);
+  --color-primary:          var(--gsc-red);
+  --color-primary-hover:    var(--gsc-red-deep);
+  --color-accent:           var(--gsc-orange);
+  --color-heading:          var(--gsc-text);
+  --color-body:             var(--gsc-text-4);
+
+  /* Status tints — badges & inline signals (transparent so they sit on ink). */
+  --tint-primary-bg:    rgba(227, 34, 19, 0.16);
+  --tint-primary-brd:   rgba(227, 34, 19, 0.45);
+  --tint-primary-fg:    var(--gsc-red-bright);
+  --tint-accent-bg:     rgba(234, 96, 32, 0.14);
+  --tint-accent-brd:    rgba(234, 96, 32, 0.40);
+  --tint-accent-fg:     var(--gsc-orange-tint);
+  --tint-neutral-bg:    rgba(240, 240, 240, 0.08);
+  --tint-neutral-brd:   var(--gsc-line);
+  --tint-neutral-fg:    var(--gsc-text-4);
+
+  /* Glow washes — hero / closing radial atmospheres. */
+  --glow-red:           rgba(227, 34, 19, 0.22);
+  --glow-orange:        rgba(234, 96, 32, 0.14);
+
+  /* ----------------------------------------------------------------------
+     TYPOGRAPHY
+     Three voices: DISPLAY (condensed, all-caps headlines), UI (labels,
+     eyebrows, structural text) and BODY (long-form reading).
+     ---------------------------------------------------------------------- */
+  --font-display: 'Bebas Neue', 'Oswald', 'Arial Narrow', sans-serif;
+  --font-ui:      'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-body:    'Roboto', system-ui, -apple-system, sans-serif;
+
+  /* Display ramp — fluid, headline-first. */
+  --fs-display-1:  clamp(58px, 10vw, 132px);  /* hero H1          */
+  --fs-display-2:  clamp(40px,  6vw,  74px);  /* closing / big    */
+  --fs-display-3:  clamp(36px,  5vw,  58px);  /* section H2       */
+  --fs-display-4:  clamp(28px, 3.6vw,  42px); /* band headline    */
+  --fs-display-5:  30px;                       /* card title large */
+  --fs-display-6:  26px;                       /* card title       */
+  --fs-display-7:  22px;                       /* small display    */
+
+  /* Text ramp. */
+  --fs-lead:   clamp(16px, 2vw, 20px);  /* hero sub / lead     */
+  --fs-lg:     17px;
+  --fs-md:     15px;
+  --fs-base:   14.5px;
+  --fs-sm:     13px;
+  --fs-xs:     11px;    /* eyebrows, tags     */
+  --fs-2xs:    10.5px;  /* micro labels       */
+
+  /* Weights. */
+  --fw-light:    300;
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  /* Line-heights. */
+  --lh-display:  0.92;  /* tight caps headlines */
+  --lh-snug:     1.05;
+  --lh-heading:  1.2;
+  --lh-body:     1.6;
+  --lh-relaxed:  1.7;
+
+  /* Tracking (letter-spacing) — condensed caps want air. */
+  --ls-display:  0.01em;
+  --ls-eyebrow:  0.2em;
+  --ls-label:    0.12em;
+  --ls-tag:      0.1em;
+
+  /* ----------------------------------------------------------------------
+     SPACE — 4px base grid. Named steps used across padding & gaps.
+     ---------------------------------------------------------------------- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --space-14: 56px;
+  --space-18: 72px;
+  --space-25: 100px;  /* section rhythm */
+
+  /* ----------------------------------------------------------------------
+     LAYOUT
+     ---------------------------------------------------------------------- */
+  --container:      1180px;
+  --container-pad:  32px;
+  --section-y:      100px;
+
+  /* ----------------------------------------------------------------------
+     RADII
+     ---------------------------------------------------------------------- */
+  --radius-sm:   12px;
+  --radius-md:   14px;
+  --radius-lg:   16px;
+  --radius-pill: 100px;
+
+  /* ----------------------------------------------------------------------
+     BORDERS
+     ---------------------------------------------------------------------- */
+  --border-hair: 1px solid var(--color-border);
+
+  /* ----------------------------------------------------------------------
+     ELEVATION — the base system is border-led & flat; these are for
+     modals / menus / lifted states that the prospectus didn't need.
+     ---------------------------------------------------------------------- */
+  --shadow-sm:  0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md:  0 8px 24px rgba(0,0,0,0.35);
+  --shadow-lg:  0 24px 60px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 0 1px var(--tint-primary-brd), 0 12px 40px rgba(227,34,19,0.25);
+
+  /* ----------------------------------------------------------------------
+     MOTION
+     ---------------------------------------------------------------------- */
+  --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    0.18s;
+  --dur:         0.25s;
+  --dur-slow:    0.7s;
+  --transition:  var(--dur) var(--ease);
+
+  /* ----------------------------------------------------------------------
+     Z-INDEX
+     ---------------------------------------------------------------------- */
+  --z-base:    1;
+  --z-sticky: 50;
+  --z-overlay: 80;
+  --z-modal:  100;
+}
