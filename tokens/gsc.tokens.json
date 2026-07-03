@@ -1,0 +1,97 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Global Sports Corporation design tokens — W3C DTCG format (2025.10 stable). Source of truth for cross-platform export via Style Dictionary v4.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "red":       { "$value": "#E32213", "$description": "Primary — one action / accent per view" },
+      "red-deep":  { "$value": "#B01A0E", "$description": "Pressed / on-cream" },
+      "red-bright":{ "$value": "#FF7A6E", "$description": "Text accent on dark" },
+      "orange":    { "$value": "#EA6020", "$description": "Secondary accent" },
+      "orange-tint":{ "$value": "#F0A06A", "$description": "Accent on dark" },
+      "crema":     { "$value": "#F2E4C8", "$description": "The one anchor claim" },
+      "crema-deep":{ "$value": "#D9C6A0", "$description": "Divider on crema" }
+    },
+    "ink": {
+      "base":   { "$value": "#191A19", "$description": "App background" },
+      "soft":   { "$value": "#232423", "$description": "Raised surface" },
+      "raised": { "$value": "#2B2C2B", "$description": "Card hover / input" },
+      "line":   { "$value": "#3A3B3A", "$description": "Hairline borders" }
+    },
+    "text": {
+      "1": { "$value": "#FFFFFF" },
+      "2": { "$value": "#D9DAD9" },
+      "3": { "$value": "#C9CAC9" },
+      "4": { "$value": "#B7B8B7" },
+      "muted": { "$value": "#9A9B9A" },
+      "faint": { "$value": "#8F908F" },
+      "ghost": { "$value": "#6F706F" }
+    },
+    "semantic": {
+      "bg":       { "$value": "{color.ink.base}" },
+      "surface":  { "$value": "{color.ink.soft}" },
+      "border":   { "$value": "{color.ink.line}" },
+      "primary":  { "$value": "{color.brand.red}" },
+      "primary-hover": { "$value": "{color.brand.red-deep}" },
+      "accent":   { "$value": "{color.brand.orange}" },
+      "heading":  { "$value": "{color.text.1}" },
+      "body":     { "$value": "{color.text.4}" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display": { "$value": ["Bebas Neue", "Oswald", "Arial Narrow", "sans-serif"] },
+      "ui":      { "$value": ["Montserrat", "system-ui", "sans-serif"] },
+      "body":    { "$value": ["Roboto", "system-ui", "sans-serif"] }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "light": { "$value": 300 },
+      "regular": { "$value": 400 },
+      "medium": { "$value": 500 },
+      "semibold": { "$value": 600 },
+      "bold": { "$value": 700 },
+      "black": { "$value": 800 }
+    }
+  },
+  "dimension": {
+    "$type": "dimension",
+    "space": {
+      "1":  { "$value": "4px" },
+      "2":  { "$value": "8px" },
+      "3":  { "$value": "12px" },
+      "4":  { "$value": "16px" },
+      "5":  { "$value": "20px" },
+      "6":  { "$value": "24px" },
+      "7":  { "$value": "28px" },
+      "8":  { "$value": "32px" },
+      "10": { "$value": "40px" },
+      "11": { "$value": "44px" },
+      "14": { "$value": "56px" },
+      "18": { "$value": "72px" },
+      "25": { "$value": "100px" }
+    },
+    "radius": {
+      "sm":   { "$value": "12px" },
+      "md":   { "$value": "14px" },
+      "lg":   { "$value": "16px" },
+      "pill": { "$value": "100px" }
+    },
+    "font-size": {
+      "lead": { "$value": "20px" },
+      "lg":   { "$value": "17px" },
+      "md":   { "$value": "15px" },
+      "base": { "$value": "14.5px" },
+      "sm":   { "$value": "13px" },
+      "xs":   { "$value": "11px" },
+      "2xs":  { "$value": "10.5px" }
+    }
+  },
+  "duration": {
+    "$type": "duration",
+    "fast": { "$value": "180ms" },
+    "base": { "$value": "250ms" },
+    "slow": { "$value": "700ms" }
+  }
+}

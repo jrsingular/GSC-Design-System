@@ -1,0 +1,68 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-brand-red: #e32213; /** Primary — one action / accent per view */
+  --color-brand-red-deep: #b01a0e; /** Pressed / on-cream */
+  --color-brand-red-bright: #ff7a6e; /** Text accent on dark */
+  --color-brand-orange: #ea6020; /** Secondary accent */
+  --color-brand-orange-tint: #f0a06a; /** Accent on dark */
+  --color-brand-crema: #f2e4c8; /** The one anchor claim */
+  --color-brand-crema-deep: #d9c6a0; /** Divider on crema */
+  --color-ink-base: #191a19; /** App background */
+  --color-ink-soft: #232423; /** Raised surface */
+  --color-ink-raised: #2b2c2b; /** Card hover / input */
+  --color-ink-line: #3a3b3a; /** Hairline borders */
+  --color-text-1: #ffffff;
+  --color-text-2: #d9dad9;
+  --color-text-3: #c9cac9;
+  --color-text-4: #b7b8b7;
+  --color-text-muted: #9a9b9a;
+  --color-text-faint: #8f908f;
+  --color-text-ghost: #6f706f;
+  --font-family-display: 'Bebas Neue', Oswald, 'Arial Narrow', sans-serif;
+  --font-family-ui: Montserrat, system-ui, sans-serif;
+  --font-family-body: Roboto, system-ui, sans-serif;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+  --dimension-space-1: 4px;
+  --dimension-space-2: 8px;
+  --dimension-space-3: 12px;
+  --dimension-space-4: 16px;
+  --dimension-space-5: 20px;
+  --dimension-space-6: 24px;
+  --dimension-space-7: 28px;
+  --dimension-space-8: 32px;
+  --dimension-space-10: 40px;
+  --dimension-space-11: 44px;
+  --dimension-space-14: 56px;
+  --dimension-space-18: 72px;
+  --dimension-space-25: 100px;
+  --dimension-radius-sm: 12px;
+  --dimension-radius-md: 14px;
+  --dimension-radius-lg: 16px;
+  --dimension-radius-pill: 100px;
+  --dimension-font-size-lead: 20px;
+  --dimension-font-size-lg: 17px;
+  --dimension-font-size-md: 15px;
+  --dimension-font-size-base: 14.5px;
+  --dimension-font-size-sm: 13px;
+  --dimension-font-size-xs: 11px;
+  --dimension-font-size-2xs: 10.5px;
+  --duration-fast: 180ms;
+  --duration-base: 250ms;
+  --duration-slow: 700ms;
+  --color-semantic-bg: var(--color-ink-base);
+  --color-semantic-surface: var(--color-ink-soft);
+  --color-semantic-border: var(--color-ink-line);
+  --color-semantic-primary: var(--color-brand-red);
+  --color-semantic-primary-hover: var(--color-brand-red-deep);
+  --color-semantic-accent: var(--color-brand-orange);
+  --color-semantic-heading: var(--color-text-1);
+  --color-semantic-body: var(--color-text-4);
+}

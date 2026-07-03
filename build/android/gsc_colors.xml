@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <color name="color_brand_red">#ffe32213</color>
+  <color name="color_brand_red_deep">#ffb01a0e</color>
+  <color name="color_brand_red_bright">#ffff7a6e</color>
+  <color name="color_brand_orange">#ffea6020</color>
+  <color name="color_brand_orange_tint">#fff0a06a</color>
+  <color name="color_brand_crema">#fff2e4c8</color>
+  <color name="color_brand_crema_deep">#ffd9c6a0</color>
+  <color name="color_ink_base">#ff191a19</color>
+  <color name="color_ink_soft">#ff232423</color>
+  <color name="color_ink_raised">#ff2b2c2b</color>
+  <color name="color_ink_line">#ff3a3b3a</color>
+  <color name="color_text_1">#ffffffff</color>
+  <color name="color_text_2">#ffd9dad9</color>
+  <color name="color_text_3">#ffc9cac9</color>
+  <color name="color_text_4">#ffb7b8b7</color>
+  <color name="color_text_muted">#ff9a9b9a</color>
+  <color name="color_text_faint">#ff8f908f</color>
+  <color name="color_text_ghost">#ff6f706f</color>
+  <color name="color_semantic_bg">#ff191a19</color>
+  <color name="color_semantic_surface">#ff232423</color>
+  <color name="color_semantic_border">#ff3a3b3a</color>
+  <color name="color_semantic_primary">#ffe32213</color>
+  <color name="color_semantic_primary_hover">#ffb01a0e</color>
+  <color name="color_semantic_accent">#ffea6020</color>
+  <color name="color_semantic_heading">#ffffffff</color>
+  <color name="color_semantic_body">#ffb7b8b7</color>
+</resources>

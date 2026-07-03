@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Do not edit directly, this file was auto-generated.
+-->
+<resources>
+  <dimen name="dimension_space_1">64.00dp</dimen>
+  <dimen name="dimension_space_2">128.00dp</dimen>
+  <dimen name="dimension_space_3">192.00dp</dimen>
+  <dimen name="dimension_space_4">256.00dp</dimen>
+  <dimen name="dimension_space_5">320.00dp</dimen>
+  <dimen name="dimension_space_6">384.00dp</dimen>
+  <dimen name="dimension_space_7">448.00dp</dimen>
+  <dimen name="dimension_space_8">512.00dp</dimen>
+  <dimen name="dimension_space_10">640.00dp</dimen>
+  <dimen name="dimension_space_11">704.00dp</dimen>
+  <dimen name="dimension_space_14">896.00dp</dimen>
+  <dimen name="dimension_space_18">1152.00dp</dimen>
+  <dimen name="dimension_space_25">1600.00dp</dimen>
+  <dimen name="dimension_radius_sm">192.00dp</dimen>
+  <dimen name="dimension_radius_md">224.00dp</dimen>
+  <dimen name="dimension_radius_lg">256.00dp</dimen>
+  <dimen name="dimension_radius_pill">1600.00dp</dimen>
+  <dimen name="dimension_font_size_lead">320.00dp</dimen>
+  <dimen name="dimension_font_size_lg">272.00dp</dimen>
+  <dimen name="dimension_font_size_md">240.00dp</dimen>
+  <dimen name="dimension_font_size_base">232.00dp</dimen>
+  <dimen name="dimension_font_size_sm">208.00dp</dimen>
+  <dimen name="dimension_font_size_xs">176.00dp</dimen>
+  <dimen name="dimension_font_size_2xs">168.00dp</dimen>
+</resources>
