@@ -50,25 +50,69 @@ reference for every token and component.
 GSC-Design-System/
 ├── index.html                     # Living style guide (start here)
 ├── dist/
-│   └── gsc-design-system.css      # Bundled build — the one file to import
+│   └── gsc-design-system.css      # Bundled core build — the one file to import
 ├── css/                           # Modular source
 │   ├── fonts.css                  #   00 · Google Fonts import
 │   ├── tokens.css                 #   01 · Design tokens (single source of truth)
 │   ├── base.css                   #   02 · Reset, base type, layout primitives
 │   ├── typography.css             #   03 · Named type styles
 │   ├── utilities.css              #   04 · Layout/spacing helpers
-│   └── components.css             #   05 · All components
-├── assets/
-│   └── gsc-logo.png               # Brand mark
-├── examples/
-│   └── prospectus.html            # The original prospectus (reference)
-├── build.sh                       # Concatenates css/ → dist/
+│   ├── components.css             #   05 · All components
+│   ├── presentation.css           #   channel · 16:9 slide framework
+│   ├── mobile.css                 #   channel · mobile app shell
+│   └── print.css                  #   channel · documents / print (inverted palette)
+├── templates/                     # Working, copy-me starting points
+│   ├── presentation.html          #   16:9 deck (7 slide types + FONDOS)
+│   ├── landing.html               #   marketing landing page
+│   ├── mobile-app.html            #   phone mockups (2 screens)
+│   └── document.html              #   A4 investment memo (2 pages)
+├── docs/                          # Channel guidelines (how to speak the system)
+│   ├── README.md · brand.md · presentations.md
+│   ├── landing-pages.md · mobile.md · forms.md · documents.md
+├── assets/gsc-logo.png            # Brand mark
+├── examples/prospectus.html       # The original prospectus (reference)
+├── build.sh                       # Concatenates core css/ → dist/
 └── README.md
 ```
 
 Import the modular files during development or the single `dist/` bundle in
-production. Run `./build.sh` to regenerate the bundle after editing any source
-file.
+production. The **channel** stylesheets (`presentation.css`, `mobile.css`,
+`print.css`) load *after* the core and are opt-in per medium. Run `./build.sh`
+to regenerate the core bundle after editing any core source file.
+
+## Channels — one language, every medium
+
+The core is one design language; each medium speaks it with different physics.
+Every channel ships a working template **and** a written guide.
+
+| Channel | Template | Guide | Stylesheet |
+|---|---|---|---|
+| **Presentations** | [`templates/presentation.html`](templates/presentation.html) | [presentations.md](docs/presentations.md) | `css/presentation.css` |
+| **Landing pages** | [`templates/landing.html`](templates/landing.html) | [landing-pages.md](docs/landing-pages.md) | core |
+| **Mobile apps** | [`templates/mobile-app.html`](templates/mobile-app.html) | [mobile.md](docs/mobile.md) | `css/mobile.css` |
+| **Documents / print** | [`templates/document.html`](templates/document.html) | [documents.md](docs/documents.md) | `css/print.css` |
+| **Forms** | in the style guide | [forms.md](docs/forms.md) | core |
+| **Brand & voice** | — | [brand.md](docs/brand.md) | — |
+
+**The channel matrix** — the one thing to internalise:
+
+| | Background | Type ceiling | Red is for | Notes |
+|---|---|---|---|---|
+| Web / Landing | Ink (dark) | 132px | CTAs, accents | Full motion & hover |
+| Presentation | Ink + FONDOS | 104px | 1 moment / section | 16:9, one idea per slide |
+| Mobile | Ink (dark) | 40px | Primary action, values | 44px touch target, body 16px |
+| Document | **Paper (light)** | 46px | Accents only | Palette **inverts** by design |
+
+The document row is the deliberate exception — long-form reading flips to
+dark-ink-on-paper. Everything else is dark-first. Full rationale in
+[`docs/README.md`](docs/README.md).
+
+### Source references
+
+The presentation and iconography systems mirror the official **GSC
+TEMPLATE.pptx** and brand assets (Tipografía, Presentaciones/FONDOS) from the
+GSC brand Drive folder. The core palette and type stack come from the
+investment prospectus in [`examples/`](examples/prospectus.html).
 
 ---
 

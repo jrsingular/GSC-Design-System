@@ -1,0 +1,189 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · CHANNEL · PRESENTATIONS
+   A 16:9 slide framework that mirrors the official GSC PowerPoint template
+   (numbered slide titles, section dividers, iconography, FONDOS backgrounds).
+   Load AFTER the core stylesheet (needs the tokens).
+   --------------------------------------------------------------------------
+   Slides are authored inside a `.gsc-deck`. Each `.gsc-slide` is a fixed
+   1280×720 canvas that scales down responsively. Print one-per-page as PDF.
+   ========================================================================== */
+
+.gsc-deck {
+  --slide-w: 1280px;
+  --slide-h: 720px;
+  --slide-pad: 72px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 28px;
+  background: #0e0f0e;
+}
+
+/* The 16:9 canvas. Scales with the viewport via the wrapper below. */
+.gsc-slide {
+  position: relative;
+  width: var(--slide-w);
+  height: var(--slide-h);
+  padding: var(--slide-pad);
+  overflow: hidden;
+  background: var(--color-bg);
+  color: var(--gsc-text);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Responsive scaler — keep aspect ratio, shrink on small screens.
+   Wrap each slide: <div class="gsc-slide-fit"><div class="gsc-slide">…</div></div> */
+.gsc-slide-fit {
+  width: 100%;
+  max-width: var(--slide-w);
+  aspect-ratio: 16 / 9;
+  container-type: inline-size;
+}
+.gsc-slide-fit .gsc-slide {
+  transform-origin: top left;
+  transform: scale(calc(100cqw / 1280));
+}
+
+/* --- FONDOS · background variants ---------------------------------------- */
+.gsc-slide--ink   { background: var(--color-bg); }
+.gsc-slide--soft  { background: var(--color-surface); }
+.gsc-slide--red   { background: var(--color-primary); color: var(--gsc-ink); }
+.gsc-slide--crema { background: var(--gsc-crema); color: var(--gsc-ink); }
+.gsc-slide--glow  {
+  background:
+    radial-gradient(ellipse 900px 520px at 18% -12%, var(--glow-red), transparent 60%),
+    radial-gradient(ellipse 700px 520px at 92% 8%, var(--glow-orange), transparent 55%),
+    var(--color-bg);
+}
+/* Chalk-line pitch texture overlay for any slide. */
+.gsc-slide__texture {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: repeating-linear-gradient(90deg,
+    rgba(255,255,255,0.02) 0, rgba(255,255,255,0.02) 2px, transparent 2px, transparent 84px);
+}
+.gsc-slide--crema .gsc-slide__texture,
+.gsc-slide--red   .gsc-slide__texture {
+  background-image: repeating-linear-gradient(90deg,
+    rgba(25,26,25,0.04) 0, rgba(25,26,25,0.04) 2px, transparent 2px, transparent 84px);
+}
+
+/* --- Slide chrome · running header / footer / page number ---------------- */
+.gsc-slide__kicker {
+  position: relative; z-index: 1;
+  font-family: var(--font-ui); font-weight: var(--fw-black);
+  font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--color-primary);
+  display: flex; align-items: center; gap: 12px;
+}
+.gsc-slide--red .gsc-slide__kicker,
+.gsc-slide--crema .gsc-slide__kicker { color: var(--gsc-ink); }
+.gsc-slide__kicker::before { content: ''; width: 30px; height: 2px; background: currentColor; }
+
+.gsc-slide__footer {
+  position: absolute; left: var(--slide-pad); right: var(--slide-pad); bottom: 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: var(--font-ui); font-size: 12px; font-weight: var(--fw-bold);
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--gsc-text-faint);
+}
+.gsc-slide--red .gsc-slide__footer,
+.gsc-slide--crema .gsc-slide__footer { color: rgba(25,26,25,0.6); }
+.gsc-slide__footer img { height: 22px; }
+.gsc-slide__page {
+  font-family: var(--font-display); font-size: 20px; letter-spacing: 0.04em;
+  color: var(--gsc-text);
+}
+.gsc-slide--red .gsc-slide__page,
+.gsc-slide--crema .gsc-slide__page { color: var(--gsc-ink); }
+
+/* --- Slide type · TITLE / COVER ------------------------------------------ */
+.gsc-slide__body { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.gsc-slide__title {
+  font-family: var(--font-display); text-transform: uppercase; line-height: 0.9;
+  font-size: 104px; letter-spacing: 0.01em; margin: 18px 0;
+}
+.gsc-slide__title .gsc-accent { color: var(--color-primary); }
+.gsc-slide--red .gsc-slide__title .gsc-accent { color: var(--gsc-ink); }
+.gsc-slide__subtitle {
+  font-family: var(--font-ui); font-weight: var(--fw-medium); font-size: 22px;
+  color: var(--gsc-text-3); max-width: 780px; margin-top: 8px;
+}
+.gsc-slide--red .gsc-slide__subtitle,
+.gsc-slide--crema .gsc-slide__subtitle { color: rgba(25,26,25,0.85); }
+
+/* --- Slide type · SECTION DIVIDER ---------------------------------------- */
+.gsc-slide--section .gsc-slide__num {
+  font-family: var(--font-display); font-size: 200px; line-height: 0.8;
+  color: var(--color-primary); opacity: 0.9;
+}
+.gsc-slide--section.gsc-slide--red .gsc-slide__num { color: var(--gsc-ink); opacity: 0.28; }
+
+/* --- Slide type · CONTENT ------------------------------------------------- */
+.gsc-slide__heading {
+  font-family: var(--font-display); text-transform: uppercase; line-height: 1.0;
+  font-size: 56px; margin-bottom: 24px;
+}
+.gsc-slide__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.gsc-slide__lead {
+  font-family: var(--font-body); font-weight: 300; font-size: 20px; line-height: 1.6;
+  color: var(--gsc-text-4);
+}
+.gsc-slide--red .gsc-slide__lead,
+.gsc-slide--crema .gsc-slide__lead { color: rgba(25,26,25,0.9); }
+
+/* Bullet list for slides. */
+.gsc-slide-list { list-style: none; }
+.gsc-slide-list li {
+  display: flex; gap: 16px; padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-family: var(--font-ui); font-weight: var(--fw-medium); font-size: 19px;
+  color: var(--gsc-text-2);
+}
+.gsc-slide-list li::before { content: '→'; color: var(--color-primary); font-weight: var(--fw-black); }
+.gsc-slide--crema .gsc-slide-list li { border-color: var(--gsc-crema-deep); color: var(--gsc-ink); }
+.gsc-slide--crema .gsc-slide-list li::before { color: var(--color-primary-hover); }
+
+/* --- Slide type · STATS (big numbers row) -------------------------------- */
+.gsc-slide-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 20px; }
+.gsc-slide-stats .n { font-family: var(--font-display); font-size: 92px; line-height: 0.9; color: var(--color-primary); }
+.gsc-slide-stats .n .u { color: var(--gsc-text); }
+.gsc-slide--red .gsc-slide-stats .n { color: var(--gsc-ink); }
+.gsc-slide-stats .l {
+  font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: 14px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--gsc-text-faint); margin-top: 10px;
+}
+
+/* --- Slide type · QUOTE --------------------------------------------------- */
+.gsc-slide__quote {
+  font-family: var(--font-display); text-transform: uppercase; line-height: 1.02;
+  font-size: 64px; max-width: 1000px;
+}
+.gsc-slide__cite {
+  font-family: var(--font-ui); font-weight: var(--fw-bold); font-size: 16px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-primary); margin-top: 28px;
+}
+
+/* --- Iconography guidance (official set uses 2px strokes, red accents) ---- */
+.gsc-icon-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 24px; margin-top: 20px; }
+.gsc-icon-tile {
+  aspect-ratio: 1; display: grid; place-items: center;
+  border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  background: var(--color-surface);
+}
+.gsc-icon-tile svg { width: 44px; height: 44px; stroke: var(--gsc-text); stroke-width: 2; fill: none; }
+.gsc-icon-tile svg .accent { stroke: var(--color-primary); }
+
+/* --- Speaker-note / print helpers ---------------------------------------- */
+@media print {
+  .gsc-deck { background: #fff; padding: 0; gap: 0; }
+  .gsc-slide-fit { max-width: none; }
+  .gsc-slide {
+    width: 100%; height: 100vh; border: none; border-radius: 0;
+    box-shadow: none; page-break-after: always;
+  }
+  .gsc-slide-fit .gsc-slide { transform: none; }
+}

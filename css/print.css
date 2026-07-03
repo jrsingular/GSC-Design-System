@@ -1,0 +1,101 @@
+/* ==========================================================================
+   GSC DESIGN SYSTEM · CHANNEL · DOCUMENTS & PRINT
+   Letterhead, reports and any A4/Letter document destined for PDF, print or a
+   .docx-equivalent layout. Load AFTER the core stylesheet.
+   --------------------------------------------------------------------------
+   Documents invert the brand: DARK INK ON PAPER, not white on ink. Reading a
+   long report on a black page is fatiguing and burns toner. Red and crema stay
+   as accents. This is the one place the palette flips by design.
+   ========================================================================== */
+
+.gsc-doc {
+  --page-w: 210mm;              /* A4; use 8.5in for US Letter */
+  --page-h: 297mm;
+  --page-margin: 22mm;
+  --paper: #ffffff;
+  --paper-soft: #f7f5f0;       /* faint crema-tinted band */
+  background: #d8d8d6;         /* desk behind the page (screen only) */
+  padding: 24px;
+  font-family: var(--font-body);
+  color: #1c1d1c;
+}
+
+/* A single sheet. */
+.gsc-page {
+  width: var(--page-w);
+  min-height: var(--page-h);
+  margin: 0 auto 24px;
+  padding: var(--page-margin);
+  background: var(--paper);
+  color: #1c1d1c;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Letterhead ---------------------------------------------------------- */
+.gsc-letterhead {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  padding-bottom: 18px; margin-bottom: 28px;
+  border-bottom: 3px solid var(--gsc-red);
+}
+.gsc-letterhead img { height: 40px; }
+.gsc-letterhead__meta {
+  text-align: right; font-family: var(--font-ui); font-size: 10px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: #6a6b6a; line-height: 1.7;
+}
+.gsc-letterhead__meta strong { display: block; color: #1c1d1c; font-size: 11px; }
+
+/* --- Document type ramp (print-tuned) ----------------------------------- */
+.gsc-doc h1 { font-family: var(--font-display); font-size: 46px; text-transform: uppercase; color: #1c1d1c; line-height: 0.95; margin-bottom: 6px; }
+.gsc-doc h1 .gsc-accent { color: var(--gsc-red); }
+.gsc-doc h2 { font-family: var(--font-display); font-size: 26px; text-transform: uppercase; color: #1c1d1c; margin: 26px 0 10px; }
+.gsc-doc h3 { font-family: var(--font-ui); font-weight: 800; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gsc-red); margin: 22px 0 8px; }
+.gsc-doc p  { font-family: var(--font-body); font-weight: 400; font-size: 11.5pt; line-height: 1.65; color: #2a2b2a; margin-bottom: 12px; }
+.gsc-doc b, .gsc-doc strong { color: #1c1d1c; font-weight: 600; }
+.gsc-doc .gsc-doc-lead { font-family: var(--font-ui); font-weight: 500; font-size: 13pt; line-height: 1.5; color: #3a3b3a; }
+.gsc-doc .gsc-doc-eyebrow { font-family: var(--font-ui); font-weight: 800; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gsc-red); margin-bottom: 10px; }
+
+/* --- Document lists ------------------------------------------------------ */
+.gsc-doc ul.gsc-doc-list { list-style: none; margin: 8px 0 14px; }
+.gsc-doc ul.gsc-doc-list li { position: relative; padding: 6px 0 6px 22px; font-size: 11.5pt; line-height: 1.55; color: #2a2b2a; }
+.gsc-doc ul.gsc-doc-list li::before { content: '›'; position: absolute; left: 4px; color: var(--gsc-red); font-weight: 800; }
+
+/* --- Callout band (crema) ----------------------------------------------- */
+.gsc-doc-callout {
+  background: var(--paper-soft); border-left: 3px solid var(--gsc-red);
+  padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0;
+}
+.gsc-doc-callout p { margin: 0; font-family: var(--font-ui); font-weight: 500; font-size: 11pt; color: #2a2b2a; }
+
+/* --- Figures row --------------------------------------------------------- */
+.gsc-doc-figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 18px 0; }
+.gsc-doc-figures .fig { border: 1px solid #e3e1dc; border-radius: 8px; padding: 16px; }
+.gsc-doc-figures .n { font-family: var(--font-display); font-size: 40px; line-height: 1; color: var(--gsc-red-deep); }
+.gsc-doc-figures .l { font-family: var(--font-ui); font-weight: 700; font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; color: #6a6b6a; margin-top: 6px; }
+
+/* --- Report table -------------------------------------------------------- */
+.gsc-doc-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-family: var(--font-ui); }
+.gsc-doc-table th { text-align: left; font-size: 9px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #6a6b6a; padding: 8px 10px; border-bottom: 2px solid #1c1d1c; }
+.gsc-doc-table td { font-size: 10.5pt; color: #2a2b2a; padding: 9px 10px; border-bottom: 1px solid #e3e1dc; }
+.gsc-doc-table tr:nth-child(even) td { background: #faf9f6; }
+
+/* --- Footer / page number ----------------------------------------------- */
+.gsc-doc-footer {
+  margin-top: auto; padding-top: 14px; border-top: 1px solid #e3e1dc;
+  display: flex; justify-content: space-between;
+  font-family: var(--font-ui); font-size: 8.5px; letter-spacing: 0.06em;
+  text-transform: uppercase; color: #9a9b9a;
+}
+
+/* --- Print rules --------------------------------------------------------- */
+@page { size: A4; margin: 0; }
+@media print {
+  .gsc-doc { background: #fff; padding: 0; }
+  .gsc-page {
+    width: auto; min-height: auto; margin: 0;
+    box-shadow: none; page-break-after: always;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+}
