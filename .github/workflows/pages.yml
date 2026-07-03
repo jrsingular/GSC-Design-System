@@ -3,11 +3,15 @@ name: Deploy style guide to GitHub Pages
 # Publishes the living style guide (index.html), templates, docs and assets
 # to GitHub Pages so the design system has a shareable URL.
 #
-# One-time setup: repo Settings → Pages → Source = "GitHub Actions".
+# MANUAL ONLY (workflow_dispatch): this repository is Proprietary & Confidential
+# (see LICENSE). Auto-publishing on every push would expose the confidential
+# implementation on a public URL. Run this deliberately, and only after you have
+# decided the repo's visibility and enabled Pages:
+#   repo Settings → Pages → Source = "GitHub Actions".
+# To restore automatic deploys (e.g. for a public showcase), re-add the
+# `push: { branches: [main] }` trigger below.
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
