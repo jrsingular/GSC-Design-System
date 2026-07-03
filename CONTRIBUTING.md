@@ -39,3 +39,10 @@ enforce it.
 
 Semantic versioning in `package.json`. Note user-facing changes in
 `CHANGELOG.md` under "Unreleased".
+
+## Confidentiality
+
+This repository is **proprietary and confidential** to Global Sports
+Corporation (see [`LICENSE`](LICENSE)). Contributions are accepted only from
+authorized GSC personnel and engaged contractors, and must not be shared,
+mirrored, or reused outside GSC.

@@ -2,11 +2,16 @@
 
 **Global Sports Corporation — _Live the dream._**
 
-![version](https://img.shields.io/badge/version-1.1.0-E32213)
-![license](https://img.shields.io/badge/license-MIT-191A19)
+![version](https://img.shields.io/badge/version-1.1.1-E32213)
+![license](https://img.shields.io/badge/license-Proprietary%20%26%20Confidential-B01A0E)
 ![tokens](https://img.shields.io/badge/tokens-W3C%20DTCG-EA6020)
 ![skills](https://img.shields.io/badge/AI%20skills-4-E32213)
 ![channels](https://img.shields.io/badge/channels-web%20·%20deck%20·%20mobile%20·%20print-191A19)
+
+> **Proprietary & Confidential — © 2026 Global Sports Corporation. All rights reserved.**
+> This repository and its contents are the confidential property of GSC, licensed
+> only to authorized personnel and contractors for work on behalf of GSC. Do not
+> copy, distribute, or reuse outside GSC. See [`LICENSE`](LICENSE).
 
 A brand, product **and copy** design system distilled from the GSC investment
 prospectus and extended into a reusable toolkit: DTCG design tokens,
@@ -14,9 +19,10 @@ three-voice typography, 20+ components, four channel systems, and **AI skills**
 that make any agent (Claude Code, Cursor, Codex, Windsurf) build and write
 on-brand. One investment-grade language across every surface.
 
-## Install as an AI skill
+## Install as an AI skill (authorized GSC users)
 
-Give your coding agent the GSC brain in one command:
+Give your coding agent the GSC brain in one command (for internal GSC projects
+and engaged contractors only — see [`LICENSE`](LICENSE)):
 
 ```bash
 git clone https://github.com/jrsingular/GSC-Design-System
