@@ -10,6 +10,7 @@
     "tokens": "node scripts/run-style-dictionary.mjs",
     "tokens:fallback": "node scripts/build-tokens.mjs",
     "validate": "node scripts/validate-tokens.mjs",
+    "score": "node scripts/score-programs.mjs",
     "build": "npm run css && npm run tokens"
   },
   "keywords": [

@@ -11,6 +11,7 @@ memorandum have different physics.
 | [Copywriting](copywriting.md) | Voice, tone, lexicon (EN/ES), microcopy | `.claude/skills/writing-gsc-copy/` |
 | [Tokens](tokens.md) | DTCG source, cross-platform export | `tokens/gsc.tokens.json` |
 | [Governance](governance.md) | Roles, sources of truth, change workflows | Luisa León = brand approver |
+| [Program scorecards](program-scorecards.md) | World-class rubric grading each academy /10 | `npm run score` |
 | [Accessibility](accessibility.md) | WCAG contrast audit, large-only accents | enforced by `npm run validate` |
 | [Asset manifest](asset-manifest.md) | Every logo/font, provenance, gaps | `assets/logos/`, `assets/fonts/` |
 | [Presentations](presentations.md) | 16:9 decks, slide types, FONDOS backgrounds, iconography | `css/presentation.css`, `templates/presentation.html` |
