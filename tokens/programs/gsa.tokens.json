@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Global Soccer Academy (GSA) program tokens. CONFIRMED by Luisa León (GSC Brand & Communications). Palette #191919 / #E7290F / #F07D04 / #FFFFFF; fonts Morganite (primary) + Montserrat (secondary). Source: Slack #soulmd, Open Knowledge Pack GSA. Inherits corporate GSC base tokens (spacing, radius, motion, type ramp). Do not edit without Luisa León approval.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "ink":        { "$value": "#191919", "$description": "Primary — GSA base ink, surfaces and dark backgrounds" },
+      "red":        { "$value": "#E7290F", "$description": "Primary accent — GSA signature red, CTAs and highlights" },
+      "orange":     { "$value": "#F07D04", "$description": "Secondary accent — GSA orange, energy and motion" },
+      "white":      { "$value": "#FFFFFF", "$description": "Text on dark / negative space" }
+    },
+    "semantic": {
+      "bg":            { "$value": "{color.brand.ink}" },
+      "surface":       { "$value": "#242424", "$description": "Raised surface on GSA ink" },
+      "primary":       { "$value": "{color.brand.red}" },
+      "primary-hover": { "$value": "#C1220A", "$description": "Pressed red (computed)" },
+      "accent":        { "$value": "{color.brand.orange}" },
+      "heading":       { "$value": "{color.brand.white}" },
+      "body":          { "$value": "#D9D9D9" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display":   { "$value": ["Morganite", "Impact", "sans-serif"], "$description": "Primary — Morganite (Google Fonts, included in assets/fonts). Tall condensed display." },
+      "ui":        { "$value": ["Montserrat", "system-ui", "sans-serif"], "$description": "Secondary — Montserrat (Google Fonts). Labels, eyebrows, buttons." },
+      "body":      { "$value": ["Montserrat", "system-ui", "sans-serif"] }
+    }
+  },
+  "program": {
+    "$type": "string",
+    "id":           { "$value": "gsa" },
+    "name":         { "$value": "Global Soccer Academy" },
+    "slug":         { "$value": "gsa" },
+    "instagram":    { "$value": "@global_soccer_academy_gt" },
+    "voice":        { "$value": "aspiracional, profesional, deportiva" },
+    "tagline":      { "$value": "Desarrollo integral de jóvenes futbolistas" }
+  }
+}

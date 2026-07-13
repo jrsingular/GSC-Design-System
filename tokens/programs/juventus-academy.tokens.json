@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Juventus Academy Guatemala program tokens. CONFIRMED by Luisa León. Palette #000000 / #FFFFFF / #F9C016 (Juventus signature yellow); fonts JuventusFans-Bold + JuventusFans-Boldinline (custom Juventus fonts, proprietary). Official Juventus FC licensed academy. Philosophy 'Formamos personas antes que jugadores'. Source: Slack #soulmd, JUVENTUS 2026 manual. Inherits corporate GSC base tokens. Do not edit without Luisa León approval.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "black":      { "$value": "#000000", "$description": "Primary surface — Juventus black" },
+      "white":      { "$value": "#FFFFFF", "$description": "Text on black" },
+      "yellow":     { "$value": "#F9C016", "$description": "Primary accent — Juventus signature yellow" }
+    },
+    "semantic": {
+      "bg":            { "$value": "{color.brand.black}" },
+      "surface":       { "$value": "#1A1A1A", "$description": "Raised surface on black (computed)" },
+      "primary":       { "$value": "{color.brand.yellow}" },
+      "primary-hover": { "$value": "#D6A412", "$description": "Pressed yellow (computed)" },
+      "accent":        { "$value": "{color.brand.white}" },
+      "heading":       { "$value": "{color.brand.white}" },
+      "body":          { "$value": "#D9D9D9" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display":   { "$value": ["JuventusFans", "Impact", "sans-serif"], "$description": "Primary — JuventusFans-Bold + JuventusFans-Boldinline (PROPRIETARY Juventus FC custom fonts, not bundled; obtain via Luisa León / Juventus licensing). Two variants: solid (Bold) and inline (Boldinline)." },
+      "ui":        { "$value": ["Montserrat", "system-ui", "sans-serif"], "$description": "Secondary — Montserrat (Google Fonts)." },
+      "body":      { "$value": ["Montserrat", "system-ui", "sans-serif"] }
+    }
+  },
+  "program": {
+    "$type": "string",
+    "id":           { "$value": "juventus-academy" },
+    "name":         { "$value": "Juventus Academy Guatemala" },
+    "slug":         { "$value": "juventus-academy" },
+    "instagram":    { "$value": "@juventus_academy_guatemala" },
+    "voice":        { "$value": "aspiracional, divertido, profesional como equipo de alto rendimiento" },
+    "philosophy":   { "$value": "Formamos personas antes que jugadores" },
+    "partner":      { "$value": "Juventus FC (official licensed academy)" }
+  }
+}

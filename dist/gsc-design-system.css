@@ -3,10 +3,70 @@
 
 /* ==========================================================================
    GSC DESIGN SYSTEM · 00 · FONTS
-   Loads the three brand typefaces from Google Fonts.
-   Self-host these for production; this import is provided for convenience.
+   --------------------------------------------------------------------------
+   Corporate faces (Bebas Neue / Montserrat / Roboto) load from Google Fonts —
+   self-host for production. Program display face Morganite (OFL) is BUNDLED
+   and self-hosted below as WOFF2 (TTF sources in assets/fonts/), so program
+   skins (css/programs.css) render their confirmed typography out of the box.
+
+   Proprietary program fonts (Academic M54, Unison Pro, Headline Gothic ATF,
+   JuventusFans, ITC Avant Garde Gothic Pro, Redwing) are NOT bundled for
+   licensing reasons — see DESIGN.md §4. Their @font-face rules belong in the
+   consuming project once fonts are obtained via Luisa León.
+
+   Relative URLs resolve from css/ and dist/ alike (both one level deep).
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap');
+
+/* ---- Morganite (OFL, bundled) — display face for GSA & Nido Águila ------ */
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-book.woff2') format('woff2'),
+       url('../assets/fonts/morganite-book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-bookitalic.woff2') format('woff2'),
+       url('../assets/fonts/morganite-bookitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-bold.woff2') format('woff2'),
+       url('../assets/fonts/morganite-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-bolditalic.woff2') format('woff2'),
+       url('../assets/fonts/morganite-bolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-black.woff2') format('woff2'),
+       url('../assets/fonts/morganite-black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-blackitalic.woff2') format('woff2'),
+       url('../assets/fonts/morganite-blackitalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
 
 /* ==========================================================================
    GSC DESIGN SYSTEM · 01 · TOKENS
@@ -904,5 +964,170 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   .gsc-ledger__badge { justify-self: start; }
   .gsc-topbar__inner { flex-direction: column; align-items: flex-start; gap: var(--space-3); }
   .gsc-topbar__label { text-align: left; }
+}
+
+/* ==========================================================================
+   GSC DESIGN SYSTEM · PROGRAMS
+   --------------------------------------------------------------------------
+   Program skins. Each program's confirmed brand (palette + display font) is
+   applied by setting a `data-program` attribute on a root element:
+
+       <body data-program="gsa">   <!-- Global Soccer Academy -->
+       <body data-program="gba">   <!-- Global Basketball Academy -->
+       <body data-program="gra">   <!-- Global Running Academy -->
+       <body data-program="nido-aguila">   <!-- Nido Águila Guatemala -->
+       <body data-program="ser-portero">   <!-- Ser Portero -->
+       <body data-program="juventus-academy">  <!-- Juventus Academy GT -->
+       <body data-program="baby-juve">        <!-- Baby Juve -->
+
+   The corporate GSC variables (in tokens.css) remain the default. A program
+   scope only overrides --color-* and --font-display/--font-ui; spacing, radius,
+   and motion are inherited unchanged from the corporate base.
+
+   ALL palette values are CONFIRMED by Luisa León (GSC Brand & Communications).
+   Do not edit without her approval. Token files are the canonical source:
+   tokens/programs/*.tokens.json
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Global Soccer Academy — #191919 / #E7290F / #F07D04 / #FFFFFF
+   Fonts: Morganite (display) + Montserrat (ui/body)
+   -------------------------------------------------------------------------- */
+[data-program="gsa"] {
+  --gsc-ink:        #191919;
+  --gsc-ink-soft:   #242424;
+  --gsc-ink-raised: #2E2E2E;
+  --gsc-line:       #3A3A3A;
+  --gsc-red:        #E7290F;
+  --gsc-red-deep:   #C1220A;
+  --gsc-orange:     #F07D04;
+  --gsc-crema:      #F2E4C8;   /* retained for corporate surfaces only */
+  --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Morganite', Impact, sans-serif;
+  --font-ui:        'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Global Basketball Academy — #1C1C1C / #FE0000 / #A3A6A9 / #FFFFFF
+   Fonts: Academic M54 (display, proprietary) + Redwing/Montserrat (ui)
+   -------------------------------------------------------------------------- */
+[data-program="gba"] {
+  --gsc-ink:        #1C1C1C;
+  --gsc-ink-soft:   #262626;
+  --gsc-ink-raised: #303030;
+  --gsc-line:       #3A3A3A;
+  --gsc-red:        #FE0000;
+  --gsc-red-deep:   #CC0000;
+  --gsc-orange:     #A3A6A9;   /* steel grey serves the secondary-accent role */
+  --gsc-text-4:     #D6D6D6;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Academic M54', Impact, sans-serif;
+  --font-ui:        'Redwing', 'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Global Running Academy — #EE8A04 / #E53518 / #FFFFFF
+   Fonts: Unison Pro (display, proprietary) + Montserrat (ui/body)
+   -------------------------------------------------------------------------- */
+[data-program="gra"] {
+  --gsc-ink:        #1A1A1A;
+  --gsc-ink-soft:   #262626;
+  --gsc-ink-raised: #303030;
+  --gsc-line:       #3A3A3A;
+  --gsc-red:        #E53518;
+  --gsc-red-deep:   #B82A12;
+  --gsc-orange:     #EE8A04;
+  --gsc-text-4:     #E0E0E0;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Unison Pro', Impact, sans-serif;
+  --font-ui:        'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-orange);
+  --color-primary-hover: #C46F03;
+  --color-accent:        var(--gsc-red);
+}
+
+/* --------------------------------------------------------------------------
+   Nido Águila Guatemala — #F8E602 / #FFFFFF / #111A2D (Club América)
+   Fonts: Morganite (display) + ITC Avant Garde Gothic Pro (ui, proprietary)
+   -------------------------------------------------------------------------- */
+[data-program="nido-aguila"] {
+  --gsc-ink:        #111A2D;
+  --gsc-ink-soft:   #1C2640;
+  --gsc-ink-raised: #263252;
+  --gsc-line:       #2E3A57;
+  --gsc-red:        #F8E602;   /* yellow takes the primary-action role */
+  --gsc-red-deep:   #D9CF02;
+  --gsc-orange:     #FFFFFF;   /* white serves the secondary-accent role */
+  --gsc-text-4:     #C7CDD9;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Morganite', Impact, sans-serif;
+  --font-ui:        'ITC Avant Garde Gothic Pro', 'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Ser Portero — #916E35 / #FFFFFF / #000000
+   Fonts: Headline Gothic ATF (display, proprietary) + Montserrat (ui/body)
+   -------------------------------------------------------------------------- */
+[data-program="ser-portero"] {
+  --gsc-ink:        #000000;
+  --gsc-ink-soft:   #1A1A1A;
+  --gsc-ink-raised: #242424;
+  --gsc-line:       #333333;
+  --gsc-red:        #916E35;   /* marrón/oro takes the primary-action role */
+  --gsc-red-deep:   #74582B;
+  --gsc-orange:     #FFFFFF;
+  --gsc-text-4:     #D4CBBE;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Headline Gothic ATF', Impact, sans-serif;
+  --font-ui:        'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Juventus Academy Guatemala — #000000 / #FFFFFF / #F9C016
+   Fonts: JuventusFans (display, proprietary) + Montserrat (ui/body)
+   -------------------------------------------------------------------------- */
+[data-program="juventus-academy"] {
+  --gsc-ink:        #000000;
+  --gsc-ink-soft:   #1A1A1A;
+  --gsc-ink-raised: #242424;
+  --gsc-line:       #333333;
+  --gsc-red:        #F9C016;   /* Juventus yellow takes the primary-action role */
+  --gsc-red-deep:   #D6A412;
+  --gsc-orange:     #FFFFFF;
+  --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'JuventusFans', Impact, sans-serif;
+  --font-ui:        'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}
+
+/* --------------------------------------------------------------------------
+   Baby Juve — inherits Juventus Academy (#000 / #FFF / #F9C016)
+   Same fonts (JuventusFans). Voice differs (divertido, infantil) but the
+   visual system is identical to Juventus Academy.
+   -------------------------------------------------------------------------- */
+[data-program="baby-juve"] {
+  --gsc-ink:        #000000;
+  --gsc-ink-soft:   #1A1A1A;
+  --gsc-ink-raised: #242424;
+  --gsc-line:       #333333;
+  --gsc-red:        #F9C016;
+  --gsc-red-deep:   #D6A412;
+  --gsc-orange:     #FFFFFF;
+  --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'JuventusFans', Impact, sans-serif;
+  --font-ui:        'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
 }
 

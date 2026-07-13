@@ -7,6 +7,27 @@ auto-loads the richer Agent Skills in `.claude/skills/`.
 > **You are working in the Global Sports Corporation (GSC) design system.**
 > Produce output that is on-brand for GSC — *Live the dream.* — every time.
 
+## Multi-program brands (v3.0)
+
+GSC is a multi-program sports-development ecosystem with 7 academy brands, each
+confirmed by Luisa León. When producing work for a specific academy, apply its
+brand via the `data-program` attribute and use its confirmed palette + display
+font — never invent or substitute values.
+
+| Program | data-program | Palette | Display font |
+|---|---|---|---|
+| Global Soccer Academy | `gsa` | #191919 #E7290F #F07D04 #FFFFFF | Morganite |
+| Global Basketball Academy | `gba` | #1C1C1C #FE0000 #A3A6A9 #FFFFFF | Academic M54* |
+| Global Running Academy | `gra` | #EE8A04 #E53518 #FFFFFF | Unison Pro* |
+| Nido Águila Guatemala | `nido-aguila` | #F8E602 #FFFFFF #111A2D | Morganite |
+| Ser Portero | `ser-portero` | #916E35 #FFFFFF #000000 | Headline Gothic ATF* |
+| Juventus Academy Guatemala | `juventus-academy` | #000000 #FFFFFF #F9C016 | JuventusFans* |
+| Baby Juve | `baby-juve` | #000000 #FFFFFF #F9C016 | JuventusFans* |
+
+* = proprietary font, not bundled — see DESIGN.md §4. Full per-program specs in
+docs/programs/. Token files (tokens/programs/*.tokens.json) are the canonical
+source. All values confirmed by Luisa León — do not edit without her approval.
+
 ## Golden rules
 
 1. **Tokens only.** Never hard-code a hex, size, or radius. Use the `--gsc-*`

@@ -1,6 +1,66 @@
 /* ==========================================================================
    GSC DESIGN SYSTEM · 00 · FONTS
-   Loads the three brand typefaces from Google Fonts.
-   Self-host these for production; this import is provided for convenience.
+   --------------------------------------------------------------------------
+   Corporate faces (Bebas Neue / Montserrat / Roboto) load from Google Fonts —
+   self-host for production. Program display face Morganite (OFL) is BUNDLED
+   and self-hosted below as WOFF2 (TTF sources in assets/fonts/), so program
+   skins (css/programs.css) render their confirmed typography out of the box.
+
+   Proprietary program fonts (Academic M54, Unison Pro, Headline Gothic ATF,
+   JuventusFans, ITC Avant Garde Gothic Pro, Redwing) are NOT bundled for
+   licensing reasons — see DESIGN.md §4. Their @font-face rules belong in the
+   consuming project once fonts are obtained via Luisa León.
+
+   Relative URLs resolve from css/ and dist/ alike (both one level deep).
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&display=swap');
+
+/* ---- Morganite (OFL, bundled) — display face for GSA & Nido Águila ------ */
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-book.woff2') format('woff2'),
+       url('../assets/fonts/morganite-book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-bookitalic.woff2') format('woff2'),
+       url('../assets/fonts/morganite-bookitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-bold.woff2') format('woff2'),
+       url('../assets/fonts/morganite-bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-bolditalic.woff2') format('woff2'),
+       url('../assets/fonts/morganite-bolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-black.woff2') format('woff2'),
+       url('../assets/fonts/morganite-black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Morganite';
+  src: url('../assets/fonts/morganite-blackitalic.woff2') format('woff2'),
+       url('../assets/fonts/morganite-blackitalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}

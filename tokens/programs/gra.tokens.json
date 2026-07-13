@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Global Running Academy (GRA) program tokens. CONFIRMED by Luisa León. Palette #EE8A04 / #E53518 / #FFFFFF; fonts Unison Pro (primary, proprietary) + Montserrat (secondary). Source: Slack #soulmd, Open Knowledge Pack GRA. Inherits corporate GSC base tokens. Do not edit without Luisa León approval.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "orange":     { "$value": "#EE8A04", "$description": "Primary — GRA orange, motion and energy" },
+      "red":        { "$value": "#E53518", "$description": "Secondary accent — GRA red, intensity" },
+      "white":      { "$value": "#FFFFFF", "$description": "Text / negative space" }
+    },
+    "semantic": {
+      "bg":            { "$value": "#1A1A1A", "$description": "GRA default dark surface (computed for contrast)" },
+      "surface":       { "$value": "#262626" },
+      "primary":       { "$value": "{color.brand.orange}" },
+      "primary-hover": { "$value": "#C46F03", "$description": "Pressed orange (computed)" },
+      "accent":        { "$value": "{color.brand.red}" },
+      "heading":       { "$value": "{color.brand.white}" },
+      "body":          { "$value": "#E0E0E0" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display":   { "$value": ["Unison Pro", "Impact", "sans-serif"], "$description": "Primary — Unison Pro Bold Italic (PROPRIETARY, not bundled; obtain via Luisa León). Athletic italic display." },
+      "ui":        { "$value": ["Montserrat", "system-ui", "sans-serif"], "$description": "Secondary — Montserrat (Google Fonts)." },
+      "body":      { "$value": ["Montserrat", "system-ui", "sans-serif"] }
+    }
+  },
+  "program": {
+    "$type": "string",
+    "id":           { "$value": "gra" },
+    "name":         { "$value": "Global Running Academy" },
+    "slug":         { "$value": "gra" },
+    "instagram":    { "$value": "@globalrunningacademy" },
+    "voice":        { "$value": "emocional, atlética, profesional" },
+    "tagline":      { "$value": "Rinde al máximo — atletismo para todos" }
+  }
+}

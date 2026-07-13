@@ -55,6 +55,18 @@ Copy this checklist when drafting:
 - [ ] Run the compliance checklist below
 ```
 
+## Program voices (v3)
+
+The voice above is **corporate GSC** (investor/rights/group-level). Each academy
+has its own confirmed voice — check `docs/programs/<slug>.md` before writing
+program copy: GSA *aspiracional, profesional, deportiva* · GBA *ambiente
+basquetbolista* · GRA *emocional, atlética* · Nido Águila *locución de estadio;
+slogan "Grandes de corazón"* · Ser Portero *inspiracional; "El Ser está antes
+que el portero"* · Juventus Academy *alto rendimiento; "Formamos personas antes
+que jugadores"* · Baby Juve *divertido, infantil*. Program copy is
+Spanish-first (parents/kids in Guatemala); corporate stays English-first.
+Never invent a program slogan — use the confirmed ones or ask Luisa León.
+
 ## References (read as needed)
 
 - **Voice & tone in depth, by scenario** → [reference/voice-tone.md](reference/voice-tone.md)

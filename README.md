@@ -2,11 +2,12 @@
 
 **Global Sports Corporation — _Live the dream._**
 
-![version](https://img.shields.io/badge/version-1.1.1-E32213)
+![version](https://img.shields.io/badge/version-3.0.0-E32213)
 ![license](https://img.shields.io/badge/license-Proprietary%20%26%20Confidential-B01A0E)
 ![tokens](https://img.shields.io/badge/tokens-W3C%20DTCG-EA6020)
 ![skills](https://img.shields.io/badge/AI%20skills-4-E32213)
 ![channels](https://img.shields.io/badge/channels-web%20·%20deck%20·%20mobile%20·%20print-191A19)
+![programs](https://img.shields.io/badge/programs-7%20academies-F9C016)
 
 > **Proprietary & Confidential — © 2026 Global Sports Corporation. All rights reserved.**
 > This repository and its contents are the confidential property of GSC, licensed
@@ -33,6 +34,20 @@ football at the core.
 This design system is the identity that carries GSC across all of that work:
 academy and event communications, marketing pages, rights and partnership
 decks, and investor prospectuses. Full profile → **[docs/about-gsc.md](docs/about-gsc.md)**.
+
+### Seven academy brands, one system
+
+GSC runs seven youth-sports academies, each with its own confirmed brand
+identity — palette, typography, and voice — all approved by **Luisa León**
+(Brand & Communications). This design system carries all of them:
+
+- **Global Soccer Academy** · **Global Basketball Academy** · **Global Running
+  Academy** · **Nido Águila Guatemala** (Club América) · **Ser Portero** ·
+  **Juventus Academy Guatemala** · **Baby Juve**
+
+Each program gets a token file (`tokens/programs/`) and a brand sheet
+(`docs/programs/`). Apply a program's brand with `data-program="gsa"` (etc.) on
+a root element. Full reference → **[DESIGN.md](DESIGN.md)**.
 
 ## Install as an AI skill (authorized GSC users)
 
@@ -94,6 +109,11 @@ One stylesheet gets you everything (fonts included via `@import`). Open
 **[`index.html`](index.html)** for the living style guide — the visual
 reference for every token and component.
 
+> **Program skins:** add `data-program="gsa"` (or gba, gra, nido-aguila,
+> ser-portero, juventus-academy, baby-juve) to `<body>` to switch to that
+> academy's confirmed palette and display font. See `css/programs.css` and
+> `docs/programs/`.
+
 ---
 
 ## What's in the box
@@ -122,7 +142,10 @@ GSC-Design-System/
 │   ├── building-gsc-brand/ · designing-gsc-interfaces/
 │   └── writing-gsc-copy/ · designing-gsc-landing-pages/
 ├── tokens/gsc.tokens.json         # W3C DTCG token source (cross-platform)
-├── style-dictionary.config.js     # → build/{css,scss,js,ios,android}
+├── scripts/                       # Token pipeline + CI validator
+│   ├── run-style-dictionary.mjs   #   canonical build → build/{css,scss,js,ios,android}
+│   ├── build-tokens.mjs           #   dependency-free fallback build
+│   └── validate-tokens.mjs        #   DTCG validity · hex parity · WCAG audit (CI)
 ├── build/                         # Generated tokens (CSS/SCSS/JS/Swift/XML)
 ├── templates/                     # Working, copy-me starting points
 │   ├── presentation.html          #   16:9 deck (7 slide types + FONDOS)

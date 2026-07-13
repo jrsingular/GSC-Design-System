@@ -10,6 +10,9 @@ memorandum have different physics.
 | [Brand](brand.md) | Logo, colour discipline, voice, do/don't | `assets/gsc-logo.png` |
 | [Copywriting](copywriting.md) | Voice, tone, lexicon (EN/ES), microcopy | `.claude/skills/writing-gsc-copy/` |
 | [Tokens](tokens.md) | DTCG source, cross-platform export | `tokens/gsc.tokens.json` |
+| [Governance](governance.md) | Roles, sources of truth, change workflows | Luisa León = brand approver |
+| [Accessibility](accessibility.md) | WCAG contrast audit, large-only accents | enforced by `npm run validate` |
+| [Asset manifest](asset-manifest.md) | Every logo/font, provenance, gaps | `assets/logos/`, `assets/fonts/` |
 | [Presentations](presentations.md) | 16:9 decks, slide types, FONDOS backgrounds, iconography | `css/presentation.css`, `templates/presentation.html` |
 | [Landing pages](landing-pages.md) | Marketing web, hero → proof → CTA rhythm | `templates/landing.html` |
 | [Mobile apps](mobile.md) | App shell, touch targets, mobile type scale | `css/mobile.css`, `templates/mobile-app.html` |
@@ -31,3 +34,20 @@ tapped or printed.
 
 The document row is the deliberate exception: long-form reading and toner cost
 mean documents flip to dark-ink-on-paper. Everything else stays dark-first.
+
+## Program brands
+
+GSC is a multi-program ecosystem. Each academy has its own confirmed brand:
+
+| Program | Brand sheet | Token file |
+|---|---|---|
+| Global Soccer Academy | [programs/gsa.md](programs/gsa.md) | tokens/programs/gsa.tokens.json |
+| Global Basketball Academy | [programs/gba.md](programs/gba.md) | tokens/programs/gba.tokens.json |
+| Global Running Academy | [programs/gra.md](programs/gra.md) | tokens/programs/gra.tokens.json |
+| Nido Águila Guatemala | [programs/nido-aguila.md](programs/nido-aguila.md) | tokens/programs/nido-aguila.tokens.json |
+| Ser Portero | [programs/ser-portero.md](programs/ser-portero.md) | tokens/programs/ser-portero.tokens.json |
+| Juventus Academy Guatemala | [programs/juventus-academy.md](programs/juventus-academy.md) | tokens/programs/juventus-academy.tokens.json |
+| Baby Juve | [programs/baby-juve.md](programs/baby-juve.md) | tokens/programs/baby-juve.tokens.json |
+
+See also: [asset-manifest.md](asset-manifest.md) (logos, fonts, gaps) and
+[../DESIGN.md](../DESIGN.md) (full multi-program reference).

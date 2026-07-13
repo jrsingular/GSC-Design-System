@@ -63,6 +63,23 @@ crema is rationed to one anchor per surface. Restraint *is* the brand.
 - **Backgrounds:** built for dark (ink) and light (paper). On solid red, use a mono knockout if legibility drops.
 - **Never:** recolour the figure, stretch, add shadows, box it, or drop it on a busy photo without a scrim.
 
+## Program brands (v3) — GSC is seven academies plus corporate
+
+The tokens above are the **corporate** brand. Each academy has its own
+Luisa-León-confirmed palette, display font, and voice — applied with
+`data-program="<slug>"` on a root element (slugs: `gsa`, `gba`, `gra`,
+`nido-aguila`, `ser-portero`, `juventus-academy`, `baby-juve`).
+
+**Non-negotiable brand-accuracy rule:** never invent, substitute, or "improve"
+a program's palette hex or font name. The canonical values live in
+`tokens/programs/*.tokens.json` and `css/programs.css`; per-program sheets in
+`docs/programs/*.md`; quick table in `DESIGN.md` §2. If a value seems wrong,
+the fix is to ask Luisa León — not to change it. Proprietary program fonts
+(Academic M54, Unison Pro, Headline Gothic ATF, JuventusFans, ITC Avant Garde
+Gothic Pro) are named but not bundled; keep the family name with its fallback.
+Accent-on-dark is **large-text-only** in GSA/GBA/GRA/Ser Portero — see
+`docs/accessibility.md`.
+
 ## The channel rule (where the palette flips)
 
 Everything is **dark-first** — except **documents/print**, which invert to

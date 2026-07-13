@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Nido Águila Guatemala program tokens. CONFIRMED by Luisa León. Palette #F8E602 / #FFFFFF / #111A2D (Club América); fonts Morganite (primary, Google Fonts) + ITC Avant Garde Gothic Pro (secondary, proprietary). Source: Slack #soulmd, Open Knowledge Pack Nido Águila. Official Club América de México partner. Inherits corporate GSC base tokens. Do not edit without Luisa León approval.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "yellow":     { "$value": "#F8E602", "$description": "Primary — Club América yellow, signature accent" },
+      "navy":       { "$value": "#111A2D", "$description": "Primary surface — Club América navy, dark backgrounds" },
+      "white":      { "$value": "#FFFFFF", "$description": "Text on navy / on yellow" }
+    },
+    "semantic": {
+      "bg":            { "$value": "{color.brand.navy}" },
+      "surface":       { "$value": "#1C2640", "$description": "Raised surface on navy (computed)" },
+      "primary":       { "$value": "{color.brand.yellow}" },
+      "primary-hover": { "$value": "#D9CF02", "$description": "Pressed yellow (computed)" },
+      "accent":        { "$value": "{color.brand.white}" },
+      "heading":       { "$value": "{color.brand.white}" },
+      "body":          { "$value": "#C7CDD9" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display":   { "$value": ["Morganite", "Impact", "sans-serif"], "$description": "Primary — Morganite (Google Fonts, included in assets/fonts). Tall condensed." },
+      "ui":        { "$value": ["ITC Avant Garde Gothic Pro", "Montserrat", "system-ui", "sans-serif"], "$description": "Secondary — ITC Avant Garde Gothic Pro (PROPRIETARY, not bundled; obtain via Luisa León) + Montserrat fallback." },
+      "body":      { "$value": ["Montserrat", "system-ui", "sans-serif"] }
+    }
+  },
+  "program": {
+    "$type": "string",
+    "id":           { "$value": "nido-aguila" },
+    "name":         { "$value": "Nido Águila Guatemala" },
+    "slug":         { "$value": "nido-aguila" },
+    "instagram":    { "$value": "@nidoaguilaguatemala" },
+    "voice":        { "$value": "aspiracional, profesional, deportiva Club América, locución de estadio" },
+    "slogan":       { "$value": "Grandes de corazón" },
+    "partner":      { "$value": "Club América de México (official partner)" }
+  }
+}

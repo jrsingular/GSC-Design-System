@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Global Basketball Academy (GBA) program tokens. CONFIRMED by Luisa León. Palette #1C1C1C / #FE0000 / #A3A6A9 / #FFFFFF; fonts Academic M54 (primary, proprietary) + Redwing + Montserrat (secondary). Source: Slack #soulmd, Open Knowledge Pack GBA. Inherits corporate GSC base tokens. Do not edit without Luisa León approval.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "ink":        { "$value": "#1C1C1C", "$description": "Primary — GBA base ink" },
+      "red":        { "$value": "#FE0000", "$description": "Primary accent — GBA signature basketball red" },
+      "steel":      { "$value": "#A3A6A9", "$description": "Secondary — GBA steel grey, structure and dividers" },
+      "white":      { "$value": "#FFFFFF", "$description": "Text on dark" }
+    },
+    "semantic": {
+      "bg":            { "$value": "{color.brand.ink}" },
+      "surface":       { "$value": "#262626", "$description": "Raised surface on GBA ink" },
+      "primary":       { "$value": "{color.brand.red}" },
+      "primary-hover": { "$value": "#CC0000", "$description": "Pressed red (computed)" },
+      "accent":        { "$value": "{color.brand.steel}" },
+      "heading":       { "$value": "{color.brand.white}" },
+      "body":          { "$value": "#D6D6D6" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display":   { "$value": ["Academic M54", "Impact", "sans-serif"], "$description": "Primary — Academic M54 (PROPRIETARY, not bundled; obtain via Luisa León). Bold collegiate display." },
+      "ui":        { "$value": ["Redwing", "Montserrat", "system-ui", "sans-serif"], "$description": "Secondary — Redwing (proprietary) + Montserrat (Google Fonts)." },
+      "body":      { "$value": ["Montserrat", "system-ui", "sans-serif"] }
+    }
+  },
+  "program": {
+    "$type": "string",
+    "id":           { "$value": "gba" },
+    "name":         { "$value": "Global Basketball Academy" },
+    "slug":         { "$value": "gba" },
+    "instagram":    { "$value": "@global_basketball_academy_gt" },
+    "voice":        { "$value": "aspiracional, profesional, deportiva, ambiente basquetbolista" },
+    "tagline":      { "$value": "La experiencia de baloncesto profesional en Guatemala" }
+  }
+}

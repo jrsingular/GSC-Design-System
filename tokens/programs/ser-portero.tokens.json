@@ -1,0 +1,39 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Ser Portero program tokens. CONFIRMED by Luisa León. Palette #916E35 (marrón/oro) / #FFFFFF / #000000; fonts Headline Gothic ATF (primary, proprietary — regular + Rough) + Montserrat (secondary). Slogans 'El Ser está antes que el portero' / 'Tu mente dirige tu parada'. Source: Slack #soulmd, Ser Portero brand doc. Goalkeeper technification academy, methodology by Prof. Ernesto García. Inherits corporate GSC base tokens. Do not edit without Luisa León approval.",
+  "color": {
+    "$type": "color",
+    "brand": {
+      "gold":       { "$value": "#916E35", "$description": "Primary — Ser Portero marrón/oro, signature earthy gold" },
+      "black":      { "$value": "#000000", "$description": "Primary surface — deep black backgrounds" },
+      "white":      { "$value": "#FFFFFF", "$description": "Text on black / on gold" }
+    },
+    "semantic": {
+      "bg":            { "$value": "{color.brand.black}" },
+      "surface":       { "$value": "#1A1A1A", "$description": "Raised surface on black (computed)" },
+      "primary":       { "$value": "{color.brand.gold}" },
+      "primary-hover": { "$value": "#74582B", "$description": "Pressed gold (computed)" },
+      "accent":        { "$value": "{color.brand.white}" },
+      "heading":       { "$value": "{color.brand.white}" },
+      "body":          { "$value": "#D4CBBE" }
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "display":   { "$value": ["Headline Gothic ATF", "Impact", "sans-serif"], "$description": "Primary — Headline Gothic ATF regular + Rough (PROPRIETARY, not bundled; obtain via Luisa León). Vintage athletic headline." },
+      "ui":        { "$value": ["Montserrat", "system-ui", "sans-serif"], "$description": "Secondary — Montserrat (Google Fonts)." },
+      "body":      { "$value": ["Montserrat", "system-ui", "sans-serif"] }
+    }
+  },
+  "program": {
+    "$type": "string",
+    "id":           { "$value": "ser-portero" },
+    "name":         { "$value": "Ser Portero" },
+    "slug":         { "$value": "ser-portero" },
+    "instagram":    { "$value": "@serporteroguatemala" },
+    "voice":        { "$value": "emocional, atlética, profesional e inspiracional" },
+    "slogan-1":     { "$value": "El Ser está antes que el portero" },
+    "slogan-2":     { "$value": "Tu mente dirige tu parada" }
+  }
+}

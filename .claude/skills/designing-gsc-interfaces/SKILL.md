@@ -45,6 +45,23 @@ Channel add-ons load *after* the core: `css/presentation.css` (16:9 decks),
 | Data | `.gsc-chart-card` + `.gsc-bar*`; `.gsc-table` |
 | Forms | `.gsc-field`, `.gsc-label`, `.gsc-input`, `.gsc-textarea` |
 
+## Program skins (v3)
+
+To build for one of GSC's seven academies, set `data-program` on a root element
+— the skin re-tokens colour + display font while spacing/radius/motion stay
+corporate:
+
+```html
+<body data-program="juventus-academy">  <!-- or gsa · gba · gra · nido-aguila · ser-portero · baby-juve -->
+```
+
+All components work unchanged under a skin (they consume tokens). Rules:
+values come from `tokens/programs/*.tokens.json` — never hard-code or invent a
+program colour; program accents on dark are **large-text-only** in GSA, GBA,
+GRA and Ser Portero (body text stays white/the program body tint — see
+`docs/accessibility.md`); Morganite is bundled and self-hosted, other program
+display fonts are proprietary and load only if the consuming project has them.
+
 ## Channel matrix
 
 | Channel | Background | Type ceiling | Red for | Notes |

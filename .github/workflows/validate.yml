@@ -1,0 +1,32 @@
+name: Validate tokens & brand integrity
+
+# Enforces on every push/PR what docs/self-evaluation.md verified by hand:
+# DTCG token validity, token↔CSS hex parity, the WCAG contrast audit
+# (0 hard failures), and dist-bundle freshness.
+#
+# The validator (scripts/validate-tokens.mjs) is dependency-free — no npm
+# install, so this check is fast and can never break on registry issues.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate tokens, parity, contrast, dist
+        run: node scripts/validate-tokens.mjs
