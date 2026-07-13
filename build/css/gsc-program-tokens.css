@@ -12,7 +12,7 @@
   --color-semantic-accent: #ffffff;
   --color-semantic-heading: #ffffff;
   --color-semantic-body: #d9d9d9;
-  --font-family-display: JuventusFans, Impact, sans-serif; /** Primary — JuventusFans (PROPRIETARY, shared with Juventus Academy; obtain via Luisa León). */
+  --font-family-display: JuventusFans, 'Bebas Neue', Impact, sans-serif; /** Primary — JuventusFans (PROPRIETARY, shared with Juventus Academy; obtain via Luisa León). */
   --font-family-ui: Montserrat, system-ui, sans-serif;
   --font-family-body: Montserrat, system-ui, sans-serif;
 }
@@ -29,7 +29,7 @@
   --color-semantic-accent: #a3a6a9;
   --color-semantic-heading: #ffffff;
   --color-semantic-body: #d6d6d6;
-  --font-family-display: 'Academic M54', Impact, sans-serif; /** Primary — Academic M54 (PROPRIETARY, not bundled; obtain via Luisa León). Bold collegiate display. */
+  --font-family-display: 'Academic M54', 'Bebas Neue', Impact, sans-serif; /** Primary — Academic M54 (PROPRIETARY, not bundled; obtain via Luisa León). Bold collegiate display. */
   --font-family-ui: Redwing, Montserrat, system-ui, sans-serif; /** Secondary — Redwing (proprietary) + Montserrat (Google Fonts). */
   --font-family-body: Montserrat, system-ui, sans-serif;
 }
@@ -45,7 +45,7 @@
   --color-semantic-accent: #e53518;
   --color-semantic-heading: #ffffff;
   --color-semantic-body: #e0e0e0;
-  --font-family-display: 'Unison Pro', Impact, sans-serif; /** Primary — Unison Pro Bold Italic (PROPRIETARY, not bundled; obtain via Luisa León). Athletic italic display. */
+  --font-family-display: 'Unison Pro', 'Bebas Neue', Impact, sans-serif; /** Primary — Unison Pro Bold Italic (PROPRIETARY, not bundled; obtain via Luisa León). Athletic italic display. */
   --font-family-ui: Montserrat, system-ui, sans-serif; /** Secondary — Montserrat (Google Fonts). */
   --font-family-body: Montserrat, system-ui, sans-serif;
 }
@@ -78,7 +78,7 @@
   --color-semantic-accent: #ffffff;
   --color-semantic-heading: #ffffff;
   --color-semantic-body: #d9d9d9;
-  --font-family-display: JuventusFans, Impact, sans-serif; /** Primary — JuventusFans-Bold + JuventusFans-Boldinline (PROPRIETARY Juventus FC custom fonts, not bundled; obtain via Luisa León / Juventus licensing). Two variants: solid (Bold) and inline (Boldinline). */
+  --font-family-display: JuventusFans, 'Bebas Neue', Impact, sans-serif; /** Primary — JuventusFans-Bold + JuventusFans-Boldinline (PROPRIETARY Juventus FC custom fonts, not bundled; obtain via Luisa León / Juventus licensing). Two variants: solid (Bold) and inline (Boldinline). */
   --font-family-ui: Montserrat, system-ui, sans-serif; /** Secondary — Montserrat (Google Fonts). */
   --font-family-body: Montserrat, system-ui, sans-serif;
 }
@@ -110,7 +110,7 @@
   --color-semantic-accent: #ffffff;
   --color-semantic-heading: #ffffff;
   --color-semantic-body: #d4cbbe;
-  --font-family-display: 'Headline Gothic ATF', Impact, sans-serif; /** Primary — Headline Gothic ATF regular + Rough (PROPRIETARY, not bundled; obtain via Luisa León). Vintage athletic headline. */
+  --font-family-display: 'Headline Gothic ATF', 'Bebas Neue', Impact, sans-serif; /** Primary — Headline Gothic ATF regular + Rough (PROPRIETARY, not bundled; obtain via Luisa León). Vintage athletic headline. */
   --font-family-ui: Montserrat, system-ui, sans-serif; /** Secondary — Montserrat (Google Fonts). */
   --font-family-body: Montserrat, system-ui, sans-serif;
 }

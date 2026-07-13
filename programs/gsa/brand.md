@@ -75,3 +75,19 @@ The `data-program="gsa"` selector maps to `tokens.json` for all colour, typograp
 - **Token file (canonical source of truth):** `tokens.json`
 - **Source document:** `_source/gsa-open-knowledge-pack.pdf`
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.
+
+## Accesibilidad (WCAG 2.1 AA — auditado)
+
+- El acento primario `#E7290F` sobre `#191919` rinde **3.95:1** — **solo texto grande** (≥24px, o ≥18.66px en bold): titulares, eyebrows, cifras. Nunca en texto corrido, captions o labels de formulario.
+- Texto corrido: usa el tinte de lectura del programa (`#D9D9D9`, **12.46:1** sobre fondo) o blanco — ambos superan AA holgadamente.
+- Estas reglas están **aplicadas por CI** (`npm run validate`, auditoría de contraste con 0 fallos duros) y demostradas en el showcase.
+
+## Entrega tipográfica
+
+- Morganite está **empaquetada y auto-alojada** por el sistema (WOFF2, `font-display: swap`) — el titular renderiza la marca en cualquier entorno.
+
+## Showcase
+
+Página de demostración premium del programa — héroe, paleta, tipografía y
+componentes con esta piel: [`preview.html`](preview.html). Verificada en
+navegador (0 errores, disciplina de acento en texto corrido).

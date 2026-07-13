@@ -13,8 +13,21 @@
   --gsc-red-deep:   #74582B;
   --gsc-orange:     #FFFFFF;
   --gsc-text-4:     #D4CBBE;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'Headline Gothic ATF', Impact, sans-serif;
+  --glow-red:       rgba(145, 110, 53, 0.22);   /* hero glow — derived from confirmed #916E35 */
+  --glow-orange:    rgba(255, 255, 255, 0.14);   /* hero glow — derived from confirmed #FFFFFF */
+
+  --font-display:   'Headline Gothic ATF', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(145, 110, 53, 0.16);
+  --tint-primary-brd: rgba(145, 110, 53, 0.45);
+  --tint-primary-fg:  #CDBDA4;
+  --tint-accent-bg:   rgba(255, 255, 255, 0.14);
+  --tint-accent-brd:  rgba(255, 255, 255, 0.4);
+  --tint-accent-fg:   #FFFFFF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);

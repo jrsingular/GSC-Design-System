@@ -1,0 +1,8 @@
+/* ==========================================================================
+   Global Soccer Academy — fonts
+   --------------------------------------------------------------------------
+   GSA's confirmed display face is Morganite (OFL), which the corporate system
+   BUNDLES and self-hosts (css/fonts.css → assets/fonts/*.woff2). Nothing else
+   to load here — this file exists so every program folder carries the same
+   contract (skin.css + fonts.css + tokens.json + brand.md + logos/).
+   ========================================================================== */

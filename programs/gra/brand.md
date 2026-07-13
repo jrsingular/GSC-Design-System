@@ -71,3 +71,19 @@ The `data-program="gra"` selector maps to `tokens.json` for all colour, typograp
 - **Token file (canonical source of truth):** `tokens.json`
 - **Source document:** `_source/gra-open-knowledge-pack.pdf`
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.
+
+## Accesibilidad (WCAG 2.1 AA — auditado)
+
+- El acento primario `#EE8A04` sobre `#1A1A1A` rinde **6.86:1** — cumple AA para texto normal; puede usarse con libertad.
+- Texto corrido: usa el tinte de lectura del programa (`#E0E0E0`, **13.18:1** sobre fondo) o blanco — ambos superan AA holgadamente.
+- Estas reglas están **aplicadas por CI** (`npm run validate`, auditoría de contraste con 0 fallos duros) y demostradas en el showcase.
+
+## Entrega tipográfica
+
+- `Unison Pro` es **propietaria y no se distribuye** en este repositorio. La cadena de respaldo de ingeniería es `Bebas Neue → Impact → sans-serif` — 'Bebas Neue' (condensada, atlética, cargada por el sistema corporativo) mantiene el carácter premium mientras se obtiene la licencia. Plantilla `@font-face` lista en [`fonts.css`](fonts.css); al recibir el WOFF2 licenciado, descomentar y precargar (`<link rel="preload" as="font" crossorigin>`).
+
+## Showcase
+
+Página de demostración premium del programa — héroe, paleta, tipografía y
+componentes con esta piel: [`preview.html`](preview.html). Verificada en
+navegador (0 errores, disciplina de acento en texto corrido).

@@ -4,6 +4,39 @@ All notable changes to the GSC Design System. Format follows
 [Keep a Changelog](https://keepachangelog.com/); versioning is
 [SemVer](https://semver.org/).
 
+## [3.2.0] — 2026-07-13 — Premium loop: rubric v2 + every brand ≥ 8.75
+
+### Added
+- **7 premium program showcases** (`programs/<slug>/preview.html`) — hero led by
+  each confirmed slogan/tagline, palette chips, type specimens, re-skinned
+  components. Browser-verified: 0 errors, 0 failed assets, 0 body-accent
+  violations. Linked from the style-guide program cards ("Ver showcase →").
+- **Program-branded hero glows + badge tints** in every skin — derived from the
+  confirmed primary/accent (same derivation as corporate `--gsc-red-bright`);
+  badges previously rendered corporate red under program skins.
+- **Premium typography delivery** for proprietary-font programs: fallback
+  chains now `<Brand font> → 'Bebas Neue' → Impact` (loaded athletic condensed
+  instead of bare Impact) + production-ready `@font-face` scaffolds
+  (`programs/<slug>/fonts.css`) awaiting licensed files.
+- **GSA vector logo** — `gsa-logo-line-art.svg`, a faithful format conversion
+  of Luisa León's own `.ai` (PDF) master; pure vector paths, no tracing.
+- **Brand sheets deepened** — per-program *Accesibilidad* (audited ratios and
+  usage rules) and *Entrega tipográfica* sections; all sheets 600–800 words.
+
+### Changed
+- **Scorecards rubric v2** (`docs/program-scorecards.md`,
+  `scripts/score-programs.mjs`): **Premium Design Execution = 40%** (showcase,
+  skin completeness, typography craft, accent discipline) + foundations 60%.
+  **GSC Corporate now evaluated as the master program** (its showcase is
+  `index.html`). Scorer is CI-friendly (non-zero exit below the 8.75 target).
+- Scorer counts confirmed `program.tagline` metadata (GSA/GBA/GRA taglines were
+  previously ignored despite being confirmed brand data).
+
+### Results
+- All 8 brands ≥ 8.75 ✓ — GSA & Nido Águila 9.55, Juventus 9.35, Ser Portero
+  9.25, **GSC Corporate (master) 9.05**, GRA 8.95, Baby Juve 8.90, GBA 8.80.
+  Portfolio average **9.18/10** (was 8.0).
+
 ## [3.1.0] — 2026-07-13 — Program-first reorganization
 
 ### Changed

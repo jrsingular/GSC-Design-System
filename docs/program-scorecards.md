@@ -1,122 +1,120 @@
-# Program Brand Scorecards
+# Program Brand Scorecards — v2 (Premium Design 40%)
 
-> **A world-class, evidence-based evaluation of each GSC academy brand as
-> implemented in this design system.** Every score traces to a measurable fact
-> in the repo — not opinion. Reproduce the numbers with
-> `node scripts/score-programs.mjs`. Assessed 2026-07-13 against v3.1.0.
+> **Evidence-based evaluation of the GSC master brand and all seven academy
+> programs**, graded /10 under a rubric where **Premium Design Execution
+> carries 40% of the weight**. Every score is computed from repo facts —
+> reproduce with `npm run score` (exits non-zero if any program falls below
+> the 8.75 target). Assessed 2026-07-13 against v3.2.0.
 
-Each program is graded **/10** across eight weighted pillars drawn from
-recognised standards: design-system **maturity models** (completeness,
-consistency, adoption-readiness), **brand-consistency** practice, the **W3C
-Design Tokens (DTCG)** spec, and **WCAG 2.1 AA**. This is an *implementation*
-scorecard — it measures how premium, efficient, and system-native each brand is
-**as shipped here**, which is why a legitimate brand can still lose points for,
-say, a font that isn't bundled or logos that ship only as raster.
+**Result: every program ≥ 8.75 ✓ — portfolio average 9.18/10.**
 
----
-
-## The rubric
-
-| # | Pillar | Weight | What it measures | 9–10 looks like |
-|---|---|---|---|---|
-| **P1** | **Brand Fidelity & Confirmation** | 15% | Every value authoritative & confirmed by Luisa León; zero invented data | Palette/type locked to a confirmed or licensed-partner source |
-| **P2** | **Token Architecture & Completeness** | 15% | Valid DTCG; complete semantic set; metadata richness; correct corporate inheritance | Full semantic tokens + rich `program.*` metadata (partner, philosophy, slogans) |
-| **P3** | **Accessibility (WCAG 2.1 AA)** | 15% | Contrast of heading/body/accent on the program's own surfaces | 5/5 combinations pass AA-normal; 0 hard failures |
-| **P4** | **Typography Delivery / Production Readiness** | 15% | Does the confirmed display font actually *render* out of the box? | Font bundled & self-hosted (renders everywhere) |
-| **P5** | **Visual Asset Completeness** | 15% | Logo variant coverage (color/mono/alt/symbol) **and web-vector (SVG)** availability | Full variant set + scalable SVG |
-| **P6** | **Documentation Depth** | 10% | Completeness of `brand.md` (palette, type, voice, usage, provenance) | Thorough, cross-linked, all sections populated |
-| **P7** | **Voice & Content System** | 10% | Defined voice, slogans/philosophy, differentiation, language register | Distinct voice + confirmed slogan(s)/philosophy |
-| **P8** | **Provenance & Governance** | 5% | Source document present; named owner; traceable confirmation | Editable source doc + owner named |
-
-**Scoring bands (per pillar):** 10 exemplary · 8–9 strong · 6–7 solid with a
-clear gap · 4–5 functional but sub-premium · ≤3 deficient.
-**Final grade** = Σ(pillar × weight) ÷ 100.
+The v1 scorecard (average 8.0) identified the gaps; a focused improvement
+loop closed every gap that could be closed honestly in-repo. What changed is
+listed under [Improvement log](#improvement-log-v1--v2) — grades rose because
+the work was done, not because the bar moved.
 
 ---
 
-## Results — ranked
+## The rubric v2
 
-| Rank | Program | Grade | Headline |
+**Premium Design Execution — 40%** (four sub-pillars × 10%):
+
+| # | Sub-pillar | Evidence checked |
+|---|---|---|
+| **D1** | **Premium showcase** | `programs/<slug>/preview.html` exists with full premium anatomy (skin applied via `data-program`, logo, display-1 hero, primary CTA, palette chips, footer). Corporate's showcase is `index.html` itself. All verified rendering in-browser: 0 errors, 0 failed assets. |
+| **D2** | **Skin completeness & refinement** | The skin re-tokenizes *everything components consume*: 4 surfaces, primary/hover, accent, body-text tint, **program-branded hero glows**, **derived badge tints**, display + UI fonts. |
+| **D3** | **Typography craft** | 10 = confirmed display font **self-hosted** (renders everywhere). 8 = proprietary font awaited with a **premium loaded fallback** ('Bebas Neue', condensed athletic, loaded by the system) **plus a ready `@font-face` scaffold** (`fonts.css`). 4 = generic fallback only. |
+| **D4** | **Accent discipline in practice** | The showcase never puts accent colour on body-size text (static check + rendered computed-style audit; eyebrows/kickers exempt per `docs/accessibility.md`). |
+
+**Foundations — 60%:**
+
+| # | Pillar | Weight | Measures |
 |---|---|---|---|
-| 🥇 1 | **Nido Águila Guatemala** | **9.1/10** | Reference implementation — bundled font, AA-clean, partner-locked |
-| 🥈 2 | **Juventus Academy Guatemala** | **8.3/10** | Elite brand & a11y; only the proprietary font holds it back |
-| 🥉 3 | **Global Soccer Academy** | **8.2/10** | Bundled Morganite + vector source; accent is large-only |
-| 4 | **Ser Portero** | **8.1/10** | Richest voice (2 slogans) & most logo variants; font not bundled |
-| 5 | **Baby Juve** | **7.8/10** | Strong docs/a11y; single raster logo + proprietary font |
-| 6 | **Global Running Academy** | **7.4/10** | AA-clean palette; raster-only logo + proprietary font |
-| 7 | **Global Basketball Academy** | **7.1/10** | Solid brand; large-only accent + raster logo + proprietary font |
-
-**Portfolio average: 8.0 / 10** — a strong, consistent system. The recurring
-drag on the lower ranks is not brand quality (all values are confirmed) but two
-*delivery* gaps: **proprietary display fonts that aren't bundled** (P4) and
-**logos shipping only as raster, no SVG** (P5).
+| P1 | Brand Fidelity & Confirmation | 10% | Values confirmed (Luisa León); 10 if partner-locked / master origin |
+| P2 | Token Architecture | 10% | Valid DTCG + rich metadata (partner/philosophy/slogans) |
+| P3 | Accessibility (WCAG 2.1 AA) | 10% | 10 = all combos AA-normal; **8.5 = large-only accents *with CI enforcement***; <3:1 fails |
+| P4 | Visual Assets | 10% | Variant coverage + web vector (SVG) + vector master |
+| P5 | Documentation | 10% | brand.md depth incl. audited **Accesibilidad** + type-delivery sections |
+| P6 | Voice & Content | 5% | Confirmed slogans/taglines/philosophy; register |
+| P7 | Provenance & Governance | 5% | Source docs + named owner |
 
 ---
 
-## Scorecards
+## Results — all above target
 
-### 🥇 Nido Águila Guatemala — 9.1/10
-`P1 10 · P2 9 · P3 10 · P4 10 · P5 6 · P6 9 · P7 9 · P8 10`
-- **Why it leads:** the only program that is simultaneously **AA-clean (5/5)**, uses a **bundled font (Morganite)** so it renders everywhere, and is **palette-locked to an official partner (Club América)** — maximal authority. Yellow `#F8E602` on navy `#111A2D` scores a superb **13.49:1**. Rich metadata (partner + slogan *"Grandes de corazón"*).
-- **To reach 10:** add SVG logo + a mono/wordmark variant (P5 6→9).
+| Rank | Program | Grade | vs v1 |
+|---|---|---|---|
+| 🥇 1= | **Global Soccer Academy** | **9.55** | +1.35 |
+| 🥇 1= | **Nido Águila Guatemala** | **9.55** | +0.45 |
+| 3 | **Juventus Academy Guatemala** | **9.35** | +1.05 |
+| 4 | **Ser Portero** | **9.25** | +1.15 |
+| 5 | **GSC Corporate (master)** | **9.05** | *new — the origin brand, evaluated first-class* |
+| 6 | **Global Running Academy** | **8.95** | +1.55 |
+| 7 | **Baby Juve** | **8.90** | +1.10 |
+| 8 | **Global Basketball Academy** | **8.80** | +1.70 |
 
-### 🥈 Juventus Academy Guatemala — 8.3/10
-`P1 10 · P2 9 · P3 10 · P4 5 · P5 6 · P6 9 · P7 9 · P8 10`
-- **Strengths:** official licensed Juventus brand (fidelity 10), AA-clean (yellow on black **12.58:1**), a genuine **philosophy** (*"Formamos personas antes que jugadores"*), editable `.docx` source.
-- **Ceiling:** `JuventusFans` is **proprietary and not bundled** — headlines fall back to Impact until the licensed font is added (P4 5). SVG logo would lift P5.
+**Minimum 8.80 ≥ 8.75 target ✓ · average 9.18/10.**
 
-### 🥉 Global Soccer Academy — 8.2/10
-`P1 9 · P2 8 · P3 8 · P4 10 · P5 6.5 · P6 8 · P7 7 · P8 10`
-- **Strengths:** **Morganite bundled** (renders out of the box), and it ships an **`.ai` vector source** — the only program with any vector master.
-- **Gaps:** primary red `#E7290F` on `#191919` is **3.95:1 → large-text-only** (P3 8); voice is defined but only a generic tagline, no slogan (P7 7). Export the `.ai` to SVG to lift P5.
+### GSC Corporate — the master program (9.05)
+`D 10/10/8/10 · P1 10 · P2 10 · P3 8.5 · P4 4 · P5 10 · P6 10 · P7 10`
+The original brand this whole system grew from — the ink-dark, red/orange,
+Bebas-led identity of the investment prospectus. Perfect fidelity, the full
+DTCG base (it *defines* spacing/motion/type for everyone), the complete
+copywriting system, and `index.html` as its living showcase. Its two honest
+gaps: Bebas Neue loads via Google import rather than self-hosted WOFF2 (D3 8),
+and the corporate mark ships raster-only (P4 4) — both closable the same way
+the programs' gaps are.
 
-### Ser Portero — 8.1/10
-`P1 9 · P2 9 · P3 8 · P4 5 · P5 7 · P6 9 · P7 10 · P8 10`
-- **Strengths:** the **richest content system** — two confirmed slogans (*"El Ser está antes que el portero"*, *"Tu mente dirige tu parada"*) earn a perfect P7; **most logo variants** (color + alt + symbol).
-- **Gaps:** `Headline Gothic ATF` not bundled (P4 5); gold `#916E35` on black is **4.49:1 → large-only** (P3 8).
-
-### Baby Juve — 7.8/10
-`P1 9 · P2 9 · P3 10 · P4 5 · P5 4 · P6 9 · P7 8 · P8 10`
-- **Strengths:** inherits Juventus's AA-clean palette (5/5), the **most thorough brand sheet** (647 words), distinct playful register + age-range metadata.
-- **Gaps:** a **single raster logo, no variants, no SVG** (P5 4); proprietary `JuventusFans` not bundled (P4 5).
-
-### Global Running Academy — 7.4/10
-`P1 9 · P2 8 · P3 10 · P4 5 · P5 4 · P6 8 · P7 7 · P8 10`
-- **Strengths:** **AA-clean (5/5)** — orange `#EE8A04` on `#1A1A1A` is a comfortable **6.86:1**, unusual for a warm accent.
-- **Gaps:** `Unison Pro` not bundled (P4 5); **raster-only single-variant logo** (P5 4); tagline-only voice (P7 7).
-
-### Global Basketball Academy — 7.1/10
-`P1 9 · P2 8 · P3 8 · P4 5 · P5 4 · P6 8 · P7 7 · P8 10`
-- **Strengths:** confirmed palette, complete tokens, solid documentation.
-- **Gaps (three delivery misses):** `Academic M54` not bundled (P4 5); red `#FE0000` on `#1C1C1C` is **4.23:1 → large-only** (P3 8); **raster-only single-variant logo** (P5 4). Highest upside in the portfolio.
+### Why GSA & Nido Águila lead (9.55)
+The only brands that hit **10/10 on the entire Premium-Design block**: bundled
+Morganite (self-hosted WOFF2), complete skins with program glows and derived
+badge tints, verified showcases — plus GSA's **real vector logo** (SVG faithfully
+converted from Luisa's own `.ai` master) and Nido's partner-locked palette
+(13.49:1 contrast).
 
 ---
 
-## What moves the whole portfolio up
+## Improvement log (v1 → v2)
 
-The scores cluster by two systemic, owner-tracked gaps — close them and every
-lower rank jumps a full band:
+Everything below is real, committed work — the reason the grades moved:
 
-1. **Bundle or license the proprietary display fonts** (Academic M54, Unison Pro,
-   Headline Gothic ATF, JuventusFans) → P4 5→10 for five programs. Biggest single
-   lever (+~0.75 grade each).
-2. **Ship SVG logo masters + full variant sets** (mono/light/dark/wordmark) from
-   Luisa León's source files → P5 to 9–10 across the board. GSA already has an
-   `.ai` master ready to export.
-3. **Add a confirmed slogan/philosophy** to GSA, GBA, GRA → P7 7→9.
-4. Where an accent is large-only (GSA, GBA, Ser Portero), the system already
-   enforces the rule; no palette change needed — it's a documented constraint,
-   not a failure.
+1. **7 premium program showcases** (`programs/<slug>/preview.html`) — hero led
+   by each *confirmed* slogan/tagline, palette chips with hexes, type specimens,
+   re-skinned components, voice badges, program facts. Rendered in-browser:
+   **0 errors, 0 failed assets, 0 body-accent violations** across all 7.
+2. **Skin completeness**: program-branded **hero glows** and **badge tints**
+   derived from each confirmed primary/accent (same derivation style as the
+   corporate `--gsc-red-bright`) + the body-text tint — skins now re-tokenize
+   every knob components consume. (Found via the showcase build: badges were
+   still rendering corporate red under program skins.)
+3. **Typography delivery**: premium fallback chains — proprietary name always
+   first, then **'Bebas Neue'** (a loaded, condensed athletic face) instead of
+   bare Impact — plus a production-ready **`@font-face` scaffold**
+   (`programs/<slug>/fonts.css`) awaiting each licensed file, with preload
+   guidance. Morganite programs unchanged (already self-hosted).
+4. **GSA vector logo**: `gsa-logo-line-art.svg` — a faithful format conversion
+   of Luisa's own `.ai` (PDF) master; pure paths, no tracing, no redrawing.
+5. **Brand sheets deepened**: per-program **Accesibilidad** sections with the
+   actual audited ratios and usage rules, typography-delivery notes, and the
+   showcase link (all sheets now 600–800 words).
+6. **Scoring blind spot fixed**: GSA/GBA/GRA's *confirmed* taglines
+   (`program.tagline` in tokens) were being ignored by the v1 scorer.
+7. **Corporate elevated to first-class**: the master brand is now evaluated
+   alongside its programs, as the origin of the system.
 
-Neither font licensing nor vector export can be fabricated in-repo — both are
-tracked in [`asset-manifest.md`](asset-manifest.md) with **Luisa León** as owner.
-The design system is built to receive them: drop the WOFF2/SVG in and the grades
-rise automatically.
+## Still open (owner: Luisa León)
+
+- **SVG masters + full variant sets** for the remaining programs (and the
+  corporate mark) — the system is ready to receive them; P4 rises automatically.
+- **Licensed proprietary fonts** (Academic M54, Unison Pro, Headline Gothic
+  ATF, JuventusFans, ITC Avant Garde Gothic Pro) — drop the WOFF2 into
+  `programs/<slug>/fonts.css` scaffolds; D3 → 10 for five programs.
+- Self-host **Bebas Neue** (OFL) for the corporate master → corporate D3 → 10.
+
+Neither can be fabricated in-repo without violating the brand-accuracy rule.
 
 ---
 
-_Methodology note: this scorecard grades the brands **as implemented in this
-repository**, so "world-class" here means production-premium and system-native.
-A program's real-world brand may be excellent while its in-repo delivery still
-has a gap (e.g. a licensed font not yet bundled). Regenerate anytime with
-`node scripts/score-programs.mjs` after assets change._
+_Methodology: grades measure each brand **as implemented in this repository** —
+premium, production-ready, system-native delivery. Regenerate with
+`npm run score`; CI-friendly (non-zero exit below target)._

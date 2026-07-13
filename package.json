@@ -1,6 +1,6 @@
 {
   "name": "gsc-design-system",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Global Sports Corporation design system — tokens, components, channel templates, and AI skills. Live the dream. Proprietary & Confidential.",
   "type": "module",
   "private": true,

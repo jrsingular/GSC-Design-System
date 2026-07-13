@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Academic M54 — @font-face scaffold (PROPRIETARY, licensed)
+   --------------------------------------------------------------------------
+   This program's confirmed font is proprietary and is NOT bundled in this
+   repository (licensing — see DESIGN.md §4, docs/governance.md). Obtain the
+   licensed files via Luisa León, drop the WOFF2 next to this file, uncomment,
+   and load this stylesheet AFTER dist/gsc-design-system.css.
+
+   Until then the skin renders its premium fallback ('Bebas Neue', loaded by
+   the corporate system) — the brand font is never substituted, only awaited.
+
+   Production notes: preload the WOFF2 (<link rel="preload" as="font"
+   crossorigin>), keep font-display: swap.
+   ========================================================================== */
+/*
+@font-face {
+  font-family: 'Academic M54';
+  src: url('./academic-m54.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+*/

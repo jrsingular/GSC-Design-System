@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juventus Academy Guatemala · GSC Program Showcase</title>
+<link rel="stylesheet" href="../../dist/gsc-design-system.css">
+<link rel="stylesheet" href="../juventus-academy/fonts.css" onerror="">
+<style>
+  /* Showcase-local layout. All colour/type comes from the program skin tokens.
+     Accent discipline: program accents appear ONLY at display/eyebrow sizes;
+     body copy stays on the body tint (see docs/accessibility.md). */
+  .chip { display:flex; align-items:center; gap:12px; border:1px solid var(--gsc-line); border-radius:var(--radius-sm); padding:10px 14px; background:var(--gsc-ink-soft); }
+  .chip__swatch { width:42px; height:42px; border-radius:8px; border:1px solid var(--gsc-line); }
+  .chip__meta b { display:block; font-family:var(--font-ui); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:var(--gsc-text); }
+  .chip__meta span { font-family:var(--font-ui); font-size:11px; color:var(--gsc-text-faint); }
+  .type-specimen { border-top:1px solid var(--gsc-line); padding:14px 0; display:flex; align-items:baseline; gap:18px; }
+  .type-specimen .lbl { font-family:var(--font-ui); font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gsc-text-faint); min-width:120px; }
+</style>
+</head>
+<body data-program="juventus-academy">
+
+<header class="gsc-topbar">
+  <div class="gsc-topbar__inner">
+    <div class="gsc-topbar__logo"><img src="logos/juventus-academy-logo-color.png" alt="Juventus Academy Guatemala" style="height:40px;"></div>
+    <div class="gsc-topbar__label">GSC Program Showcase<strong>Juventus Academy Guatemala</strong></div>
+  </div>
+</header>
+
+<section class="gsc-hero" style="padding-bottom:64px;">
+  <div class="gsc-pitch-texture"></div>
+  <div class="gsc-hero__inner">
+    <div class="gsc-eyebrow">Juventus Academy Guatemala</div>
+    <h1 class="gsc-display-1" style="max-width:12ch;">Formamos personas antes que jugadores</h1>
+    <p class="gsc-hero__sub">aspiracional, divertido, profesional como equipo de alto rendimiento</p>
+    <div class="gsc-flex gsc-gap-3 gsc-wrap-flex">
+      <a class="gsc-btn gsc-btn--primary" href="#brand">Conoce el programa</a>
+      <a class="gsc-btn gsc-btn--ghost" href="brand.md">Brand sheet</a>
+    </div>
+  </div>
+</section>
+
+<section class="gsc-section is-soft" id="brand">
+  <div class="gsc-wrap">
+    <div class="gsc-section-head">
+      <div class="gsc-section-num">01 — Identidad</div>
+      <h2 class="gsc-display-3">La marca en el sistema</h2>
+      <p>Paleta y tipografía confirmadas por Luisa León, servidas desde <code style="font-family:ui-monospace,monospace; font-size:13px;">programs/juventus-academy/tokens.json</code>.</p>
+    </div>
+    <div class="gsc-grid gsc-grid--2" style="align-items:start;">
+      <div>
+        <div class="gsc-kicker gsc-mb-6">Paleta confirmada</div>
+        <div class="gsc-flex-col gsc-gap-3">
+        <div class="chip"><div class="chip__swatch" style="background:#000000;"></div><div class="chip__meta"><b>black</b><span>#000000</span></div></div>
+        <div class="chip"><div class="chip__swatch" style="background:#FFFFFF;"></div><div class="chip__meta"><b>white</b><span>#FFFFFF</span></div></div>
+        <div class="chip"><div class="chip__swatch" style="background:#F9C016;"></div><div class="chip__meta"><b>yellow</b><span>#F9C016</span></div></div>
+        </div>
+      </div>
+      <div>
+        <div class="gsc-kicker gsc-mb-6">Tipografía</div>
+        <div class="type-specimen"><span class="lbl">Display · JuventusFans</span><span class="gsc-display-4">Juventus Academy Guatemala</span></div>
+        <div class="type-specimen"><span class="lbl">Eyebrow</span><span class="gsc-eyebrow">aspiracional</span></div>
+        <div class="type-specimen"><span class="lbl">UI · Montserrat</span><span class="gsc-lead">Un sistema, una academia, una identidad.</span></div>
+        <div class="type-specimen"><span class="lbl">Body</span><span class="gsc-body">El texto corrido usa siempre el tinte de lectura del programa — nunca el acento (regla de accesibilidad AA).</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gsc-section">
+  <div class="gsc-wrap">
+    <div class="gsc-section-head">
+      <div class="gsc-section-num">02 — Componentes</div>
+      <h2 class="gsc-display-3">El sistema, con esta piel</h2>
+      <p>Los mismos componentes GSC, re-tokenizados por <code style="font-family:ui-monospace,monospace; font-size:13px;">data-program="juventus-academy"</code>.</p>
+    </div>
+    <div class="gsc-grid gsc-grid--3">
+      <article class="gsc-card gsc-card--hover">
+        <div class="gsc-card__tag">Voz</div>
+        <h3 class="gsc-card__title">Cómo suena</h3>
+        <p class="gsc-card__body"><span class="gsc-badge gsc-badge--primary">aspiracional</span> <span class="gsc-badge gsc-badge--primary">divertido</span> <span class="gsc-badge gsc-badge--primary">profesional como equipo de alto rendimiento</span> </p>
+      </article>
+      <article class="gsc-card gsc-card--hover">
+        <div class="gsc-card__tag">Acciones</div>
+        <h3 class="gsc-card__title">Botones</h3>
+        <div class="gsc-flex gsc-gap-3 gsc-wrap-flex" style="margin-top:6px;">
+          <button class="gsc-btn gsc-btn--primary gsc-btn--sm">Inscríbete</button>
+          <button class="gsc-btn gsc-btn--ghost gsc-btn--sm">Conócenos</button>
+        </div>
+      </article>
+      <article class="gsc-card gsc-card--hover">
+        <div class="gsc-card__tag">Datos</div>
+        <h3 class="gsc-card__title">Ficha</h3>
+        <div class="gsc-flex-col gsc-gap-3">
+      <div class="gsc-fact"><div class="gsc-fact__num" style="font-size:22px; line-height:1.3;">Juventus FC (official licensed academy)</div><div class="gsc-fact__label">Partner</div></div>
+      <div class="gsc-fact"><div class="gsc-fact__num" style="font-size:22px; line-height:1.3;">@juventus_academy_guatemala</div><div class="gsc-fact__label">Instagram</div></div>
+      <div class="gsc-fact"><div class="gsc-fact__num" style="font-size:22px; line-height:1.3;">JuventusFans · Montserrat</div><div class="gsc-fact__label">Tipografía</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="gsc-footer">
+  <div class="gsc-footer__inner">
+    <p>Juventus Academy Guatemala · Global Sports Corporation — <em>Live the dream.</em> Valores de marca confirmados; ver <code style="font-family:ui-monospace,monospace;">brand.md</code> y docs/accessibility.md.</p>
+    <div class="gsc-footer__date">GSC · programs/juventus-academy</div>
+  </div>
+</footer>
+
+</body>
+</html>

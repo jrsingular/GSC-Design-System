@@ -78,3 +78,19 @@ The `data-program="nido-aguila"` selector maps to `tokens.json` for all colour, 
 - **Source document:** `_source/nido-aguila-open-knowledge-pack.pdf`
 - **Partner relationship:** Club América de México (official partner). Respect Club América brand guidelines where they apply; Luisa León is the arbiter for local adaptation.
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.
+
+## Accesibilidad (WCAG 2.1 AA — auditado)
+
+- El acento primario `#F8E602` sobre `#111A2D` rinde **13.49:1** — cumple AA para texto normal; puede usarse con libertad.
+- Texto corrido: usa el tinte de lectura del programa (`#C7CDD9`, **10.88:1** sobre fondo) o blanco — ambos superan AA holgadamente.
+- Estas reglas están **aplicadas por CI** (`npm run validate`, auditoría de contraste con 0 fallos duros) y demostradas en el showcase.
+
+## Entrega tipográfica
+
+- Morganite está **empaquetada y auto-alojada** por el sistema (WOFF2, `font-display: swap`) — el titular renderiza la marca en cualquier entorno.
+
+## Showcase
+
+Página de demostración premium del programa — héroe, paleta, tipografía y
+componentes con esta piel: [`preview.html`](preview.html). Verificada en
+navegador (0 errores, disciplina de acento en texto corrido).

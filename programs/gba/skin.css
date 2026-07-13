@@ -13,8 +13,21 @@
   --gsc-red-deep:   #CC0000;
   --gsc-orange:     #A3A6A9;   /* steel grey serves the secondary-accent role */
   --gsc-text-4:     #D6D6D6;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'Academic M54', Impact, sans-serif;
+  --glow-red:       rgba(254, 0, 0, 0.22);   /* hero glow — derived from confirmed #FE0000 */
+  --glow-orange:    rgba(163, 166, 169, 0.14);   /* hero glow — derived from confirmed #A3A6A9 */
+
+  --font-display:   'Academic M54', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Redwing', 'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(254, 0, 0, 0.16);
+  --tint-primary-brd: rgba(254, 0, 0, 0.45);
+  --tint-primary-fg:  #FE8C8C;
+  --tint-accent-bg:   rgba(163, 166, 169, 0.14);
+  --tint-accent-brd:  rgba(163, 166, 169, 0.4);
+  --tint-accent-fg:   #CCCECF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);

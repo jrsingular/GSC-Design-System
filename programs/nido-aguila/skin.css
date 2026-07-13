@@ -13,8 +13,21 @@
   --gsc-red-deep:   #D9CF02;
   --gsc-orange:     #FFFFFF;   /* white serves the secondary-accent role */
   --gsc-text-4:     #C7CDD9;   /* program body-text tint (color.semantic.body) */
+  --glow-red:       rgba(248, 230, 2, 0.22);   /* hero glow — derived from confirmed #F8E602 */
+  --glow-orange:    rgba(255, 255, 255, 0.14);   /* hero glow — derived from confirmed #FFFFFF */
+
   --font-display:   'Morganite', Impact, sans-serif;
   --font-ui:        'ITC Avant Garde Gothic Pro', 'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(248, 230, 2, 0.16);
+  --tint-primary-brd: rgba(248, 230, 2, 0.45);
+  --tint-primary-fg:  #FBF38D;
+  --tint-accent-bg:   rgba(255, 255, 255, 0.14);
+  --tint-accent-brd:  rgba(255, 255, 255, 0.4);
+  --tint-accent-fg:   #FFFFFF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);

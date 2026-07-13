@@ -14,8 +14,21 @@
   --gsc-orange:     #F07D04;
   --gsc-crema:      #F2E4C8;   /* retained for corporate surfaces only */
   --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
+  --glow-red:       rgba(231, 41, 15, 0.22);   /* hero glow — derived from confirmed #E7290F */
+  --glow-orange:    rgba(240, 125, 4, 0.14);   /* hero glow — derived from confirmed #F07D04 */
+
   --font-display:   'Morganite', Impact, sans-serif;
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(231, 41, 15, 0.16);
+  --tint-primary-brd: rgba(231, 41, 15, 0.45);
+  --tint-primary-fg:  #F49E93;
+  --tint-accent-bg:   rgba(240, 125, 4, 0.14);
+  --tint-accent-brd:  rgba(240, 125, 4, 0.4);
+  --tint-accent-fg:   #F6B774;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);

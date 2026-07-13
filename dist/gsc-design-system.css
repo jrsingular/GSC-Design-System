@@ -983,8 +983,21 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   --gsc-red-deep:   #D6A412;
   --gsc-orange:     #FFFFFF;
   --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'JuventusFans', Impact, sans-serif;
+  --glow-red:       rgba(249, 192, 22, 0.22);   /* hero glow — derived from confirmed #F9C016 */
+  --glow-orange:    rgba(255, 255, 255, 0.14);   /* hero glow — derived from confirmed #FFFFFF */
+
+  --font-display:   'JuventusFans', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(249, 192, 22, 0.16);
+  --tint-primary-brd: rgba(249, 192, 22, 0.45);
+  --tint-primary-fg:  #FCE296;
+  --tint-accent-bg:   rgba(255, 255, 255, 0.14);
+  --tint-accent-brd:  rgba(255, 255, 255, 0.4);
+  --tint-accent-fg:   #FFFFFF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);
@@ -1005,8 +1018,21 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   --gsc-red-deep:   #CC0000;
   --gsc-orange:     #A3A6A9;   /* steel grey serves the secondary-accent role */
   --gsc-text-4:     #D6D6D6;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'Academic M54', Impact, sans-serif;
+  --glow-red:       rgba(254, 0, 0, 0.22);   /* hero glow — derived from confirmed #FE0000 */
+  --glow-orange:    rgba(163, 166, 169, 0.14);   /* hero glow — derived from confirmed #A3A6A9 */
+
+  --font-display:   'Academic M54', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Redwing', 'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(254, 0, 0, 0.16);
+  --tint-primary-brd: rgba(254, 0, 0, 0.45);
+  --tint-primary-fg:  #FE8C8C;
+  --tint-accent-bg:   rgba(163, 166, 169, 0.14);
+  --tint-accent-brd:  rgba(163, 166, 169, 0.4);
+  --tint-accent-fg:   #CCCECF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);
@@ -1027,8 +1053,21 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   --gsc-red-deep:   #B82A12;
   --gsc-orange:     #EE8A04;
   --gsc-text-4:     #E0E0E0;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'Unison Pro', Impact, sans-serif;
+  --glow-red:       rgba(238, 138, 4, 0.22);   /* hero glow — derived from confirmed #EE8A04 */
+  --glow-orange:    rgba(229, 53, 24, 0.14);   /* hero glow — derived from confirmed #E53518 */
+
+  --font-display:   'Unison Pro', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(238, 138, 4, 0.16);
+  --tint-primary-brd: rgba(238, 138, 4, 0.45);
+  --tint-primary-fg:  #F7CA8E;
+  --tint-accent-bg:   rgba(229, 53, 24, 0.14);
+  --tint-accent-brd:  rgba(229, 53, 24, 0.4);
+  --tint-accent-fg:   #F08F7F;
+
   --color-primary:       var(--gsc-orange);
   --color-primary-hover: #C46F03;
   --color-accent:        var(--gsc-red);
@@ -1050,8 +1089,21 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   --gsc-orange:     #F07D04;
   --gsc-crema:      #F2E4C8;   /* retained for corporate surfaces only */
   --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
+  --glow-red:       rgba(231, 41, 15, 0.22);   /* hero glow — derived from confirmed #E7290F */
+  --glow-orange:    rgba(240, 125, 4, 0.14);   /* hero glow — derived from confirmed #F07D04 */
+
   --font-display:   'Morganite', Impact, sans-serif;
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(231, 41, 15, 0.16);
+  --tint-primary-brd: rgba(231, 41, 15, 0.45);
+  --tint-primary-fg:  #F49E93;
+  --tint-accent-bg:   rgba(240, 125, 4, 0.14);
+  --tint-accent-brd:  rgba(240, 125, 4, 0.4);
+  --tint-accent-fg:   #F6B774;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);
@@ -1072,8 +1124,21 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   --gsc-red-deep:   #D6A412;
   --gsc-orange:     #FFFFFF;
   --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'JuventusFans', Impact, sans-serif;
+  --glow-red:       rgba(249, 192, 22, 0.22);   /* hero glow — derived from confirmed #F9C016 */
+  --glow-orange:    rgba(255, 255, 255, 0.14);   /* hero glow — derived from confirmed #FFFFFF */
+
+  --font-display:   'JuventusFans', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(249, 192, 22, 0.16);
+  --tint-primary-brd: rgba(249, 192, 22, 0.45);
+  --tint-primary-fg:  #FCE296;
+  --tint-accent-bg:   rgba(255, 255, 255, 0.14);
+  --tint-accent-brd:  rgba(255, 255, 255, 0.4);
+  --tint-accent-fg:   #FFFFFF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);
@@ -1094,8 +1159,21 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   --gsc-red-deep:   #D9CF02;
   --gsc-orange:     #FFFFFF;   /* white serves the secondary-accent role */
   --gsc-text-4:     #C7CDD9;   /* program body-text tint (color.semantic.body) */
+  --glow-red:       rgba(248, 230, 2, 0.22);   /* hero glow — derived from confirmed #F8E602 */
+  --glow-orange:    rgba(255, 255, 255, 0.14);   /* hero glow — derived from confirmed #FFFFFF */
+
   --font-display:   'Morganite', Impact, sans-serif;
   --font-ui:        'ITC Avant Garde Gothic Pro', 'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(248, 230, 2, 0.16);
+  --tint-primary-brd: rgba(248, 230, 2, 0.45);
+  --tint-primary-fg:  #FBF38D;
+  --tint-accent-bg:   rgba(255, 255, 255, 0.14);
+  --tint-accent-brd:  rgba(255, 255, 255, 0.4);
+  --tint-accent-fg:   #FFFFFF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);
@@ -1116,8 +1194,21 @@ strong, b { font-weight: var(--fw-medium); color: var(--gsc-text); }
   --gsc-red-deep:   #74582B;
   --gsc-orange:     #FFFFFF;
   --gsc-text-4:     #D4CBBE;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'Headline Gothic ATF', Impact, sans-serif;
+  --glow-red:       rgba(145, 110, 53, 0.22);   /* hero glow — derived from confirmed #916E35 */
+  --glow-orange:    rgba(255, 255, 255, 0.14);   /* hero glow — derived from confirmed #FFFFFF */
+
+  --font-display:   'Headline Gothic ATF', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(145, 110, 53, 0.16);
+  --tint-primary-brd: rgba(145, 110, 53, 0.45);
+  --tint-primary-fg:  #CDBDA4;
+  --tint-accent-bg:   rgba(255, 255, 255, 0.14);
+  --tint-accent-brd:  rgba(255, 255, 255, 0.4);
+  --tint-accent-fg:   #FFFFFF;
+
   --color-primary:       var(--gsc-red);
   --color-primary-hover: var(--gsc-red-deep);
   --color-accent:        var(--gsc-orange);

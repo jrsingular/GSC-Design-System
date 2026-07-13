@@ -13,8 +13,21 @@
   --gsc-red-deep:   #B82A12;
   --gsc-orange:     #EE8A04;
   --gsc-text-4:     #E0E0E0;   /* program body-text tint (color.semantic.body) */
-  --font-display:   'Unison Pro', Impact, sans-serif;
+  --glow-red:       rgba(238, 138, 4, 0.22);   /* hero glow — derived from confirmed #EE8A04 */
+  --glow-orange:    rgba(229, 53, 24, 0.14);   /* hero glow — derived from confirmed #E53518 */
+
+  --font-display:   'Unison Pro', 'Bebas Neue', Impact, sans-serif;  /* fallback chain = engineering; first family is the confirmed brand font */
   --font-ui:        'Montserrat', system-ui, sans-serif;
+  /* Badge/status tints — derived from the confirmed primary/accent (same
+     derivation as corporate --gsc-red-bright); components read these for
+     .gsc-badge, so badges re-brand with the program. */
+  --tint-primary-bg:  rgba(238, 138, 4, 0.16);
+  --tint-primary-brd: rgba(238, 138, 4, 0.45);
+  --tint-primary-fg:  #F7CA8E;
+  --tint-accent-bg:   rgba(229, 53, 24, 0.14);
+  --tint-accent-brd:  rgba(229, 53, 24, 0.4);
+  --tint-accent-fg:   #F08F7F;
+
   --color-primary:       var(--gsc-orange);
   --color-primary-hover: #C46F03;
   --color-accent:        var(--gsc-red);
