@@ -39,7 +39,7 @@ Communication should carry the pride and energy of Club América, delivered with
 
 ## Logo
 
-Logo files are stored in `assets/logos/nido-aguila/`:
+Logo files are stored in `logos/`:
 
 | File                            | Format | Status                                   |
 |---------------------------------|--------|------------------------------------------|
@@ -69,12 +69,12 @@ Apply the program identity via the `data-program` attribute on the document body
 </body>
 ```
 
-The `data-program="nido-aguila"` selector maps to `tokens/programs/nido-aguila.tokens.json` for all colour, typography, and spacing tokens.
+The `data-program="nido-aguila"` selector maps to `tokens.json` for all colour, typography, and spacing tokens.
 
 ## Governance
 
 - **Design approval:** Luisa León approves all designs before publication or deployment.
-- **Token file (canonical source of truth):** `tokens/programs/nido-aguila.tokens.json`
-- **Source document:** `docs/programs/_source/nido-aguila-open-knowledge-pack.pdf`
+- **Token file (canonical source of truth):** `tokens.json`
+- **Source document:** `_source/nido-aguila-open-knowledge-pack.pdf`
 - **Partner relationship:** Club América de México (official partner). Respect Club América brand guidelines where they apply; Luisa León is the arbiter for local adaptation.
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.

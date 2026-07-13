@@ -41,13 +41,13 @@ GSC is a multi-program ecosystem. Each academy has its own confirmed brand:
 
 | Program | Brand sheet | Token file |
 |---|---|---|
-| Global Soccer Academy | [programs/gsa.md](programs/gsa.md) | tokens/programs/gsa.tokens.json |
-| Global Basketball Academy | [programs/gba.md](programs/gba.md) | tokens/programs/gba.tokens.json |
-| Global Running Academy | [programs/gra.md](programs/gra.md) | tokens/programs/gra.tokens.json |
-| Nido Águila Guatemala | [programs/nido-aguila.md](programs/nido-aguila.md) | tokens/programs/nido-aguila.tokens.json |
-| Ser Portero | [programs/ser-portero.md](programs/ser-portero.md) | tokens/programs/ser-portero.tokens.json |
-| Juventus Academy Guatemala | [programs/juventus-academy.md](programs/juventus-academy.md) | tokens/programs/juventus-academy.tokens.json |
-| Baby Juve | [programs/baby-juve.md](programs/baby-juve.md) | tokens/programs/baby-juve.tokens.json |
+| Global Soccer Academy | [../programs/gsa/brand.md](../programs/gsa/brand.md) | ../programs/gsa/tokens.json |
+| Global Basketball Academy | [../programs/gba/brand.md](../programs/gba/brand.md) | ../programs/gba/tokens.json |
+| Global Running Academy | [../programs/gra/brand.md](../programs/gra/brand.md) | ../programs/gra/tokens.json |
+| Nido Águila Guatemala | [../programs/nido-aguila/brand.md](../programs/nido-aguila/brand.md) | ../programs/nido-aguila/tokens.json |
+| Ser Portero | [../programs/ser-portero/brand.md](../programs/ser-portero/brand.md) | ../programs/ser-portero/tokens.json |
+| Juventus Academy Guatemala | [../programs/juventus-academy/brand.md](../programs/juventus-academy/brand.md) | ../programs/juventus-academy/tokens.json |
+| Baby Juve | [../programs/baby-juve/brand.md](../programs/baby-juve/brand.md) | ../programs/baby-juve/tokens.json |
 
 See also: [asset-manifest.md](asset-manifest.md) (logos, fonts, gaps) and
 [../DESIGN.md](../DESIGN.md) (full multi-program reference).

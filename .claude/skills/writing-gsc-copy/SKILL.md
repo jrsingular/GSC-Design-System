@@ -58,7 +58,7 @@ Copy this checklist when drafting:
 ## Program voices (v3)
 
 The voice above is **corporate GSC** (investor/rights/group-level). Each academy
-has its own confirmed voice — check `docs/programs/<slug>.md` before writing
+has its own confirmed voice — check `programs/<slug>/brand.md` before writing
 program copy: GSA *aspiracional, profesional, deportiva* · GBA *ambiente
 basquetbolista* · GRA *emocional, atlética* · Nido Águila *locución de estadio;
 slogan "Grandes de corazón"* · Ser Portero *inspiracional; "El Ser está antes

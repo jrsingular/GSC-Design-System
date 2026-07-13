@@ -4,6 +4,35 @@ All notable changes to the GSC Design System. Format follows
 [Keep a Changelog](https://keepachangelog.com/); versioning is
 [SemVer](https://semver.org/).
 
+## [3.1.0] — 2026-07-13 — Program-first reorganization
+
+### Changed
+- **Repo is now organized program-first.** Each academy's brand material —
+  previously scattered across `tokens/programs/`, `assets/logos/<slug>/`,
+  `docs/programs/`, and a block inside `css/programs.css` — is consolidated into
+  a single self-contained folder:
+  ```
+  programs/<slug>/  →  tokens.json · skin.css · brand.md · logos/ · _source/
+  ```
+  Everything about an academy now lives in one place (and can be handed to that
+  academy's partner as a unit). The **shared design system stays shared**
+  (`css/`, corporate `tokens/gsc.tokens.json`, channels) — it is not fragmented.
+- All moves used `git mv` (history preserved). Build (`build.sh`,
+  `run-style-dictionary.mjs`, `build-tokens.mjs`) and the CI validator repointed
+  to `programs/*/{tokens.json,skin.css}`; `css/programs.css` removed (split into
+  per-program `skin.css`). Added `.github/CODEOWNERS` routing `programs/**` to
+  Brand & Communications.
+- `dist/gsc-design-system.css` output is unchanged in content — **consumers who
+  import the one bundle are unaffected.** Verified lossless: `npm run validate`
+  passes and the program showcase renders identically (all logos load).
+
+### Fixed
+- The hex-parity validator is now **corporate-inheritance-aware**: it checks each
+  program's own `skin.css` (plus the corporate base) instead of scanning one
+  monolithic file. This surfaced (and correctly resolves) cases like GSA/GBA/GRA
+  declaring white in tokens while inheriting it from the corporate base — a real
+  check the old whole-file scan silently passed.
+
 ## [3.0.0] — 2026-07-13 — Multi-program design system
 
 ### Added

@@ -45,9 +45,10 @@ identity — palette, typography, and voice — all approved by **Luisa León**
   Academy** · **Nido Águila Guatemala** (Club América) · **Ser Portero** ·
   **Juventus Academy Guatemala** · **Baby Juve**
 
-Each program gets a token file (`tokens/programs/`) and a brand sheet
-(`docs/programs/`). Apply a program's brand with `data-program="gsa"` (etc.) on
-a root element. Full reference → **[DESIGN.md](DESIGN.md)**.
+Each academy is a **self-contained folder** — `programs/<slug>/` holds its
+tokens, skin, brand sheet, logos and source docs. Apply a program's brand with
+`data-program="gsa"` (etc.) on a root element. Full reference →
+**[DESIGN.md](DESIGN.md)**.
 
 ## Install as an AI skill (authorized GSC users)
 
@@ -111,8 +112,8 @@ reference for every token and component.
 
 > **Program skins:** add `data-program="gsa"` (or gba, gra, nido-aguila,
 > ser-portero, juventus-academy, baby-juve) to `<body>` to switch to that
-> academy's confirmed palette and display font. See `css/programs.css` and
-> `docs/programs/`.
+> academy's confirmed palette and display font. Everything for an academy lives
+> in `programs/<slug>/` (tokens, `skin.css`, `brand.md`, logos).
 
 ---
 
@@ -121,45 +122,33 @@ reference for every token and component.
 ```
 GSC-Design-System/
 ├── index.html                     # Living style guide (start here)
-├── dist/
-│   └── gsc-design-system.css      # Bundled core build — the one file to import
+├── dist/gsc-design-system.css     # Bundled build — the one file to import
+│
+│   ── SHARED SYSTEM (corporate, program-agnostic) ──
+├── tokens/gsc.tokens.json         # W3C DTCG corporate token source
 ├── css/                           # Modular source
-│   ├── fonts.css                  #   00 · Google Fonts import
-│   ├── tokens.css                 #   01 · Design tokens (single source of truth)
-│   ├── base.css                   #   02 · Reset, base type, layout primitives
-│   ├── typography.css             #   03 · Named type styles
-│   ├── utilities.css              #   04 · Layout/spacing helpers
-│   ├── components.css             #   05 · All components
-│   ├── presentation.css           #   channel · 16:9 slide framework
-│   ├── mobile.css                 #   channel · mobile app shell
-│   └── print.css                  #   channel · documents / print (inverted palette)
-├── templates/                     # Working, copy-me starting points
-│   ├── presentation.html          #   16:9 deck (7 slide types + FONDOS)
-│   ├── landing.html               #   marketing landing page
-│   ├── mobile-app.html            #   phone mockups (2 screens)
-│   └── document.html              #   A4 investment memo (2 pages)
-├── .claude/skills/                # AI Agent Skills (4 × SKILL.md + reference/)
-│   ├── building-gsc-brand/ · designing-gsc-interfaces/
-│   └── writing-gsc-copy/ · designing-gsc-landing-pages/
-├── tokens/gsc.tokens.json         # W3C DTCG token source (cross-platform)
-├── scripts/                       # Token pipeline + CI validator
-│   ├── run-style-dictionary.mjs   #   canonical build → build/{css,scss,js,ios,android}
-│   ├── build-tokens.mjs           #   dependency-free fallback build
-│   └── validate-tokens.mjs        #   DTCG validity · hex parity · WCAG audit (CI)
+│   ├── fonts.css tokens.css base.css typography.css utilities.css components.css
+│   └── presentation.css mobile.css print.css     # channel overlays
+├── templates/                     # Copy-me starting points
+│   └── presentation.html landing.html mobile-app.html document.html
+│
+│   ── PROGRAM LAYER (one self-contained folder per academy) ──
+├── programs/
+│   ├── gsa/                        # Global Soccer Academy
+│   │   ├── tokens.json             #   DTCG brand tokens (canonical)
+│   │   ├── skin.css                #   [data-program="gsa"] palette + font
+│   │   ├── brand.md                #   full brand sheet
+│   │   ├── logos/                  #   logo files
+│   │   └── _source/                #   Open Knowledge Pack (provenance)
+│   └── gba/ gra/ nido-aguila/ ser-portero/ juventus-academy/ baby-juve/
+│
+│   ── TOOLING & DOCS ──
+├── .claude/skills/                # 4 AI Agent Skills (+ AGENTS.md, DESIGN.md)
+├── scripts/                       # run-style-dictionary · build-tokens · validate-tokens
 ├── build/                         # Generated tokens (CSS/SCSS/JS/Swift/XML)
-├── templates/                     # Working, copy-me starting points
-│   ├── presentation.html          #   16:9 deck (7 slide types + FONDOS)
-│   ├── landing.html               #   marketing landing page
-│   ├── mobile-app.html            #   phone mockups (2 screens)
-│   └── document.html              #   A4 investment memo (2 pages)
-├── docs/                          # Guidelines — how to speak the system
-│   ├── README.md · brand.md · copywriting.md · tokens.md
-│   ├── presentations.md · landing-pages.md · mobile.md · forms.md · documents.md
-├── AGENTS.md · DESIGN.md          # Cross-tool AI references (Cursor/Codex/…)
-├── install.sh                     # One-command skill install
-├── assets/gsc-logo.png            # Brand mark
-├── examples/prospectus.html       # The original prospectus (reference)
-├── build.sh                       # Concatenates core css/ → dist/
+├── docs/                          # Guidelines (brand, copywriting, tokens, governance, a11y…)
+├── assets/                        # gsc-logo.png · fonts/ (Morganite) · logos/gsc-corporate/
+├── build.sh · install.sh · CONTRIBUTING.md · CHANGELOG.md · LICENSE
 └── README.md
 ```
 

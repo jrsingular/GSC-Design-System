@@ -25,7 +25,7 @@ font — never invent or substitute values.
 | Baby Juve | `baby-juve` | #000000 #FFFFFF #F9C016 | JuventusFans* |
 
 * = proprietary font, not bundled — see DESIGN.md §4. Full per-program specs in
-docs/programs/. Token files (tokens/programs/*.tokens.json) are the canonical
+programs/<slug>/brand.md. Token files (programs/*/tokens.json) are the canonical
 source. All values confirmed by Luisa León — do not edit without her approval.
 
 ## Golden rules

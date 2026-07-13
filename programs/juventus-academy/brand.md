@@ -46,7 +46,7 @@ Communication should balance aspiration and joy. The "divertido" quality means c
 
 ## Logo
 
-Logo files are stored in `assets/logos/juventus-academy/`:
+Logo files are stored in `logos/`:
 
 | File                                | Format | Status                                   |
 |-------------------------------------|--------|------------------------------------------|
@@ -75,12 +75,12 @@ Apply the program identity via the `data-program` attribute on the document body
 </body>
 ```
 
-The `data-program="juventus-academy"` selector maps to `tokens/programs/juventus-academy.tokens.json` for all colour, typography, and spacing tokens.
+The `data-program="juventus-academy"` selector maps to `tokens.json` for all colour, typography, and spacing tokens.
 
 ## Governance
 
 - **Design approval:** Luisa León approves all designs before publication or deployment.
-- **Token file (canonical source of truth):** `tokens/programs/juventus-academy.tokens.json`
-- **Source document:** `docs/programs/_source/juventus-academy-2026.docx`
+- **Token file (canonical source of truth):** `tokens.json`
+- **Source document:** `_source/juventus-academy-2026.docx`
 - **Partner relationship:** Juventus FC (official licensed academy). Respect Juventus FC brand guidelines where they apply; Luisa León is the arbiter for local adaptation.
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.

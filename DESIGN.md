@@ -19,7 +19,7 @@ GSC runs a **two-layer token system**:
    spacing, radius, motion, the neutral ink ramp, and the corporate red/orange/
    crema palette. Shared by every surface that speaks *as GSC* (investor decks,
    corporate site, group-level communications).
-2. **Program overrides** (`tokens/programs/*.tokens.json`) — one per academy.
+2. **Program overrides** (`programs/*/tokens.json`) — one per academy.
    Each inherits the corporate base (spacing, radius, motion, type ramp) and
    overrides **color** and **font family** with that program's confirmed brand.
 
@@ -28,17 +28,21 @@ and type. This keeps the system coherent while letting each academy look like
 itself. The build (Style Dictionary) compiles both layers into per-platform
 outputs (CSS, SCSS, JS, iOS, Android).
 
+**Organization is program-first**: the shared corporate system lives in `css/`
+and `tokens/gsc.tokens.json`; each academy is a self-contained folder under
+`programs/<slug>/` holding everything about that brand.
+
 ```
-tokens/
-  gsc.tokens.json              # corporate base (red/orange/crema/ink + type + space)
-  programs/
-    gsa.tokens.json            # Global Soccer Academy
-    gba.tokens.json            # Global Basketball Academy
-    gra.tokens.json            # Global Running Academy
-    nido-aguila.tokens.json    # Nido Águila Guatemala (Club América)
-    ser-portero.tokens.json    # Ser Portero
-    juventus-academy.tokens.json   # Juventus Academy Guatemala
-    baby-juve.tokens.json      # Baby Juve (inherits Juventus Academy)
+tokens/gsc.tokens.json         # corporate base (red/orange/crema/ink + type + space)
+css/                           # shared system (base, components, typography, channels…)
+programs/                      # one self-contained folder per academy
+  gsa/                         # Global Soccer Academy
+    tokens.json                #   DTCG brand tokens (canonical source)
+    skin.css                   #   [data-program="gsa"] palette + font override
+    brand.md                   #   full brand sheet
+    logos/                     #   logo files
+    _source/                   #   Open Knowledge Pack (provenance)
+  gba/ · gra/ · nido-aguila/ · ser-portero/ · juventus-academy/ · baby-juve/
 ```
 
 ---
@@ -85,7 +89,7 @@ investor, rights, and group-level work — **not** for individual academy comms.
 
 ## 2 · Program brands (confirmed)
 
-Each program has its own brand sheet in `docs/programs/`. This table is the
+Each program has its own brand sheet at `programs/<slug>/brand.md`. This table is the
 quick reference; the token files are the source of truth.
 
 | Program | Primary | Accent | Surface | Display font | UI font | Voice |
@@ -108,7 +112,7 @@ Every palette hex and font name above was **confirmed by Luisa León**. Do not
 substitute, "improve," or invent values. If a value seems wrong, the fix is to
 **ask Luisa**, not to change the token. Earlier versions of this file contained
 invented program palettes — those have been removed. The token files
-(`tokens/programs/*.tokens.json`) are the canonical source.
+(`programs/*/tokens.json`) are the canonical source.
 
 ---
 
@@ -119,23 +123,23 @@ invented program palettes — those have been removed. The token files
 - **Fonts** Morganite (primary, Google Fonts — bundled in `assets/fonts/`) +
   Montserrat (secondary).
 - **Voice** aspiracional, profesional, deportiva.
-- **Logos** `assets/logos/gsa/` — `gsa-logo-color.png`, `.jpg`, `gsa-logo-line-art.ai`.
-- **Full sheet** → `docs/programs/gsa.md`
+- **Logos** `programs/gsa/logos/` — `gsa-logo-color.png`, `.jpg`, `gsa-logo-line-art.ai`.
+- **Full sheet** → `programs/gsa/brand.md`
 
 ### Global Basketball Academy (GBA)
 - **Palette** `#1C1C1C` `#FE0000` `#A3A6A9` `#FFFFFF` — confirmed.
 - **Fonts** Academic M54 (primary, proprietary) + Redwing (proprietary) +
   Montserrat (secondary).
 - **Voice** aspiracional, profesional, deportiva, ambiente basquetbolista.
-- **Logos** `assets/logos/gba/` — `gba-logo-color.png`, `.jpg`.
-- **Full sheet** → `docs/programs/gba.md`
+- **Logos** `programs/gba/logos/` — `gba-logo-color.png`, `.jpg`.
+- **Full sheet** → `programs/gba/brand.md`
 
 ### Global Running Academy (GRA)
 - **Palette** `#EE8A04` `#E53518` `#FFFFFF` — confirmed.
 - **Fonts** Unison Pro (primary, proprietary) + Montserrat (secondary).
 - **Voice** emocional, atlética, profesional.
-- **Logos** `assets/logos/gra/` — `gra-logo-color.png`, `.jpg`.
-- **Full sheet** → `docs/programs/gra.md`
+- **Logos** `programs/gra/logos/` — `gra-logo-color.png`, `.jpg`.
+- **Full sheet** → `programs/gra/brand.md`
 
 ### Nido Águila Guatemala
 - **Palette** `#F8E602` `#FFFFFF` `#111A2D` (Club América) — confirmed.
@@ -144,8 +148,8 @@ invented program palettes — those have been removed. The token files
 - **Voice** aspiracional, profesional, deportiva Club América, locución de
   estadio. **Slogan:** *Grandes de corazón.*
 - **Partner** Club América de México (official).
-- **Logos** `assets/logos/nido-aguila/` — `nido-aguila-logo-color.png`, `-alt.png`.
-- **Full sheet** → `docs/programs/nido-aguila.md`
+- **Logos** `programs/nido-aguila/logos/` — `nido-aguila-logo-color.png`, `-alt.png`.
+- **Full sheet** → `programs/nido-aguila/brand.md`
 
 ### Ser Portero
 - **Palette** `#916E35` (marrón/oro) `#FFFFFF` `#000000` — confirmed.
@@ -153,9 +157,9 @@ invented program palettes — those have been removed. The token files
   Montserrat (secondary).
 - **Voice** emocional, atlética, profesional e inspiracional.
 - **Slogans** *El Ser está antes que el portero* · *Tu mente dirige tu parada.*
-- **Logos** `assets/logos/ser-portero/` — `ser-portero-logo-color.png`,
+- **Logos** `programs/ser-portero/logos/` — `ser-portero-logo-color.png`,
   `-alt.png`, `ser-portero-symbol.png`.
-- **Full sheet** → `docs/programs/ser-portero.md`
+- **Full sheet** → `programs/ser-portero/brand.md`
 
 ### Juventus Academy Guatemala
 - **Palette** `#000000` `#FFFFFF` `#F9C016` (Juventus yellow) — confirmed.
@@ -165,17 +169,17 @@ invented program palettes — those have been removed. The token files
 - **Philosophy** *Formamos personas antes que jugadores.* Methodology: Juventus
   Way (Style of Play, Technical, Tactical, Mental, Emotional & Social).
 - **Partner** Juventus FC (official licensed academy).
-- **Logos** `assets/logos/juventus-academy/` — `juventus-academy-logo-color.png`,
+- **Logos** `programs/juventus-academy/logos/` — `juventus-academy-logo-color.png`,
   `-mono.png`.
-- **Full sheet** → `docs/programs/juventus-academy.md`
+- **Full sheet** → `programs/juventus-academy/brand.md`
 
 ### Baby Juve
 - **Inherits Juventus Academy branding** — same palette, same fonts.
 - **Voice differs:** divertido, infantil deportivo, emocionante.
 - **Program** iniciación deportiva, ages 3–5, non-competitive, Juventus Academy
   methodology with introduction to Italian language.
-- **Logos** `assets/logos/baby-juve/` — `baby-juve-logo-color.png`.
-- **Full sheet** → `docs/programs/baby-juve.md`
+- **Logos** `programs/baby-juve/logos/` — `baby-juve-logo-color.png`.
+- **Full sheet** → `programs/baby-juve/brand.md`
 
 ---
 
@@ -220,7 +224,7 @@ it, do not silently swap in a "similar" face.
 
 Program skins are applied by setting a `data-program` attribute on a root
 element (e.g. `<body data-program="gsa">`); the compiled program CSS variables
-override the corporate defaults for that subtree. See `docs/programs/` for
+override the corporate defaults for that subtree. See `programs/<slug>/brand.md` for
 usage.
 
 ---
@@ -262,9 +266,9 @@ CTAs name the action ("Request the data room") · ration urgency. Full guide:
 
 - **Brand approval:** Luisa León approves all designs and any change to palette,
   typography, or voice values.
-- **Token changes:** edit `tokens/programs/*.tokens.json`, run `npm run tokens`,
+- **Token changes:** edit `programs/*/tokens.json`, run `npm run tokens`,
   open a PR. Do not edit generated `build/` files directly.
-- **Asset additions:** drop logos into `assets/logos/{program}/` using the
+- **Asset additions:** drop logos into `programs/{slug}/logos/` using the
   nomenclature in `docs/asset-manifest.md`; update the manifest in the same PR.
 - **Full governance** → `docs/governance.md` (roles, sources of truth, change
   workflows); operational matters live in the Open Knowledge Pack (`SOUL.md`).

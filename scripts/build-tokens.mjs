@@ -2,7 +2,7 @@
 // DTCG token source without requiring the style-dictionary npm package.
 // The canonical path is `npm run tokens` (Style Dictionary v4); use this
 // script only when the npm registry is unreachable:  node scripts/build-tokens.mjs
-// Reads tokens/gsc.tokens.json + tokens/programs/*.tokens.json and emits
+// Reads tokens/gsc.tokens.json + programs/*/tokens.json and emits
 // build/{css,scss,js,ios,android} mirrors of what `npm run tokens` produces.
 import fs from 'fs';
 import path from 'path';
@@ -12,12 +12,13 @@ import { fileURLToPath } from 'url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const corpToken = JSON.parse(fs.readFileSync(path.join(root, 'tokens/gsc.tokens.json'), 'utf8'));
 
-// Load program token files
-const progDir = path.join(root, 'tokens/programs');
-const progFiles = fs.readdirSync(progDir).filter(f => f.endsWith('.tokens.json'));
-const progTokens = progFiles.map(f => ({
-  slug: f.replace('.tokens.json', ''),
-  data: JSON.parse(fs.readFileSync(path.join(progDir, f), 'utf8'))
+// Load program token files — colocated at programs/<slug>/tokens.json
+const progRoot = path.join(root, 'programs');
+const progSlugs = fs.readdirSync(progRoot)
+  .filter(d => fs.existsSync(path.join(progRoot, d, 'tokens.json'))).sort();
+const progTokens = progSlugs.map(slug => ({
+  slug,
+  data: JSON.parse(fs.readFileSync(path.join(progRoot, slug, 'tokens.json'), 'utf8'))
 }));
 
 // Flatten a DTCG token tree into { path: [...], value } entries.
@@ -65,7 +66,7 @@ fs.mkdirSync(path.join(root, 'build/css'), { recursive: true });
 fs.writeFileSync(path.join(root, 'build/css/gsc-tokens.css'), cssLines.join('\n') + '\n');
 
 // Per-program CSS scopes (data-program selectors)
-const progCssLines = ['/* Program token scopes — generated. Canonical CSS lives in css/programs.css */'];
+const progCssLines = ['/* Program token scopes — generated. Canonical CSS lives in programs/<slug>/skin.css */'];
 for (const p of progTokens) {
   const flat = flatten(p.data);
   progCssLines.push(`[data-program="${p.slug}"] {`);

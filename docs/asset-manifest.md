@@ -176,18 +176,18 @@ brand sheet for how the art informs the style.
 ## Source documents (Open Knowledge Packs)
 
 The original brand/program documents Luisa shared are kept in
-`docs/programs/_source/` as provenance for the confirmed values. They are the
+`programs/<slug>/_source/` as provenance for the confirmed values. They are the
 authoritative backing for the token files and brand sheets.
 
 | Program | Source file |
 |---|---|
-| GSA | `docs/programs/_source/gsa-open-knowledge-pack.pdf` |
-| GBA | `docs/programs/_source/gba-open-knowledge-pack.pdf` |
-| GRA | `docs/programs/_source/gra-open-knowledge-pack.pdf` |
-| Nido Águila | `docs/programs/_source/nido-aguila-open-knowledge-pack.pdf` |
-| Ser Portero | `docs/programs/_source/ser-portero-brand-doc.docx` |
-| Juventus Academy | `docs/programs/_source/juventus-academy-2026.docx` |
-| Baby Juve | `docs/programs/_source/baby-juve-program-doc.pdf` |
+| GSA | `programs/gsa/_source/gsa-open-knowledge-pack.pdf` |
+| GBA | `programs/gba/_source/gba-open-knowledge-pack.pdf` |
+| GRA | `programs/gra/_source/gra-open-knowledge-pack.pdf` |
+| Nido Águila | `programs/nido-aguila/_source/nido-aguila-open-knowledge-pack.pdf` |
+| Ser Portero | `programs/ser-portero/_source/ser-portero-brand-doc.docx` |
+| Juventus Academy | `programs/juventus-academy/_source/juventus-academy-2026.docx` |
+| Baby Juve | `programs/baby-juve/_source/baby-juve-program-doc.pdf` |
 
 ---
 

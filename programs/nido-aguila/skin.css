@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Nido Águila Guatemala — program skin  ·  data-program="nido-aguila"
+   Confirmed by Luisa León. Source of truth: programs/nido-aguila/tokens.json
+   Overrides colour + display/ui font only; spacing/radius/motion inherit
+   from the corporate base (css/tokens.css). Do not edit without approval.
+   ========================================================================== */
+[data-program="nido-aguila"] {
+  --gsc-ink:        #111A2D;
+  --gsc-ink-soft:   #1C2640;
+  --gsc-ink-raised: #263252;
+  --gsc-line:       #2E3A57;
+  --gsc-red:        #F8E602;   /* yellow takes the primary-action role */
+  --gsc-red-deep:   #D9CF02;
+  --gsc-orange:     #FFFFFF;   /* white serves the secondary-accent role */
+  --gsc-text-4:     #C7CDD9;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Morganite', Impact, sans-serif;
+  --font-ui:        'ITC Avant Garde Gothic Pro', 'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}

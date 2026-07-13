@@ -13,20 +13,20 @@ Referenced from DESIGN.md §9 (this file closes the "pending" it named).
 
 ## Sources of truth (in priority order)
 
-1. **Token files** — `tokens/gsc.tokens.json` + `tokens/programs/*.tokens.json`.
+1. **Token files** — `tokens/gsc.tokens.json` + `programs/*/tokens.json`.
    Canonical for every colour, font stack, spacing, radius, motion value.
-2. **Hand-authored CSS** — `css/tokens.css`, `css/programs.css`. Must mirror the
+2. **Hand-authored CSS** — `css/tokens.css`, `programs/<slug>/skin.css`. Must mirror the
    token files exactly; CI (`.github/workflows/validate.yml`) fails a PR whose
    skin hexes drift from the tokens.
 3. **Generated outputs** — `build/`, `dist/`. Never edited by hand; regenerate
    with `npm run build`.
-4. **Docs** — DESIGN.md, docs/programs/*.md describe; they never override tokens.
+4. **Docs** — DESIGN.md, programs/*/brand.md describe; they never override tokens.
 
 ## Change workflows
 
 ### Brand value (palette / font / voice / slogan)
 1. Get Luisa León's confirmation in writing (Slack #soulmd or equivalent).
-2. Edit the token file; mirror the value in `css/tokens.css` or `css/programs.css`.
+2. Edit the token file; mirror the value in `css/tokens.css` or `programs/<slug>/skin.css`.
 3. `npm run build && npm run validate` — parity + contrast must pass (0 hard failures).
 4. PR citing Luisa's confirmation; update `docs/accessibility.md` if a palette changed.
 

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Baby Juve — program skin  ·  data-program="baby-juve"
+   Confirmed by Luisa León. Source of truth: programs/baby-juve/tokens.json
+   Overrides colour + display/ui font only; spacing/radius/motion inherit
+   from the corporate base (css/tokens.css). Do not edit without approval.
+   ========================================================================== */
+[data-program="baby-juve"] {
+  --gsc-ink:        #000000;
+  --gsc-ink-soft:   #1A1A1A;
+  --gsc-ink-raised: #242424;
+  --gsc-line:       #333333;
+  --gsc-red:        #F9C016;
+  --gsc-red-deep:   #D6A412;
+  --gsc-orange:     #FFFFFF;
+  --gsc-text-4:     #D9D9D9;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'JuventusFans', Impact, sans-serif;
+  --font-ui:        'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}

@@ -36,7 +36,7 @@ Communication should elevate and motivate young players while maintaining a prof
 
 ## Logo
 
-Logo files are stored in `assets/logos/gsa/`:
+Logo files are stored in `logos/`:
 
 | File                        | Format | Status                                   |
 |-----------------------------|--------|------------------------------------------|
@@ -67,11 +67,11 @@ Apply the program identity via the `data-program` attribute on the document body
 </body>
 ```
 
-The `data-program="gsa"` selector maps to `tokens/programs/gsa.tokens.json` for all colour, typography, and spacing tokens.
+The `data-program="gsa"` selector maps to `tokens.json` for all colour, typography, and spacing tokens.
 
 ## Governance
 
 - **Design approval:** Luisa León approves all designs before publication or deployment.
-- **Token file (canonical source of truth):** `tokens/programs/gsa.tokens.json`
-- **Source document:** `docs/programs/_source/gsa-open-knowledge-pack.pdf`
+- **Token file (canonical source of truth):** `tokens.json`
+- **Source document:** `_source/gsa-open-knowledge-pack.pdf`
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.

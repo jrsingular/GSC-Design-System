@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Global Basketball Academy — program skin  ·  data-program="gba"
+   Confirmed by Luisa León. Source of truth: programs/gba/tokens.json
+   Overrides colour + display/ui font only; spacing/radius/motion inherit
+   from the corporate base (css/tokens.css). Do not edit without approval.
+   ========================================================================== */
+[data-program="gba"] {
+  --gsc-ink:        #1C1C1C;
+  --gsc-ink-soft:   #262626;
+  --gsc-ink-raised: #303030;
+  --gsc-line:       #3A3A3A;
+  --gsc-red:        #FE0000;
+  --gsc-red-deep:   #CC0000;
+  --gsc-orange:     #A3A6A9;   /* steel grey serves the secondary-accent role */
+  --gsc-text-4:     #D6D6D6;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Academic M54', Impact, sans-serif;
+  --font-ui:        'Redwing', 'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-red);
+  --color-primary-hover: var(--gsc-red-deep);
+  --color-accent:        var(--gsc-orange);
+}

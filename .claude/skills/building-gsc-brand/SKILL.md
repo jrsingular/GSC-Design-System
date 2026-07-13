@@ -72,8 +72,8 @@ Luisa-León-confirmed palette, display font, and voice — applied with
 
 **Non-negotiable brand-accuracy rule:** never invent, substitute, or "improve"
 a program's palette hex or font name. The canonical values live in
-`tokens/programs/*.tokens.json` and `css/programs.css`; per-program sheets in
-`docs/programs/*.md`; quick table in `DESIGN.md` §2. If a value seems wrong,
+`programs/*/tokens.json` and `programs/<slug>/skin.css`; per-program sheets in
+`programs/*/brand.md`; quick table in `DESIGN.md` §2. If a value seems wrong,
 the fix is to ask Luisa León — not to change it. Proprietary program fonts
 (Academic M54, Unison Pro, Headline Gothic ATF, JuventusFans, ITC Avant Garde
 Gothic Pro) are named but not bundled; keep the family name with its fallback.

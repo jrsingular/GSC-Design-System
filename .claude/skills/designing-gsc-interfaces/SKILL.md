@@ -56,7 +56,7 @@ corporate:
 ```
 
 All components work unchanged under a skin (they consume tokens). Rules:
-values come from `tokens/programs/*.tokens.json` — never hard-code or invent a
+values come from `programs/*/tokens.json` — never hard-code or invent a
 program colour; program accents on dark are **large-text-only** in GSA, GBA,
 GRA and Ser Portero (body text stays white/the program body tint — see
 `docs/accessibility.md`); Morganite is bundled and self-hosted, other program

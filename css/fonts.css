@@ -4,7 +4,7 @@
    Corporate faces (Bebas Neue / Montserrat / Roboto) load from Google Fonts —
    self-host for production. Program display face Morganite (OFL) is BUNDLED
    and self-hosted below as WOFF2 (TTF sources in assets/fonts/), so program
-   skins (css/programs.css) render their confirmed typography out of the box.
+   skins (programs/<slug>/skin.css) render their confirmed typography out of the box.
 
    Proprietary program fonts (Academic M54, Unison Pro, Headline Gothic ATF,
    JuventusFans, ITC Avant Garde Gothic Pro, Redwing) are NOT bundled for

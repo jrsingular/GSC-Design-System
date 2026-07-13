@@ -39,7 +39,7 @@ Communication should speak to the goalkeeper's emotional journey — the isolati
 
 ## Logo
 
-Logo files are stored in `assets/logos/ser-portero/`:
+Logo files are stored in `logos/`:
 
 | File                            | Format | Status                                   |
 |---------------------------------|--------|------------------------------------------|
@@ -70,11 +70,11 @@ Apply the program identity via the `data-program` attribute on the document body
 </body>
 ```
 
-The `data-program="ser-portero"` selector maps to `tokens/programs/ser-portero.tokens.json` for all colour, typography, and spacing tokens.
+The `data-program="ser-portero"` selector maps to `tokens.json` for all colour, typography, and spacing tokens.
 
 ## Governance
 
 - **Design approval:** Luisa León approves all designs before publication or deployment.
-- **Token file (canonical source of truth):** `tokens/programs/ser-portero.tokens.json`
-- **Source document:** `docs/programs/_source/ser-portero-brand-doc.docx`
+- **Token file (canonical source of truth):** `tokens.json`
+- **Source document:** `_source/ser-portero-brand-doc.docx`
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.

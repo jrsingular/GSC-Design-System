@@ -3,9 +3,9 @@
 //
 // Enforces in CI what docs/self-evaluation.md verified by hand:
 //   1. DTCG validity   — all token files parse; every leaf has $value; aliases resolve.
-//   2. Hex parity      — every program colour in tokens/programs/*.tokens.json
+//   2. Hex parity      — every program colour in programs/*/tokens.json
 //                        appears in that program's [data-program] block in
-//                        css/programs.css (the hand-authored skin must match
+//                        programs/<slug>/skin.css (the hand-authored skin must match
 //                        the canonical token source).
 //   3. Contrast audit  — WCAG 2.1 ratios recomputed per program. Hard failures
 //                        (< 3:1) fail the build; large-only accents (3–4.5:1)
@@ -28,10 +28,11 @@ const ok = (m) => console.log(`  ✓ ${m}`);
 
 /* ---------- 1 · DTCG validity -------------------------------------------- */
 console.log('\n1 · DTCG token validity');
+const programSlugs = fs.readdirSync(rel('programs'))
+  .filter(d => fs.existsSync(rel(`programs/${d}/tokens.json`))).sort();
 const tokenFiles = [
   'tokens/gsc.tokens.json',
-  ...fs.readdirSync(rel('tokens/programs')).filter(f => f.endsWith('.tokens.json'))
-    .sort().map(f => `tokens/programs/${f}`)
+  ...programSlugs.map(slug => `programs/${slug}/tokens.json`)
 ];
 const KNOWN_TYPES = new Set(['color', 'fontFamily', 'fontWeight', 'dimension', 'duration', 'string']);
 const trees = {};
@@ -68,25 +69,25 @@ for (const file of tokenFiles) {
   } catch (e) { err(`${file}: ${e.message}`); }
 }
 
-/* ---------- 2 · Hex parity tokens ↔ css/programs.css ---------------------- */
-console.log('\n2 · Hex parity (tokens/programs ↔ css/programs.css)');
-const programsCss = fs.readFileSync(rel('css/programs.css'), 'utf8');
-function cssBlock(slug) {
-  const m = programsCss.match(new RegExp(`\\[data-program="${slug}"\\]\\s*{([^}]*)}`, 's'));
-  return m ? m[1].toLowerCase() : null;
-}
-for (const file of tokenFiles.slice(1)) {
-  const slug = path.basename(file).replace('.tokens.json', '');
-  const block = cssBlock(slug);
-  if (!block) { err(`css/programs.css: no [data-program="${slug}"] block`); continue; }
-  const hexes = [...new Set((trees[file] || [])
+/* ---------- 2 · Hex parity tokens ↔ programs/<slug>/skin.css -------------- */
+console.log('\n2 · Hex parity (programs/<slug>/tokens.json ↔ skin.css, corporate-inheritance-aware)');
+// Programs override colour where they differ and INHERIT the corporate base
+// otherwise (e.g. white text = corporate --gsc-text). A token hex is satisfied
+// if it appears in the program's own skin OR is already provided by the
+// corporate base (css/tokens.css). This checks the skin never omits a
+// program-specific colour, without demanding it re-declare inherited neutrals.
+const corporateCss = fs.readFileSync(rel('css/tokens.css'), 'utf8').toLowerCase();
+for (const slug of programSlugs) {
+  const skinPath = rel(`programs/${slug}/skin.css`);
+  if (!fs.existsSync(skinPath)) { err(`programs/${slug}/skin.css missing`); continue; }
+  const skin = fs.readFileSync(skinPath, 'utf8').toLowerCase();
+  if (!skin.includes(`[data-program="${slug}"]`)) err(`programs/${slug}/skin.css: no [data-program="${slug}"] selector`);
+  const hexes = [...new Set((trees[`programs/${slug}/tokens.json`] || [])
     .filter(l => l.type === 'color' && /^#/.test(String(l.value)))
     .map(l => String(l.value).toLowerCase()))];
-  // The skin exposes brand + primary/hover/accent; computed shades (surface,
-  // body-text tints) live only in tokens. Require brand-critical hexes.
-  const missing = hexes.filter(h => !block.includes(h) && !programsCss.toLowerCase().includes(h));
-  if (missing.length) err(`${slug}: token hexes absent from css/programs.css → ${missing.join(', ')}`);
-  else ok(`${slug} — ${hexes.length} colour values present in skin`);
+  const missing = hexes.filter(h => !skin.includes(h) && !corporateCss.includes(h));
+  if (missing.length) err(`${slug}: token hexes in neither skin.css nor corporate base → ${missing.join(', ')}`);
+  else ok(`${slug} — ${hexes.length} colour values present (skin + inherited)`);
 }
 
 /* ---------- 3 · WCAG contrast audit --------------------------------------- */
@@ -104,9 +105,8 @@ const ratio = (a, b) => {
   return (l1 + 0.05) / (l2 + 0.05);
 };
 let hard = 0;
-for (const file of tokenFiles.slice(1)) {
-  const slug = path.basename(file).replace('.tokens.json', '');
-  const leaves = trees[file] || [];
+for (const slug of programSlugs) {
+  const leaves = trees[`programs/${slug}/tokens.json`] || [];
   const get = (p) => {
     const l = leaves.find(x => x.path === `color.semantic.${p}`);
     if (!l) return null;

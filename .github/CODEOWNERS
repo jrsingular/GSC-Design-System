@@ -1,0 +1,19 @@
+# GSC Design System — code ownership
+# Brand values (palette, typography, voice) are confirmed by Luisa León; every
+# per-program folder is owned by Brand & Communications so changes route for
+# approval. See docs/governance.md.
+#
+# Replace the placeholder handles with real GitHub usernames/teams.
+
+# Per-program brand packages — Brand & Communications (Luisa León) approves.
+/programs/**                @gsc-brand
+
+# Shared brand + token sources — Brand & Communications.
+/tokens/                    @gsc-brand
+/css/tokens.css             @gsc-brand
+/docs/brand.md              @gsc-brand
+/docs/governance.md         @gsc-brand
+/docs/accessibility.md      @gsc-brand
+
+# Everything else — design-system maintainers.
+*                           @gsc-design-system

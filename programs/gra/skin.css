@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Global Running Academy — program skin  ·  data-program="gra"
+   Confirmed by Luisa León. Source of truth: programs/gra/tokens.json
+   Overrides colour + display/ui font only; spacing/radius/motion inherit
+   from the corporate base (css/tokens.css). Do not edit without approval.
+   ========================================================================== */
+[data-program="gra"] {
+  --gsc-ink:        #1A1A1A;
+  --gsc-ink-soft:   #262626;
+  --gsc-ink-raised: #303030;
+  --gsc-line:       #3A3A3A;
+  --gsc-red:        #E53518;
+  --gsc-red-deep:   #B82A12;
+  --gsc-orange:     #EE8A04;
+  --gsc-text-4:     #E0E0E0;   /* program body-text tint (color.semantic.body) */
+  --font-display:   'Unison Pro', Impact, sans-serif;
+  --font-ui:        'Montserrat', system-ui, sans-serif;
+  --color-primary:       var(--gsc-orange);
+  --color-primary-hover: #C46F03;
+  --color-accent:        var(--gsc-red);
+}

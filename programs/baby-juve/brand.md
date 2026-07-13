@@ -43,7 +43,7 @@ Baby Juve's voice differs intentionally from Juventus Academy's. Communication s
 
 ## Logo
 
-Logo files are stored in `assets/logos/baby-juve/`:
+Logo files are stored in `logos/`:
 
 | File                        | Format | Status                                       |
 |-----------------------------|--------|----------------------------------------------|
@@ -74,12 +74,12 @@ Apply the program identity via the `data-program` attribute on the document body
 </body>
 ```
 
-The `data-program="baby-juve"` selector maps to `tokens/programs/baby-juve.tokens.json` for all colour, typography, and spacing tokens. Baby Juve tokens inherit from `juventus-academy` tokens where values are shared; overrides apply only where Baby Juve differs (voice/tone, age range, program nature).
+The `data-program="baby-juve"` selector maps to `tokens.json` for all colour, typography, and spacing tokens. Baby Juve tokens inherit from `juventus-academy` tokens where values are shared; overrides apply only where Baby Juve differs (voice/tone, age range, program nature).
 
 ## Governance
 
 - **Design approval:** Luisa León approves all designs before publication or deployment.
-- **Token file (canonical source of truth):** `tokens/programs/baby-juve.tokens.json`
-- **Source document:** `docs/programs/_source/baby-juve-program-doc.pdf`
-- **Parent program:** Juventus Academy (`juventus-academy`). Refer to `docs/programs/juventus-academy.md` for the full Juventus Academy identity, methodology, and partner relationship details.
+- **Token file (canonical source of truth):** `tokens.json`
+- **Source document:** `_source/baby-juve-program-doc.pdf`
+- **Parent program:** Juventus Academy (`juventus-academy`). Refer to `../juventus-academy/brand.md` for the full Juventus Academy identity, methodology, and partner relationship details.
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.

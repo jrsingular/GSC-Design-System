@@ -8,13 +8,13 @@ one source drives every platform identically.
 
 1. **Corporate base** — `tokens/gsc.tokens.json`. Palette, type, spacing,
    radius, motion for the GSC parent brand.
-2. **Program overrides** — `tokens/programs/*.tokens.json`, one per academy
+2. **Program overrides** — `programs/*/tokens.json`, one per academy
    (gsa, gba, gra, nido-aguila, ser-portero, juventus-academy, baby-juve).
    Each overrides **colour + font family only**; spacing/radius/motion are
    inherited from the corporate base. Values are confirmed by Luisa León —
    see `docs/governance.md` before editing anything.
 
-The hand-authored `css/tokens.css` (corporate) and `css/programs.css` (skins)
+The hand-authored `css/tokens.css` (corporate) and `programs/<slug>/skin.css` (skins)
 remain the canonical **web** stylesheets. CI enforces that their values match
 the token files (`npm run validate`).
 
@@ -52,8 +52,8 @@ Import a program file as its own variable collection.
 ## Editing tokens
 
 1. Brand values require Luisa León's approval first (`docs/governance.md`).
-2. Edit the token file (`tokens/gsc.tokens.json` or `tokens/programs/*.tokens.json`).
-3. Mirror the value into `css/tokens.css` / `css/programs.css`.
+2. Edit the token file (`tokens/gsc.tokens.json` or `programs/*/tokens.json`).
+3. Mirror the value into `css/tokens.css` / `programs/<slug>/skin.css`.
 4. `npm run build` (regenerates `build/` + `dist/`), then `npm run validate` —
    parity and the contrast audit (0 hard failures) must pass; CI runs the same
    check on every PR.

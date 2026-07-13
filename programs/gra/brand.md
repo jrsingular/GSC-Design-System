@@ -33,7 +33,7 @@ Communication should connect emotionally with runners, speaking to personal jour
 
 ## Logo
 
-Logo files are stored in `assets/logos/gra/`:
+Logo files are stored in `logos/`:
 
 | File                        | Format | Status                                   |
 |-----------------------------|--------|------------------------------------------|
@@ -63,11 +63,11 @@ Apply the program identity via the `data-program` attribute on the document body
 </body>
 ```
 
-The `data-program="gra"` selector maps to `tokens/programs/gra.tokens.json` for all colour, typography, and spacing tokens.
+The `data-program="gra"` selector maps to `tokens.json` for all colour, typography, and spacing tokens.
 
 ## Governance
 
 - **Design approval:** Luisa León approves all designs before publication or deployment.
-- **Token file (canonical source of truth):** `tokens/programs/gra.tokens.json`
-- **Source document:** `docs/programs/_source/gra-open-knowledge-pack.pdf`
+- **Token file (canonical source of truth):** `tokens.json`
+- **Source document:** `_source/gra-open-knowledge-pack.pdf`
 - If any value in this sheet conflicts with the token file, the token file prevails. If a value is missing from the token file, Luisa León is the arbiter.
