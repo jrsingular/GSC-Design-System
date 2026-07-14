@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Global Soccer Academy · Inscripciones abiertas</title>
+<meta name="description" content="Global Soccer Academy — desarrollo integral de jóvenes futbolistas. Inscripciones abiertas.">
+<link rel="icon" href="logos/gsa-logo-color.png">
+<link rel="stylesheet" href="../../dist/gsc-design-system.css">
+<link rel="stylesheet" href="fonts.css" onerror="">
+<style>
+  /* Landing-specific composition — every colour/type value below is a token,
+     never a literal, so this page re-skins automatically if the GSA palette
+     ever changes in programs/gsa/tokens.json. */
+  .lp-nav { position: sticky; top: 0; z-index: var(--z-sticky); }
+  .lp-nav__links { display: flex; align-items: center; gap: 28px; }
+  .lp-nav__links a { font-family: var(--font-ui); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gsc-text-4); }
+  .lp-nav__links a:hover { color: var(--gsc-text); }
+  .lp-feature-ico { width: 46px; height: 46px; stroke: var(--color-primary); stroke-width: 2; fill: none; margin-bottom: 18px; }
+  @media (max-width: 720px){ .lp-nav__links a:not(.gsc-btn){ display:none; } }
+</style>
+</head>
+<body data-program="gsa">
+
+<!-- NAV -->
+<header class="gsc-topbar lp-nav">
+  <div class="gsc-topbar__inner">
+    <div class="gsc-topbar__logo"><img src="logos/gsa-logo-color.png" alt="Global Soccer Academy" style="height:36px;"></div>
+    <nav class="lp-nav__links">
+      <a href="#programa">Programa</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#horarios">Horarios</a>
+      <a href="#inscripcion" class="gsc-btn gsc-btn--primary gsc-btn--sm">Inscribirme</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="gsc-hero">
+  <div class="gsc-pitch-texture"></div>
+  <div class="gsc-hero__inner">
+    <div class="gsc-eyebrow">Global Soccer Academy</div>
+    <h1 class="gsc-display-1">Desarrollo<br><span class="gsc-accent">integral</span> del futbolista.</h1>
+    <p class="gsc-hero__sub">Formamos jugadores completos — técnica, físico y carácter — con un método profesional pensado para cada edad. Aspiracional, profesional, deportiva: así jugamos.</p>
+    <div class="gsc-flex gsc-gap-3 gsc-wrap-flex" style="margin-bottom:56px;">
+      <a href="#inscripcion" class="gsc-btn gsc-btn--primary gsc-btn--lg">Reservar mi cupo</a>
+      <a href="#metodologia" class="gsc-btn gsc-btn--ghost gsc-btn--lg">Conocer la metodología</a>
+    </div>
+    <div class="gsc-stat-strip">
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">3<span class="u">-18</span></div><div class="gsc-stat-cell__tag">Años de edad</div></div>
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">5<span class="u">x</span></div><div class="gsc-stat-cell__tag">Entrenamientos / semana</div></div>
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">100<span class="u">%</span></div><div class="gsc-stat-cell__tag">Cuerpo técnico certificado</div></div>
+      <div class="gsc-stat-cell"><div class="gsc-stat-cell__num">GT</div><div class="gsc-stat-cell__tag">Guatemala</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="gsc-marquee">
+  <div class="gsc-marquee__track">
+    <span>Técnica</span><span>Físico</span><span>Táctica</span><span>Carácter</span><span>Competencia</span><span>Comunidad</span>
+    <span>Técnica</span><span>Físico</span><span>Táctica</span><span>Carácter</span><span>Competencia</span><span>Comunidad</span>
+  </div>
+</div>
+
+<!-- PROGRAMA / METODOLOGÍA -->
+<section class="gsc-section" id="programa">
+  <div class="gsc-wrap">
+    <div class="gsc-section-head">
+      <div class="gsc-section-num">01 — El programa</div>
+      <h2 class="gsc-display-3">Un camino, no una temporada</h2>
+      <p>Cada jugador avanza por niveles diseñados para su edad, con objetivos claros en cada etapa del desarrollo.</p>
+    </div>
+    <div class="gsc-grid gsc-grid--3" id="metodologia">
+      <article class="gsc-card gsc-card--hover">
+        <svg class="lp-feature-ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3 class="gsc-card__title">Técnica individual</h3>
+        <p class="gsc-card__body">Control, pase y definición — la base de todo jugador completo, trabajada en <b>cada sesión</b>.</p>
+      </article>
+      <article class="gsc-card gsc-card--hover">
+        <svg class="lp-feature-ico" viewBox="0 0 24 24"><path d="M4 19V5m0 14h16"/><path d="M8 15l3-4 3 2 4-6"/></svg>
+        <h3 class="gsc-card__title">Preparación física</h3>
+        <p class="gsc-card__body">Programas por edad que cuidan el crecimiento del jugador y <b>previenen lesiones</b>.</p>
+      </article>
+      <article class="gsc-card gsc-card--hover">
+        <svg class="lp-feature-ico" viewBox="0 0 24 24"><path d="M3 20V9l9-6 9 6v11"/><path d="M9 20v-6h6v6"/></svg>
+        <h3 class="gsc-card__title">Carácter y valores</h3>
+        <p class="gsc-card__body">Disciplina, trabajo en equipo y respeto — <b>formamos personas</b>, no solo jugadores.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HORARIOS -->
+<section class="gsc-section is-soft" id="horarios">
+  <div class="gsc-wrap">
+    <div class="gsc-band gsc-band--tint">
+      <div class="gsc-kicker">Horarios 2026</div>
+      <h3 class="gsc-display-4" style="margin:14px 0 18px;">Elige el grupo de tu hijo o hija</h3>
+      <div class="gsc-grid gsc-grid--3" style="margin-top:24px;">
+        <div class="gsc-fact"><div class="gsc-fact__num">3<em>-6</em></div><div class="gsc-fact__label">Pre-fútbol · lun/mié/vie</div></div>
+        <div class="gsc-fact"><div class="gsc-fact__num">7<em>-12</em></div><div class="gsc-fact__label">Formativas · mar/jue/sáb</div></div>
+        <div class="gsc-fact"><div class="gsc-fact__num">13<em>-18</em></div><div class="gsc-fact__label">Competitivas · lun a vie</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / INSCRIPCIÓN -->
+<section class="gsc-section" id="inscripcion">
+  <div class="gsc-wrap">
+    <div class="gsc-band gsc-band--red gsc-grid gsc-grid--2 gsc-items-center" style="gap:44px;">
+      <div>
+        <h3 class="gsc-display-4" style="margin-bottom:16px;">Cupo limitado por grupo</h3>
+        <p>Agenda una clase de prueba sin costo y conoce el método GSA en la cancha.</p>
+      </div>
+      <div class="gsc-card gsc-card--pad-lg" style="background:var(--gsc-ink);">
+        <div class="gsc-field gsc-mb-4"><label class="gsc-label" for="nombre">Nombre del jugador/a</label><input class="gsc-input" id="nombre" placeholder="Nombre completo"></div>
+        <div class="gsc-field gsc-mb-4"><label class="gsc-label" for="tel">WhatsApp del padre/madre</label><input class="gsc-input" id="tel" placeholder="+502 5555 5555"></div>
+        <button class="gsc-btn gsc-btn--primary gsc-btn--lg gsc-full">Agendar clase de prueba</button>
+        <p class="gsc-fine gsc-mt-4">Sin costo. Cupo sujeto a disponibilidad por grupo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="gsc-footer">
+  <div class="gsc-footer__inner">
+    <p>Global Soccer Academy es un programa de Global Sports Corporation (GSC). Instagram <b>@global_soccer_academy_gt</b>.</p>
+    <div class="gsc-footer__date">© 2026 · Live the dream.</div>
+  </div>
+</footer>
+
+</body>
+</html>
