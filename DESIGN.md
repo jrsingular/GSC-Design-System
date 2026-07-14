@@ -11,6 +11,18 @@ seven program brands, each with its own confirmed palette, type, and voice.
 
 ---
 
+## Route first — which brand is this task?
+
+> **Before anything else, resolve which of the seven programs (or corporate) the task is
+> for, and use only that brand.** This is the system's first rule. The canonical routing
+> map is [`programs/registry.json`](programs/registry.json); the decision procedure,
+> ambiguity rule ("fútbol/soccer" is ambiguous across Global Soccer, Juventus, and Baby
+> Juve — ask), and no-mixing rule are in [`docs/program-routing.md`](docs/program-routing.md).
+> One surface = one brand. Use `corporate` only for group/investor/ecosystem work. Everything
+> below assumes you have already routed.
+
+---
+
 ## 0 · Architecture — corporate base + program overrides
 
 GSC runs a **two-layer token system**:

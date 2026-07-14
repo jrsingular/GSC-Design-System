@@ -12,6 +12,16 @@ from hairlines and surface shifts, not shadows.
 
 For brand foundations use `building-gsc-brand`; for copy use `writing-gsc-copy`.
 
+## STEP 0 — Route to a program first
+
+GSC is **seven academies plus a corporate parent.** Before you build, resolve which ONE brand
+this screen is for — `gsa`, `gba`, `gra`, `nido-aguila`, `ser-portero`, `juventus-academy`,
+`baby-juve`, or `corporate` — using `programs/registry.json` and `docs/program-routing.md`.
+Bare "fútbol/soccer" is ambiguous (Global Soccer / Juventus / Baby Juve) → **ask**; ages 3–5 →
+Baby Juve. Then apply it with `data-program="<slug>"` on a root element and use only that
+program's confirmed tokens. One surface = one brand — never mix. Use `corporate` (no
+`data-program`) only for group/investor/ecosystem work.
+
 ## Setup
 
 Import one stylesheet, then compose with `.gsc-` classes:
@@ -80,6 +90,7 @@ display fonts are proprietary and load only if the consuming project has them.
 
 ## Compliance checklist
 
+- [ ] Resolved to the correct single program (or corporate) first; `data-program` set; no brand mixing.
 - [ ] No raw hex/px literals — tokens only.
 - [ ] Exactly one primary button per view.
 - [ ] Red once, crema at most once per surface.

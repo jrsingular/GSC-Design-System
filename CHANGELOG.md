@@ -4,6 +4,44 @@ All notable changes to the GSC Design System. Format follows
 [Keep a Changelog](https://keepachangelog.com/); versioning is
 [SemVer](https://semver.org/).
 
+## [3.3.0] — 2026-07-14 — Program routing + multi-agent distribution
+
+The design system was already strong; this release makes it **usable by any agent or person
+across GSC, for any program.** The centerpiece is a routing layer so that, for every task, the
+consuming agent first resolves which of the seven programs (or corporate) applies and uses only
+that brand — never mixing, asking when ambiguous.
+
+### Added
+- **Program registry** (`programs/registry.json`) — the canonical machine-readable routing
+  map: per-program aliases, Instagram handle, partner, confirmed palette, fonts (with
+  proprietary/bundled flags + fallbacks), voice, slogan, logos, asset URLs, inheritance
+  (Baby Juve → Juventus), and an `imagePromptSeed` for on-brand image generation. Includes an
+  explicit `routing` block (decision order, ambiguity rule, no-mixing rule, corporate-only rule).
+- **Routing guide** (`docs/program-routing.md`) — the narrative decision procedure with worked
+  examples and a compliance checklist.
+- **Social & image layer** (`docs/social-and-image.md` + new `creating-gsc-social-art` skill) —
+  per-program art recipes and prompts for Instagram/flyers/key art, closing the raster-output
+  gap; logo-compositing discipline (never model-draw the Juventus / Club América crests).
+- **Fetchable indexes** (`gsc.manifest.json`, `llms.txt`) — one URL-addressable map of the whole
+  system so non-cloning agents (chat, Hyperagent) can consume it.
+- **Onboarding** (`docs/onboarding.md`) — copy-paste setup for coding agents, chat agents (with a
+  ready GSC system prompt), Hyperagent named agents, and non-technical staff.
+
+### Changed
+- **AGENTS.md** now leads with STEP 0 — route to a program — before any golden rule.
+- **All five skills** begin with a program-routing preflight and carry a routing item at the top
+  of their compliance checklist. (Fifth skill `creating-gsc-social-art` added.)
+- **DESIGN.md** gains a "Route first" callout above the architecture section.
+- **install.sh** now also copies the registry, routing guide, manifest, and llms.txt into a
+  target project; skills list updated to five.
+- **README** version corrected to 3.3.0 (badges/footer were stale at 3.0/v1.0); added a
+  "Use it with any agent" section and refreshed the file tree.
+
+### Notes
+- No brand values changed. All palettes, fonts, voices, slogans, and logo filenames are the
+  existing Luisa-León-confirmed values, now also mirrored (not redefined) in the registry for
+  routing. The per-program `tokens.json` files remain canonical.
+
 ## [3.2.0] — 2026-07-13 — Premium loop: rubric v2 + every brand ≥ 8.75
 
 ### Added

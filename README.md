@@ -2,10 +2,10 @@
 
 **Global Sports Corporation — _Live the dream._**
 
-![version](https://img.shields.io/badge/version-3.0.0-E32213)
+![version](https://img.shields.io/badge/version-3.3.0-E32213)
 ![license](https://img.shields.io/badge/license-Proprietary%20%26%20Confidential-B01A0E)
 ![tokens](https://img.shields.io/badge/tokens-W3C%20DTCG-EA6020)
-![skills](https://img.shields.io/badge/AI%20skills-4-E32213)
+![skills](https://img.shields.io/badge/AI%20skills-5-E32213)
 ![channels](https://img.shields.io/badge/channels-web%20·%20deck%20·%20mobile%20·%20print-191A19)
 ![programs](https://img.shields.io/badge/programs-7%20academies-F9C016)
 
@@ -50,6 +50,26 @@ tokens, skin, brand sheet, logos and source docs. Apply a program's brand with
 `data-program="gsa"` (etc.) on a root element. Full reference →
 **[DESIGN.md](DESIGN.md)**.
 
+## Use it with any agent — route to a program first
+
+Different people across GSC use different agents (Claude Code, Cursor, ChatGPT, Gemini,
+Hyperagent) — and non-technical staff use no code at all. They all share **one source of
+truth: this repo.** The one rule every consumer follows: **for each task, resolve which of the
+seven programs (or corporate) it is for, and use only that brand — never mix, and ask when
+ambiguous.**
+
+- **Routing map (machine-readable):** [`programs/registry.json`](programs/registry.json) — every
+  program's confirmed palette, fonts, voice, slogan, logos, and match rules.
+- **Routing guide (how to decide):** [`docs/program-routing.md`](docs/program-routing.md) —
+  decision order, the "fútbol is ambiguous" rule, the no-mixing rule, worked examples.
+- **System manifest / LLM index:** [`gsc.manifest.json`](gsc.manifest.json) ·
+  [`llms.txt`](llms.txt) — one fetchable index so any agent can pull the system by URL,
+  no clone required.
+- **Onboarding per consumer:** [`docs/onboarding.md`](docs/onboarding.md) — copy-paste setup for
+  coding agents, chat agents, Hyperagent agents, and non-technical staff.
+- **Social & image art:** [`docs/social-and-image.md`](docs/social-and-image.md) — on-brand
+  Instagram/flyer/key-art generation per program.
+
 ## Install as an AI skill (authorized GSC users)
 
 Give your coding agent the GSC brain in one command (for internal GSC projects
@@ -60,10 +80,13 @@ git clone https://github.com/jrsingular/GSC-Design-System
 ./GSC-Design-System/install.sh   # copies skills + AGENTS.md/DESIGN.md into your project
 ```
 
-- **Claude Code** auto-loads the four Agent Skills from `.claude/skills/`.
+- **Claude Code** auto-loads the five Agent Skills from `.claude/skills/`.
 - **Cursor / Codex / Windsurf / Copilot** read `AGENTS.md` + `DESIGN.md`.
+- **Chat agents / non-technical staff** → see [`docs/onboarding.md`](docs/onboarding.md).
 
-### The four skills
+### The five skills
+
+Every skill starts with a **program-routing preflight** — resolve the brand before producing.
 
 | Skill | Does |
 |---|---|
@@ -71,6 +94,7 @@ git clone https://github.com/jrsingular/GSC-Design-System
 | `designing-gsc-interfaces` | Product UI from tokens + components |
 | `writing-gsc-copy` | Voice, tone, lexicon (EN/ES), microcopy, CTAs |
 | `designing-gsc-landing-pages` | Conversion-focused marketing pages |
+| `creating-gsc-social-art` | On-brand raster art for Instagram, flyers, key art |
 
 Each `SKILL.md` follows Anthropic's authoring spec (frontmatter, progressive
 disclosure to `reference/`, a compliance checklist, evaluations).
@@ -124,6 +148,14 @@ GSC-Design-System/
 ├── index.html                     # Living style guide (start here)
 ├── dist/gsc-design-system.css     # Bundled build — the one file to import
 │
+│   ── ROUTING & ENTRY POINTS (read before designing) ──
+├── programs/registry.json         # Canonical routing map — which brand for this task
+├── gsc.manifest.json · llms.txt   # Fetchable system index for any agent
+├── AGENTS.md · DESIGN.md          # Cross-tool agent instructions + design reference
+├── docs/program-routing.md        # Decision order, ambiguity + no-mixing rules
+├── docs/onboarding.md             # Setup per consumer (coding/chat/Hyperagent/non-tech)
+├── docs/social-and-image.md       # On-brand Instagram / flyer / key-art generation
+│
 │   ── SHARED SYSTEM (corporate, program-agnostic) ──
 ├── tokens/gsc.tokens.json         # W3C DTCG corporate token source
 ├── css/                           # Modular source
@@ -143,7 +175,7 @@ GSC-Design-System/
 │   └── gba/ gra/ nido-aguila/ ser-portero/ juventus-academy/ baby-juve/
 │
 │   ── TOOLING & DOCS ──
-├── .claude/skills/                # 4 AI Agent Skills (+ AGENTS.md, DESIGN.md)
+├── .claude/skills/                # 5 AI Agent Skills (routing-preflighted)
 ├── scripts/                       # run-style-dictionary · build-tokens · validate-tokens
 ├── build/                         # Generated tokens (CSS/SCSS/JS/Swift/XML)
 ├── docs/                          # Guidelines (brand, copywriting, tokens, governance, a11y…)
@@ -327,4 +359,4 @@ stacks already include system fallbacks (`Oswald`/`Arial Narrow` for display,
 
 ---
 
-_GSC Design System · v1.0 · Global Sports Corporation · Live the dream._
+_GSC Design System · v3.3.0 · Global Sports Corporation · Live the dream._

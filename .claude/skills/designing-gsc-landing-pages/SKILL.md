@@ -13,6 +13,17 @@ in the story that earns it.
 Uses `designing-gsc-interfaces` (components) + `writing-gsc-copy` (words).
 Working reference: the repo's `templates/landing.html`.
 
+## STEP 0 — Route to a program first
+
+GSC is **seven academies plus a corporate parent.** Before you build the page, resolve which
+ONE brand it is for — `gsa`, `gba`, `gra`, `nido-aguila`, `ser-portero`, `juventus-academy`,
+`baby-juve`, or `corporate` — using `programs/registry.json` and `docs/program-routing.md`.
+An academy enrolment page is a **program** brand (Spanish-first, `data-program="<slug>"`); an
+investor-interest page is **corporate** (English-first). Bare "fútbol/soccer" is ambiguous
+(Global Soccer / Juventus / Baby Juve) → **ask**. One page = one brand — never mix. The
+"Request the data room" narrative below is the corporate/investor pattern; a program enrolment
+page ends in an enrolment CTA in that program's voice.
+
 ## The page skeleton (top → bottom)
 
 1. **Nav** `.gsc-topbar` — logo left; ≤4 links + one primary CTA right.
@@ -57,6 +68,7 @@ Working reference: the repo's `templates/landing.html`.
 
 ## Compliance checklist
 
+- [ ] Resolved to the correct single program (or corporate) first; program page is Spanish-first with `data-program`; no brand mixing.
 - [ ] Single primary CTA, same verb across nav/hero/band.
 - [ ] Claim headline + one accent word; proof numbers above the fold.
 - [ ] Proof (crema) precedes CTA (red); each rationed to one.

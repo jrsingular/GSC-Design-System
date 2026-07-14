@@ -1,0 +1,50 @@
+# GSC Design System
+
+> Global Sports Corporation — *Live the dream.* A brand, product, and copy design system for
+> a multi-program sports ecosystem: **seven academy brands plus a corporate parent.** The
+> single most important rule for any agent: for every task, **resolve which program applies**
+> and use only that program's confirmed palette, fonts, voice, and logos. Never invent values;
+> never mix two programs on one surface; when ambiguous, ask. All brand values are confirmed by
+> Luisa León (GSC Brand & Communications). Proprietary & Confidential — authorized GSC use only.
+
+Raw base for all files: `https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/`
+
+## Start here (routing — read before designing)
+
+- [Program registry (canonical routing map, JSON)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/registry.json): every program's confirmed palette, fonts, voice, slogan, logos, and match rules.
+- [Program routing guide](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/program-routing.md): the decision order, ambiguity rule, and no-mixing rule, with worked examples.
+- [System manifest (JSON index of everything)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/gsc.manifest.json): machine index of tokens, CSS, per-program assets, skills, and docs.
+- [Onboarding (any agent or person)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/onboarding.md): copy-paste setup for coding agents, chat agents, Hyperagent agents, and non-technical staff.
+
+## Cross-tool agent instructions
+
+- [AGENTS.md](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/AGENTS.md): portable entry point (Cursor, Codex, Windsurf, Gemini CLI, Copilot, Claude Code).
+- [DESIGN.md](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/DESIGN.md): condensed design reference (architecture, per-program detail, components, channels).
+
+## Design tokens & CSS
+
+- [Corporate tokens (W3C DTCG)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/tokens/gsc.tokens.json)
+- [Corporate token CSS](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/tokens.css)
+- [Bundled stylesheet (import this)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/dist/gsc-design-system.css)
+- Channel overlays: [presentation](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/presentation.css) · [mobile](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/mobile.css) · [print](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/print.css)
+
+## Output guides
+
+- [Social & image art (Instagram, flyers, key art)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/social-and-image.md)
+- [Presentations](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/presentations.md) · [Landing pages](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/landing-pages.md) · [Mobile](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/mobile.md) · [Documents](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/documents.md) · [Forms](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/forms.md)
+- [Copywriting](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/copywriting.md) · [Brand](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/brand.md) · [Accessibility](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/accessibility.md)
+
+## Per-program brand sheets
+
+- [Global Soccer Academy (gsa)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/brand.md)
+- [Global Basketball Academy (gba)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/brand.md)
+- [Global Running Academy (gra)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/brand.md)
+- [Nido Águila Guatemala (nido-aguila)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/brand.md)
+- [Ser Portero (ser-portero)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/brand.md)
+- [Juventus Academy Guatemala (juventus-academy)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/brand.md)
+- [Baby Juve (baby-juve)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/baby-juve/brand.md)
+
+## Governance
+
+- [Governance (roles, sources of truth, change workflow)](https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/governance.md)
+- Brand approval: **Luisa León** approves all designs and any change to palette, typography, or voice.

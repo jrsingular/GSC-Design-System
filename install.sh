@@ -18,12 +18,20 @@ echo "GSC Design System → installing into: $TARGET"
 # 1) Agent Skills (Claude Code)
 mkdir -p "$TARGET/.claude/skills"
 cp -R "$SRC/.claude/skills/." "$TARGET/.claude/skills/"
-echo "  ✓ .claude/skills/ (building-gsc-brand, designing-gsc-interfaces, writing-gsc-copy, designing-gsc-landing-pages)"
+echo "  ✓ .claude/skills/ (building-gsc-brand, designing-gsc-interfaces, writing-gsc-copy, designing-gsc-landing-pages, creating-gsc-social-art)"
 
 # 2) Cross-tool reference files (Cursor / Codex / Windsurf / Copilot)
 cp "$SRC/AGENTS.md" "$TARGET/AGENTS.md"
 cp "$SRC/DESIGN.md" "$TARGET/DESIGN.md"
 echo "  ✓ AGENTS.md, DESIGN.md"
+
+# 2b) Routing map — the program registry + guide (resolve the brand before designing)
+mkdir -p "$TARGET/programs" "$TARGET/docs"
+cp "$SRC/programs/registry.json" "$TARGET/programs/registry.json"
+cp "$SRC/docs/program-routing.md" "$TARGET/docs/program-routing.md"
+cp "$SRC/gsc.manifest.json" "$TARGET/gsc.manifest.json"
+[ -f "$SRC/llms.txt" ] && cp "$SRC/llms.txt" "$TARGET/llms.txt"
+echo "  ✓ programs/registry.json, docs/program-routing.md, gsc.manifest.json, llms.txt"
 
 # 3) The stylesheet bundle (optional but handy)
 if [ -f "$SRC/dist/gsc-design-system.css" ]; then

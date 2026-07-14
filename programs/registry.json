@@ -1,0 +1,285 @@
+{
+  "$schema": "https://tr.designtokens.org/",
+  "$id": "gsc-program-registry",
+  "$description": "GSC Program Registry — the canonical machine-readable routing map for the GSC Design System. Any agent, on ANY task, resolves the correct program from this file BEFORE designing. All palette hexes, font names, voices, slogans and asset paths are CONFIRMED by Luisa León (GSC Brand & Communications). Never invent, substitute, or 'improve' a value. If a value seems wrong, the fix is to ask Luisa León — not to edit it here.",
+  "version": "3.3.0",
+  "brand": "Global Sports Corporation",
+  "tagline": "Live the dream.",
+  "confirmedBy": "Luisa León (GSC Brand & Communications)",
+  "rawBase": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main",
+  "repo": "https://github.com/jrsingular/GSC-Design-System",
+
+  "routing": {
+    "summary": "STEP 1 of every task: resolve exactly ONE brand — one of the 7 programs, or GSC corporate — before producing anything. STEP 2: load that brand's palette, fonts, voice, and logos from its entry below (and its tokens/skin/brand files). STEP 3: run the brand-compliance check. Do not skip STEP 1.",
+    "decisionOrder": [
+      "1. EXPLICIT — the brief names a program or its slug (e.g. 'Ser Portero', 'gba', 'Juventus Academy'). Use it.",
+      "2. HANDLE — the brief names an Instagram handle in this file. Map it to that program.",
+      "3. PARTNER — an official partner is named: 'Juventus' -> juventus-academy; 'Club America' / 'Águila' -> nido-aguila.",
+      "4. KEYWORD — a program-unique keyword appears: 'portero'/'goalkeeper'/'arquero' -> ser-portero; 'baby'/'iniciación'/'3-5 años'/'3 a 5' -> baby-juve; 'basketball'/'básquet'/'baloncesto' -> gba; 'running'/'atletismo'/'velocidad'/'resistencia' -> gra.",
+      "5. SEDE — a venue name unique to one program is named. Map it.",
+      "6. GROUP-LEVEL — the work is investor, rights, M&A, ecosystem-wide, GSC Complex, or explicitly 'GSC corporate' -> use 'corporate'.",
+      "7. STILL UNRESOLVED -> ASK. Do not guess or default."
+    ],
+    "ambiguityRule": "Generic 'fútbol' / 'soccer' / 'academia de fútbol' is AMBIGUOUS across Global Soccer Academy, Juventus Academy, and Baby Juve. If the brief does not disambiguate, ASK which program before designing — never default to one.",
+    "noMixingRule": "One surface = one brand. Never place two programs' palettes or display fonts on the same artifact. A genuinely multi-program piece (e.g. an ecosystem overview) uses the CORPORATE brand as the wrapper; individual program logos may appear only in a neutral, equal-weight lockup, each on its own confirmed treatment.",
+    "corporateOnlyWhen": [
+      "Investor, rights, sponsorship, or M&A material",
+      "Group-level or multi-program communication",
+      "GSC Complex or ecosystem-wide topics",
+      "The brief explicitly says 'GSC corporate' / 'the parent brand'"
+    ],
+    "fidelityRule": "Palette hexes and font names in this file are the single source of truth for routing. The per-program tokens.json files are the canonical token source and must agree with this file. Proprietary fonts are named with a fallback and are NOT bundled — reference the family, never substitute another typeface.",
+    "applyMechanism": "For HTML/CSS output, set data-program=\"<slug>\" on a root element (e.g. <body data-program=\"ser-portero\">) after importing dist/gsc-design-system.css; the skin re-tokens colour + display font while spacing/radius/motion stay corporate. For image/social output, feed the program's palette + display font + voice + imagePromptSeed into the generation prompt (see docs/social-and-image.md). For copy, use the program's voice + slogan (see writing-gsc-copy)."
+  },
+
+  "programs": [
+    {
+      "slug": "gsa",
+      "dataProgram": "gsa",
+      "name": "Global Soccer Academy",
+      "aka": ["GSA", "Global Soccer", "Academia Global de Fútbol"],
+      "match": {
+        "names": ["global soccer academy", "gsa"],
+        "instagram": "@global_soccer_academy_gt",
+        "partner": null,
+        "keywords": ["global soccer", "gsa", "academia de fútbol global", "desarrollo de futbolistas gsc"],
+        "disambiguation": "Bare 'fútbol/soccer' is NOT enough — it also matches Juventus Academy and Baby Juve. Only route here when GSA / Global Soccer Academy is named or clearly implied."
+      },
+      "audience": "Youth footballers — foundational, holistic soccer development (GSC's proprietary mass-formation platform).",
+      "language": "es",
+      "palette": { "ink": "#191919", "primary": "#E7290F", "accent": "#F07D04", "white": "#FFFFFF" },
+      "fonts": {
+        "display": { "family": "Morganite", "proprietary": false, "bundled": true, "fallback": "Impact, sans-serif" },
+        "secondary": { "family": "Montserrat", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" }
+      },
+      "voice": ["aspiracional", "profesional", "deportiva"],
+      "tagline": "Desarrollo integral de jóvenes futbolistas",
+      "slogan": null,
+      "inherits": null,
+      "logos": ["gsa-logo-color.png", "gsa-logo-color.jpg", "gsa-logo-line-art.svg", "gsa-logo-line-art.ai"],
+      "primaryLogo": "programs/gsa/logos/gsa-logo-color.png",
+      "assets": { "tokens": "programs/gsa/tokens.json", "skin": "programs/gsa/skin.css", "brand": "programs/gsa/brand.md", "logoDir": "programs/gsa/logos/", "preview": "programs/gsa/preview.html" },
+      "instagramRef": "https://instagram.com/global_soccer_academy_gt",
+      "imagePromptSeed": "Global Soccer Academy sports-marketing key art. Palette: near-black ink #191919 background, signature red #E7290F as the single energy accent, orange #F07D04 as secondary highlight, white type. Tall condensed Morganite-style all-caps display headline. Aspirational, professional, athletic football tone. Dynamic youth-football photography, dark stadium-night grade, one red accent moment, generous negative space. No invented crests; leave clear space for the GSA logo."
+    },
+    {
+      "slug": "gba",
+      "dataProgram": "gba",
+      "name": "Global Basketball Academy",
+      "aka": ["GBA", "Global Basketball"],
+      "match": {
+        "names": ["global basketball academy", "gba"],
+        "instagram": "@global_basketball_academy_gt",
+        "partner": "Pro Skills Basketball (development alliance)",
+        "keywords": ["basketball", "básquet", "baloncesto", "basquetbol", "pro skills"],
+        "disambiguation": "Any basketball / básquet / baloncesto brief routes here."
+      },
+      "audience": "Youth basketball players across 5 sedes; basketball development + university-scholarship pathway.",
+      "language": "es",
+      "palette": { "ink": "#1C1C1C", "primary": "#FE0000", "steel": "#A3A6A9", "white": "#FFFFFF" },
+      "fonts": {
+        "display": { "family": "Academic M54", "proprietary": true, "bundled": false, "fallback": "Impact, sans-serif" },
+        "secondary": { "family": "Redwing", "proprietary": true, "bundled": false, "fallback": "Montserrat, system-ui, sans-serif" },
+        "ui": { "family": "Montserrat", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" }
+      },
+      "voice": ["aspiracional", "profesional", "deportiva", "ambiente basquetbolista"],
+      "slogan": null,
+      "inherits": null,
+      "staff": { "director": "Marlon Cuadra", "servicioAlCliente": "Margarita Toruño" },
+      "logos": ["gba-logo-color.png", "gba-logo-color.jpg"],
+      "primaryLogo": "programs/gba/logos/gba-logo-color.png",
+      "assets": { "tokens": "programs/gba/tokens.json", "skin": "programs/gba/skin.css", "brand": "programs/gba/brand.md", "logoDir": "programs/gba/logos/" },
+      "instagramRef": "https://instagram.com/global_basketball_academy_gt",
+      "imagePromptSeed": "Global Basketball Academy key art. Palette: deep charcoal #1C1C1C background, pure red #FE0000 as the single hot accent, steel grey #A3A6A9 as neutral support, white type. Bold condensed display headline (Academic M54 family; fall back to a heavy condensed sans if unavailable — do NOT substitute a different branded face). Court-culture, aspirational basketball energy. Youth basketball action photography, hardwood and rim details, dramatic contrast, one red accent moment. Leave clear space for the GBA logo."
+    },
+    {
+      "slug": "gra",
+      "dataProgram": "gra",
+      "name": "Global Running Academy",
+      "aka": ["GRA", "Global Running"],
+      "match": {
+        "names": ["global running academy", "gra"],
+        "instagram": "@globalrunningacademy",
+        "partner": null,
+        "keywords": ["running", "atletismo", "velocidad", "resistencia", "saltos", "carrera", "track and field"],
+        "disambiguation": "Any running / atletismo / track brief routes here."
+      },
+      "audience": "Runners ages 7+ (no upper limit); training organised by discipline — velocidad, resistencia, saltos. 1 active sede, 2 coaches.",
+      "language": "es",
+      "palette": { "primary": "#EE8A04", "accent": "#E53518", "white": "#FFFFFF" },
+      "surfaceComputed": "#1A1A1A",
+      "surfaceNote": "Computed dark surface for contrast (matches programs/gra/tokens.json semantic.bg). NOT a confirmed brand colour — GRA's confirmed palette is orange/red/white only.",
+      "fonts": {
+        "display": { "family": "Unison Pro", "proprietary": true, "bundled": false, "fallback": "Impact, sans-serif" },
+        "secondary": { "family": "Montserrat", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" }
+      },
+      "voice": ["emocional", "atlética", "profesional"],
+      "slogan": null,
+      "inherits": null,
+      "logos": ["gra-logo-color.png", "gra-logo-color.jpg"],
+      "primaryLogo": "programs/gra/logos/gra-logo-color.png",
+      "assets": { "tokens": "programs/gra/tokens.json", "skin": "programs/gra/skin.css", "brand": "programs/gra/brand.md", "logoDir": "programs/gra/logos/" },
+      "instagramRef": "https://instagram.com/globalrunningacademy",
+      "imagePromptSeed": "Global Running Academy key art. Palette: warm orange #EE8A04 as the lead colour, red #E53518 as the energy accent, white type, dark #1A1A1A grounding. Bold display headline (Unison Pro family; fall back to a strong condensed sans if unavailable). Emotional, athletic, professional running tone. Motion-blur running photography, dawn track light, stride and effort, warm orange grade. Leave clear space for the GRA logo."
+    },
+    {
+      "slug": "nido-aguila",
+      "dataProgram": "nido-aguila",
+      "name": "Nido Águila Guatemala",
+      "aka": ["Nido Águila", "Nido Aguila", "Nido"],
+      "match": {
+        "names": ["nido águila", "nido aguila", "nido"],
+        "instagram": "@nidoaguilaguatemala",
+        "partner": "Club América de México (official)",
+        "keywords": ["nido", "águila", "aguila", "club américa", "club america", "américa", "coapa"],
+        "disambiguation": "Any 'Club América' / 'Águila' football brief routes here (official Club América partner)."
+      },
+      "audience": "Football players ages 4–17; official Club América de México academy. 2 sedes (Internacional Km 16.5, Filosofado Zona 11). Includes an Academia Femenina.",
+      "language": "es",
+      "palette": { "primary": "#F8E602", "white": "#FFFFFF", "navy": "#111A2D" },
+      "fonts": {
+        "display": { "family": "Morganite", "proprietary": false, "bundled": true, "fallback": "Impact, sans-serif" },
+        "secondary": { "family": "ITC Avant Garde Gothic Pro", "proprietary": true, "bundled": false, "fallback": "Montserrat, system-ui, sans-serif" }
+      },
+      "voice": ["aspiracional", "profesional", "deportiva Club América", "locución de estadio"],
+      "slogan": "Grandes de corazón",
+      "partner": "Club América de México",
+      "inherits": null,
+      "staff": { "director": "Alonso Ortega", "servicioAlCliente": "Margarita Toruño" },
+      "logos": ["nido-aguila-logo-color.png", "nido-aguila-logo-alt.png"],
+      "primaryLogo": "programs/nido-aguila/logos/nido-aguila-logo-color.png",
+      "assets": { "tokens": "programs/nido-aguila/tokens.json", "skin": "programs/nido-aguila/skin.css", "brand": "programs/nido-aguila/brand.md", "logoDir": "programs/nido-aguila/logos/" },
+      "instagramRef": "https://instagram.com/nidoaguilaguatemala",
+      "imagePromptSeed": "Nido Águila Guatemala key art (official Club América academy). Palette: Club América yellow #F8E602 as the hero colour, white type, deep navy #111A2D grounding. Tall condensed Morganite-style all-caps headline. Aspirational, stadium-announcer ('locución de estadio') energy. Slogan when copy is needed: 'Grandes de corazón'. Youth football photography, América yellow-and-navy world, celebratory stadium mood. Use only the official Club América / Nido Águila crest from the logo files — never redraw it. Leave clear space for the logo."
+    },
+    {
+      "slug": "ser-portero",
+      "dataProgram": "ser-portero",
+      "name": "Ser Portero",
+      "aka": ["Ser Portero", "Ser Portero Guatemala"],
+      "match": {
+        "names": ["ser portero"],
+        "instagram": "@serporteroguatemala",
+        "partner": "Ser Portero (franchise license, Guatemala)",
+        "keywords": ["portero", "porteros", "goalkeeper", "arquero", "guardameta", "atajada", "parada"],
+        "disambiguation": "Any goalkeeper / portero / arquero brief routes here."
+      },
+      "audience": "Goalkeeper technification academy, birth years 2019–2006, mixed (girls accepted), max 6 GKs per coach/hour. Methodology by director Prof. Ernesto García.",
+      "language": "es",
+      "palette": { "primary": "#916E35", "white": "#FFFFFF", "black": "#000000" },
+      "fonts": {
+        "display": { "family": "Headline Gothic ATF", "proprietary": true, "bundled": false, "variants": ["regular", "Rough"], "fallback": "Impact, sans-serif" },
+        "secondary": { "family": "Montserrat", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" }
+      },
+      "voice": ["emocional", "atlética", "profesional", "inspiracional"],
+      "slogan": "El Ser está antes que el portero",
+      "slogans": ["El Ser está antes que el portero", "Tu mente dirige tu parada"],
+      "inherits": null,
+      "staff": { "director": "Prof. Ernesto García" },
+      "logos": ["ser-portero-logo-color.png", "ser-portero-logo-alt.png", "ser-portero-symbol.png"],
+      "primaryLogo": "programs/ser-portero/logos/ser-portero-logo-color.png",
+      "assets": { "tokens": "programs/ser-portero/tokens.json", "skin": "programs/ser-portero/skin.css", "brand": "programs/ser-portero/brand.md", "logoDir": "programs/ser-portero/logos/" },
+      "instagramRef": "https://instagram.com/serporteroguatemala",
+      "imagePromptSeed": "Ser Portero key art (goalkeeper technification). Palette: gold/brown #916E35 as the signature colour, white type, black #000000 grounding. Bold display headline (Headline Gothic ATF family; fall back to a strong gothic sans if unavailable). Emotional, athletic, inspirational, professional tone. Slogans when copy is needed: 'El Ser está antes que el portero' / 'Tu mente dirige tu parada'. Goalkeeper-focused photography — gloves, dive, focus, hands and eyes — dramatic low key with a gold accent. Leave clear space for the Ser Portero logo/symbol."
+    },
+    {
+      "slug": "juventus-academy",
+      "dataProgram": "juventus-academy",
+      "name": "Juventus Academy Guatemala",
+      "aka": ["Juventus Academy", "Juventus Academy Guatemala", "Juve Academy"],
+      "match": {
+        "names": ["juventus academy", "juventus academy guatemala"],
+        "instagram": "@juventus_academy_guatemala",
+        "partner": "Juventus FC (official licensed academy)",
+        "keywords": ["juventus", "juve", "juventus way", "formamos personas antes que jugadores"],
+        "disambiguation": "Juventus / Juve routes here UNLESS the brief is about ages 3–5 / iniciación (that is Baby Juve). Bare 'fútbol' is ambiguous — ask."
+      },
+      "audience": "Official Juventus FC licensed academy; formative football + academics + showcases + placement. ~458 players across 5 sedes. Route Baby Juve -> Formativo -> Prima Squadra -> Tercera División -> becas.",
+      "language": "es",
+      "palette": { "black": "#000000", "white": "#FFFFFF", "primary": "#F9C016" },
+      "fonts": {
+        "display": { "family": "JuventusFans", "proprietary": true, "bundled": false, "variants": ["JuventusFans-Bold", "JuventusFans-Boldinline"], "fallback": "Impact, sans-serif" },
+        "secondary": { "family": "Montserrat", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" }
+      },
+      "voice": ["aspiracional", "divertido", "profesional como equipo de alto rendimiento"],
+      "slogan": "Formamos personas antes que jugadores",
+      "philosophy": "Juventus Way — Style of Play, Technical, Tactical, Mental, Emotional & Social.",
+      "partner": "Juventus FC",
+      "inherits": null,
+      "logos": ["juventus-academy-logo-color.png", "juventus-academy-logo-mono.png"],
+      "primaryLogo": "programs/juventus-academy/logos/juventus-academy-logo-color.png",
+      "assets": { "tokens": "programs/juventus-academy/tokens.json", "skin": "programs/juventus-academy/skin.css", "brand": "programs/juventus-academy/brand.md", "logoDir": "programs/juventus-academy/logos/" },
+      "instagramRef": "https://instagram.com/juventus_academy_guatemala",
+      "imagePromptSeed": "Juventus Academy Guatemala key art (official Juventus FC academy). Palette: black #000000 and white with Juventus yellow #F9C016 as the single signature accent. Bold display headline (JuventusFans family; fall back to a strong condensed sans if unavailable — never substitute another branded face). High-performance, aspirational yet human tone; philosophy 'Formamos personas antes que jugadores'. Youth football photography with black-white-yellow world, elite-club polish. Use only the official Juventus Academy crest from the logo files — never redraw the Juventus marks. Leave clear space for the logo."
+    },
+    {
+      "slug": "baby-juve",
+      "dataProgram": "baby-juve",
+      "name": "Baby Juve",
+      "aka": ["Baby Juve", "Baby Juventus"],
+      "match": {
+        "names": ["baby juve", "baby juventus"],
+        "instagram": "@juventus_academy_guatemala",
+        "partner": "Juventus FC (via Juventus Academy)",
+        "keywords": ["baby juve", "iniciación", "iniciacion", "3-5", "3 a 5 años", "3 a 5 anos", "preescolar deportivo", "motricidad"],
+        "disambiguation": "Ages 3–5 / iniciación deportiva / non-competitive intro routes here, NOT Juventus Academy."
+      },
+      "audience": "Iniciación deportiva, ages 3–5, non-competitive; Juventus Academy methodology with introduction to Italian; focus on motricity and values. 4 sedes.",
+      "language": "es",
+      "palette": { "black": "#000000", "white": "#FFFFFF", "primary": "#F9C016" },
+      "fonts": {
+        "display": { "family": "JuventusFans", "proprietary": true, "bundled": false, "variants": ["JuventusFans-Bold", "JuventusFans-Boldinline"], "fallback": "Impact, sans-serif" },
+        "secondary": { "family": "Montserrat", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" }
+      },
+      "voice": ["divertido", "infantil deportivo", "emocionante"],
+      "slogan": null,
+      "inherits": "juventus-academy",
+      "inheritsNote": "Baby Juve SHARES Juventus Academy branding (same palette #000000/#FFFFFF/#F9C016, same JuventusFans fonts). ONLY the voice differs — playful, child-focused, exciting — and the audience is ages 3–5. Never make Baby Juve look like a different colour brand; it is Juventus Academy in a playful register.",
+      "logos": ["baby-juve-logo-color.png"],
+      "primaryLogo": "programs/baby-juve/logos/baby-juve-logo-color.png",
+      "assets": { "tokens": "programs/baby-juve/tokens.json", "skin": "programs/baby-juve/skin.css", "brand": "programs/baby-juve/brand.md", "logoDir": "programs/baby-juve/logos/" },
+      "instagramRef": "https://instagram.com/juventus_academy_guatemala",
+      "imagePromptSeed": "Baby Juve key art (Juventus Academy iniciación, ages 3–5). Palette: black #000000 and white with Juventus yellow #F9C016 accent — SAME brand as Juventus Academy, only the mood changes. Playful, child-friendly, exciting tone (divertido, infantil deportivo). Rounded, warm, high-energy layout for tiny players; big friendly display type (JuventusFans family; fall back to a friendly bold sans if unavailable). Toddler-football photography, joyful movement, safe and colourful, keeping the black-white-yellow identity. Use only the official Baby Juve logo file. Leave clear space for the logo."
+    }
+  ],
+
+  "corporate": {
+    "slug": "corporate",
+    "dataProgram": null,
+    "name": "Global Sports Corporation (parent)",
+    "useWhen": "Group-level, investor, rights, sponsorship, M&A, GSC Complex, ecosystem-wide, or explicitly 'GSC corporate'. NOT for individual academy comms.",
+    "language": "en-first (Spanish for local group comms)",
+    "palette": { "red": "#E32213", "redDeep": "#B01A0E", "orange": "#EA6020", "crema": "#F2E4C8", "ink": "#191A19", "inkSoft": "#232423", "line": "#3A3B3A" },
+    "fonts": {
+      "display": { "family": "Bebas Neue", "proprietary": false, "bundled": false, "cdn": true, "fallback": "Oswald, 'Arial Narrow', sans-serif" },
+      "ui": { "family": "Montserrat", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" },
+      "body": { "family": "Roboto", "proprietary": false, "bundled": false, "cdn": true, "fallback": "system-ui, sans-serif" }
+    },
+    "voice": ["investment-grade", "confident", "restrained", "disciplined operator"],
+    "tagline": "Live the dream.",
+    "logos": ["assets/gsc-logo.png"],
+    "logoDir": "assets/logos/gsc-corporate/",
+    "assets": { "tokens": "tokens/gsc.tokens.json", "css": "css/tokens.css", "bundle": "dist/gsc-design-system.css" },
+    "imagePromptSeed": "Global Sports Corporation corporate key art. Palette: stadium-night ink #191A19 background, two brand flames — red #E32213 (primary, one accent) and orange #EA6020 (secondary) — with a single rationed 'crema' #F2E4C8 anchor surface. Condensed all-caps Bebas Neue headline, Montserrat labels. Investment-grade, confident, restrained. Institutional sports-business imagery, dark and precise, hairline structure not shadows. Leave clear space for the GSC corporate logo."
+  },
+
+  "assetsIndex": {
+    "cssBundle": "dist/gsc-design-system.css",
+    "corporateTokens": "tokens/gsc.tokens.json",
+    "corporateTokensCss": "css/tokens.css",
+    "channelStylesheets": { "presentation": "css/presentation.css", "mobile": "css/mobile.css", "print": "css/print.css" },
+    "bundledFonts": "assets/fonts/",
+    "designReference": "DESIGN.md",
+    "routingGuide": "docs/program-routing.md",
+    "socialAndImageGuide": "docs/social-and-image.md",
+    "onboarding": "docs/onboarding.md"
+  },
+
+  "channels": {
+    "web":          { "background": "ink", "typeCeilingPx": 132, "redFor": "CTAs, accents", "stylesheet": "core" },
+    "presentation": { "background": "ink + FONDOS", "typeCeilingPx": 104, "redFor": "one moment / section", "stylesheet": "css/presentation.css" },
+    "mobile":       { "background": "ink", "typeCeilingPx": 40, "redFor": "primary action, values", "stylesheet": "css/mobile.css" },
+    "document":     { "background": "paper (inverted)", "typeCeilingPx": 46, "redFor": "accents only", "stylesheet": "css/print.css" },
+    "social":       { "background": "program-led", "note": "raster art for Instagram etc. — see docs/social-and-image.md; produced from each program's palette + display font + voice" }
+  }
+}

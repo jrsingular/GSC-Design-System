@@ -13,6 +13,16 @@ condensed all-caps headlines, and rationed warmth.
 This skill is the fast brand overview. For product UI reach for
 `designing-gsc-interfaces`; for words reach for `writing-gsc-copy`.
 
+## STEP 0 — Route to a program first
+
+GSC is **seven academies plus a corporate parent.** Before you judge or apply the brand,
+resolve which ONE this task is for — `gsa`, `gba`, `gra`, `nido-aguila`, `ser-portero`,
+`juventus-academy`, `baby-juve`, or `corporate` — using `programs/registry.json` and
+`docs/program-routing.md`. Bare "fútbol/soccer" is ambiguous (Global Soccer / Juventus / Baby
+Juve) → **ask**; ages 3–5 → Baby Juve. One surface = one brand — never mix. The corporate
+tokens described below apply **only** to group/investor/ecosystem work; each academy has its
+own confirmed palette, display font, and voice. Never invent or substitute a value.
+
 ## Who GSC is (context for on-brand output)
 
 Global Sports Corporation is a **Guatemala-based sports company (founded 2013)**
@@ -92,6 +102,7 @@ Everything is **dark-first** — except **documents/print**, which invert to
 
 ## Compliance checklist
 
+- [ ] Resolved to the correct single program (or corporate) first; asked if ambiguous; no brand mixing.
 - [ ] One primary red action per view; orange stays secondary.
 - [ ] Crema used at most once (the anchor claim).
 - [ ] Headlines Bebas ALL-CAPS; body Roboto sentence case; labels Montserrat tracked.

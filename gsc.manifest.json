@@ -1,0 +1,326 @@
+{
+  "$id": "gsc-design-system-manifest",
+  "$description": "Machine-readable index of the GSC Design System. Any agent can fetch this to discover the whole system by URL without cloning the repo. Start with `routing.registry`, then load the resolved program. All brand values confirmed by Luisa León.",
+  "name": "GSC Design System",
+  "version": "3.3.0",
+  "tagline": "Live the dream.",
+  "proprietary": true,
+  "confirmedBy": "Luisa León (GSC Brand & Communications)",
+  "repo": "https://github.com/jrsingular/GSC-Design-System",
+  "rawBase": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main",
+  "routing": {
+    "mustRouteFirst": true,
+    "rule": "For every task, resolve exactly ONE program (or corporate) before producing output. Never invent values; never mix two programs; ask when ambiguous.",
+    "registry": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/registry.json",
+    "guide": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/program-routing.md",
+    "slugs": [
+      "gsa",
+      "gba",
+      "gra",
+      "nido-aguila",
+      "ser-portero",
+      "juventus-academy",
+      "baby-juve",
+      "corporate"
+    ]
+  },
+  "entryPoints": {
+    "llms": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/llms.txt",
+    "agents": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/AGENTS.md",
+    "design": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/DESIGN.md",
+    "onboarding": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/onboarding.md",
+    "readme": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/README.md"
+  },
+  "tokens": {
+    "corporateDtcg": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/tokens/gsc.tokens.json",
+    "corporateCss": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/tokens.css",
+    "cssBundle": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/dist/gsc-design-system.css",
+    "channels": {
+      "presentation": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/presentation.css",
+      "mobile": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/mobile.css",
+      "print": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/print.css"
+    }
+  },
+  "skills": [
+    {
+      "name": "building-gsc-brand",
+      "path": ".claude/skills/building-gsc-brand/SKILL.md",
+      "url": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/.claude/skills/building-gsc-brand/SKILL.md"
+    },
+    {
+      "name": "designing-gsc-interfaces",
+      "path": ".claude/skills/designing-gsc-interfaces/SKILL.md",
+      "url": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/.claude/skills/designing-gsc-interfaces/SKILL.md"
+    },
+    {
+      "name": "writing-gsc-copy",
+      "path": ".claude/skills/writing-gsc-copy/SKILL.md",
+      "url": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/.claude/skills/writing-gsc-copy/SKILL.md"
+    },
+    {
+      "name": "designing-gsc-landing-pages",
+      "path": ".claude/skills/designing-gsc-landing-pages/SKILL.md",
+      "url": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/.claude/skills/designing-gsc-landing-pages/SKILL.md"
+    },
+    {
+      "name": "creating-gsc-social-art",
+      "path": ".claude/skills/creating-gsc-social-art/SKILL.md",
+      "url": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/.claude/skills/creating-gsc-social-art/SKILL.md"
+    }
+  ],
+  "outputGuides": {
+    "socialAndImage": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/social-and-image.md",
+    "presentations": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/presentations.md",
+    "landingPages": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/landing-pages.md",
+    "mobile": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/mobile.md",
+    "documents": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/documents.md",
+    "forms": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/forms.md",
+    "copywriting": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/copywriting.md",
+    "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/brand.md",
+    "accessibility": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/accessibility.md",
+    "governance": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/docs/governance.md"
+  },
+  "programs": [
+    {
+      "slug": "gsa",
+      "name": "Global Soccer Academy",
+      "dataProgram": "gsa",
+      "palette": {
+        "ink": "#191919",
+        "primary": "#E7290F",
+        "accent": "#F07D04",
+        "white": "#FFFFFF"
+      },
+      "displayFont": "Morganite",
+      "displayFontProprietary": false,
+      "voice": [
+        "aspiracional",
+        "profesional",
+        "deportiva"
+      ],
+      "slogan": null,
+      "inherits": null,
+      "instagram": "https://instagram.com/global_soccer_academy_gt",
+      "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/tokens.json",
+      "skin": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/skin.css",
+      "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/brand.md",
+      "logoDir": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/logos/",
+      "primaryLogo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/logos/gsa-logo-color.png",
+      "logos": [
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/logos/gsa-logo-color.png",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/logos/gsa-logo-color.jpg",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/logos/gsa-logo-line-art.svg",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gsa/logos/gsa-logo-line-art.ai"
+      ]
+    },
+    {
+      "slug": "gba",
+      "name": "Global Basketball Academy",
+      "dataProgram": "gba",
+      "palette": {
+        "ink": "#1C1C1C",
+        "primary": "#FE0000",
+        "steel": "#A3A6A9",
+        "white": "#FFFFFF"
+      },
+      "displayFont": "Academic M54",
+      "displayFontProprietary": true,
+      "voice": [
+        "aspiracional",
+        "profesional",
+        "deportiva",
+        "ambiente basquetbolista"
+      ],
+      "slogan": null,
+      "inherits": null,
+      "instagram": "https://instagram.com/global_basketball_academy_gt",
+      "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/tokens.json",
+      "skin": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/skin.css",
+      "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/brand.md",
+      "logoDir": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/logos/",
+      "primaryLogo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/logos/gba-logo-color.png",
+      "logos": [
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/logos/gba-logo-color.png",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gba/logos/gba-logo-color.jpg"
+      ]
+    },
+    {
+      "slug": "gra",
+      "name": "Global Running Academy",
+      "dataProgram": "gra",
+      "palette": {
+        "primary": "#EE8A04",
+        "accent": "#E53518",
+        "white": "#FFFFFF"
+      },
+      "displayFont": "Unison Pro",
+      "displayFontProprietary": true,
+      "voice": [
+        "emocional",
+        "atlética",
+        "profesional"
+      ],
+      "slogan": null,
+      "inherits": null,
+      "instagram": "https://instagram.com/globalrunningacademy",
+      "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/tokens.json",
+      "skin": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/skin.css",
+      "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/brand.md",
+      "logoDir": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/logos/",
+      "primaryLogo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/logos/gra-logo-color.png",
+      "logos": [
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/logos/gra-logo-color.png",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/gra/logos/gra-logo-color.jpg"
+      ]
+    },
+    {
+      "slug": "nido-aguila",
+      "name": "Nido Águila Guatemala",
+      "dataProgram": "nido-aguila",
+      "palette": {
+        "primary": "#F8E602",
+        "white": "#FFFFFF",
+        "navy": "#111A2D"
+      },
+      "displayFont": "Morganite",
+      "displayFontProprietary": false,
+      "voice": [
+        "aspiracional",
+        "profesional",
+        "deportiva Club América",
+        "locución de estadio"
+      ],
+      "slogan": "Grandes de corazón",
+      "inherits": null,
+      "instagram": "https://instagram.com/nidoaguilaguatemala",
+      "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/tokens.json",
+      "skin": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/skin.css",
+      "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/brand.md",
+      "logoDir": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/logos/",
+      "primaryLogo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/logos/nido-aguila-logo-color.png",
+      "logos": [
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/logos/nido-aguila-logo-color.png",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/nido-aguila/logos/nido-aguila-logo-alt.png"
+      ]
+    },
+    {
+      "slug": "ser-portero",
+      "name": "Ser Portero",
+      "dataProgram": "ser-portero",
+      "palette": {
+        "primary": "#916E35",
+        "white": "#FFFFFF",
+        "black": "#000000"
+      },
+      "displayFont": "Headline Gothic ATF",
+      "displayFontProprietary": true,
+      "voice": [
+        "emocional",
+        "atlética",
+        "profesional",
+        "inspiracional"
+      ],
+      "slogan": "El Ser está antes que el portero",
+      "inherits": null,
+      "instagram": "https://instagram.com/serporteroguatemala",
+      "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/tokens.json",
+      "skin": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/skin.css",
+      "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/brand.md",
+      "logoDir": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/logos/",
+      "primaryLogo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/logos/ser-portero-logo-color.png",
+      "logos": [
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/logos/ser-portero-logo-color.png",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/logos/ser-portero-logo-alt.png",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/ser-portero/logos/ser-portero-symbol.png"
+      ]
+    },
+    {
+      "slug": "juventus-academy",
+      "name": "Juventus Academy Guatemala",
+      "dataProgram": "juventus-academy",
+      "palette": {
+        "black": "#000000",
+        "white": "#FFFFFF",
+        "primary": "#F9C016"
+      },
+      "displayFont": "JuventusFans",
+      "displayFontProprietary": true,
+      "voice": [
+        "aspiracional",
+        "divertido",
+        "profesional como equipo de alto rendimiento"
+      ],
+      "slogan": "Formamos personas antes que jugadores",
+      "inherits": null,
+      "instagram": "https://instagram.com/juventus_academy_guatemala",
+      "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/tokens.json",
+      "skin": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/skin.css",
+      "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/brand.md",
+      "logoDir": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/logos/",
+      "primaryLogo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/logos/juventus-academy-logo-color.png",
+      "logos": [
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/logos/juventus-academy-logo-color.png",
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/juventus-academy/logos/juventus-academy-logo-mono.png"
+      ]
+    },
+    {
+      "slug": "baby-juve",
+      "name": "Baby Juve",
+      "dataProgram": "baby-juve",
+      "palette": {
+        "black": "#000000",
+        "white": "#FFFFFF",
+        "primary": "#F9C016"
+      },
+      "displayFont": "JuventusFans",
+      "displayFontProprietary": true,
+      "voice": [
+        "divertido",
+        "infantil deportivo",
+        "emocionante"
+      ],
+      "slogan": null,
+      "inherits": "juventus-academy",
+      "instagram": "https://instagram.com/juventus_academy_guatemala",
+      "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/baby-juve/tokens.json",
+      "skin": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/baby-juve/skin.css",
+      "brand": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/baby-juve/brand.md",
+      "logoDir": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/baby-juve/logos/",
+      "primaryLogo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/baby-juve/logos/baby-juve-logo-color.png",
+      "logos": [
+        "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/programs/baby-juve/logos/baby-juve-logo-color.png"
+      ]
+    }
+  ],
+  "corporate": {
+    "slug": "corporate",
+    "name": "Global Sports Corporation (parent)",
+    "palette": {
+      "red": "#E32213",
+      "redDeep": "#B01A0E",
+      "orange": "#EA6020",
+      "crema": "#F2E4C8",
+      "ink": "#191A19",
+      "inkSoft": "#232423",
+      "line": "#3A3B3A"
+    },
+    "displayFont": "Bebas Neue",
+    "voice": [
+      "investment-grade",
+      "confident",
+      "restrained",
+      "disciplined operator"
+    ],
+    "tagline": "Live the dream.",
+    "tokens": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/tokens/gsc.tokens.json",
+    "css": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/css/tokens.css",
+    "bundle": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/dist/gsc-design-system.css",
+    "logo": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/assets/gsc-logo.png",
+    "useWhen": "Group-level, investor, rights, sponsorship, M&A, GSC Complex, ecosystem-wide, or explicitly 'GSC corporate'. NOT for individual academy comms."
+  },
+  "governance": {
+    "brandApproval": "Luisa León approves all designs and any change to palette, typography, or voice.",
+    "sourceOfTruth": "programs/*/tokens.json (per-program) and tokens/gsc.tokens.json (corporate). registry.json mirrors these for routing.",
+    "license": "https://raw.githubusercontent.com/jrsingular/GSC-Design-System/main/LICENSE"
+  }
+}

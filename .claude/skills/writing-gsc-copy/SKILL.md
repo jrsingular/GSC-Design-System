@@ -9,6 +9,18 @@ GSC sells football-club investment opportunities to sophisticated investors.
 The writing is **investment-grade, confident, and plain**. Numbers do the
 bragging; the prose stays calm. Tagline: *Live the dream.*
 
+## STEP 0 — Route to a program first
+
+The voice on this page is **corporate GSC** (investor/rights/group-level). But GSC is **seven
+academies plus the corporate parent**, and each academy has its OWN confirmed voice and
+slogan. Before writing, resolve which ONE brand this copy is for — `gsa`, `gba`, `gra`,
+`nido-aguila`, `ser-portero`, `juventus-academy`, `baby-juve`, or `corporate` — using
+`programs/registry.json` and `docs/program-routing.md`. Bare "fútbol/soccer" is ambiguous
+(Global Soccer / Juventus / Baby Juve) → **ask**; ages 3–5 → Baby Juve. Program copy is
+**Spanish-first**; corporate is English-first. Use only the confirmed voice + slogan for the
+resolved program (see "Program voices" below) — never invent a slogan or borrow another
+program's.
+
 ## The one rule
 
 **Clarity beats cleverness. Write the CTA first.** Know the single action a
@@ -76,6 +88,7 @@ Never invent a program slogan — use the confirmed ones or ask Luisa León.
 
 ## Compliance checklist (validate every draft)
 
+- [ ] Resolved to the correct single program (or corporate) first; correct voice/slogan; Spanish-first for programs.
 - [ ] There is exactly one clear primary action.
 - [ ] The headline is a claim, not a topic label.
 - [ ] Every stat is specific and, where possible, benchmarked.
